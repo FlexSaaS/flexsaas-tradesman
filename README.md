@@ -6,7 +6,7 @@ A simple, customisable SaaS web platform built for small businesses.
 
 ```bash
 git clone https://github.com/FlexSaaS/flexsaas.git
-cd flexsaas
+cd flexsaas/frontend
 npm install
 npm run dev
 ```

@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
 
-// You must have this config at the top of every component.
-const config = getClientConfig();
+// You must have this at the top of every component.
+const client = getClientConfig();
 
 function ConfigTest() {
   return (
     <Container>
       <Header>
-        <Logo src={config.logo} alt="logo" />
-        <h1>{config.name}</h1>
+        <Logo src={client.logo} alt="logo" />
+        <h1>{client.name}</h1>
       </Header>
       <main>
-        <Tagline color={config.primaryColor}>{config.tagline}</Tagline>
-        <Button bg={config.primaryColor}>Book Now</Button>
+        <Tagline color={client.primaryColor}>{client.tagline}</Tagline>
+        <Button bg={client.primaryColor}>Book Now</Button>
       </main>
     </Container>
   );

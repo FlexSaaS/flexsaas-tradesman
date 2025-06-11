@@ -5,6 +5,17 @@ const clientBConfig: ClientConfig = {
   logo: "/clientB-logo.png",
   primaryColor: "#e63946",
   tagline: "Premium beauty appointments made easy.",
+  header: {
+    title: "",
+    subtitle: ""
+  },
+  cta: {
+    title: "",
+    subtitle: "",
+    buttonText: "",
+    link: ""
+  },
+  projects: []
 };
 
 export default clientBConfig;

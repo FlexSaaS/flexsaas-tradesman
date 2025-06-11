@@ -1,10 +1,17 @@
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
+import { useNavigate } from "react-router-dom";
 
-// You must have this at the top of every component.
 const client = getClientConfig();
 
 function ConfigTest() {
+  const navigate = useNavigate();
+
+  // Navigate to the /projects route
+  const goToProjects = () => {
+    navigate("/projects");
+  };
+
   return (
     <Container>
       <Header>
@@ -14,6 +21,11 @@ function ConfigTest() {
       <main>
         <Tagline color={client.primaryColor}>{client.tagline}</Tagline>
         <Button bg={client.primaryColor}>Book Now</Button>
+
+        {/* Navigation Button to go to project page */}
+        <NavButton bg={client.primaryColor} onClick={goToProjects}>
+          View Our Projects
+        </NavButton>
       </main>
     </Container>
   );
@@ -47,4 +59,9 @@ const Button = styled.button<{ bg: string }>`
   padding: 0.5rem 1rem;
   border-radius: 5px;
   margin-top: 1rem;
+`;
+
+const NavButton = styled(Button)`
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 `;

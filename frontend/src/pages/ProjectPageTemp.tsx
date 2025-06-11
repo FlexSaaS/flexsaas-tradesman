@@ -3,9 +3,320 @@ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
+import styled from 'styled-components';
 import { getClientConfig } from '../lib/getClientConfig';
 
-// Dynamically retrieve the client-specific configuration
+// Types for styled-components props
+interface ColorProps {
+  $primaryColor: string;
+}
+
+// Styled Components
+const PageWrapper = styled.div`
+  padding: 4rem 0;
+  background: #f9fafb;
+  @media (min-width: 640px) {
+    padding: 5rem 0;
+  }
+`;
+
+const Container = styled.div`
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+`;
+
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+  @media (min-width: 640px) {
+    margin-bottom: 4rem;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  @media (min-width: 640px) {
+    font-size: 2.25rem;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin: 0 auto;
+  @media (min-width: 640px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+const ProjectCard = styled.div`
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    transform: translateY(-0.25rem);
+  }
+`;
+
+const CardImageWrapper = styled.div`
+  position: relative;
+  height: 14rem;
+  @media (min-width: 640px) {
+    height: 16rem;
+  }
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const CategoryLabel = styled.div<ColorProps>`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: ${({ $primaryColor }) => $primaryColor};
+  color: #000;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  z-index: 2;
+  @media (min-width: 640px) {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.875rem;
+    padding: 0.25rem 1rem;
+  }
+  ${ProjectCard}:hover & {
+    transform: scale(1.5) translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background: ${({ $primaryColor }) => $primaryColor}e6;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 0.5rem 1.5rem;
+  }
+`;
+
+const CardContent = styled.div`
+  padding: 1rem;
+  @media (min-width: 640px) {
+    padding: 1.5rem;
+  }
+`;
+
+const CardTitle = styled.h3`
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  @media (min-width: 640px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const CardDesc = styled.p`
+  color: #4b5563;
+  font-size: 0.875rem;
+  @media (min-width: 640px) {
+    font-size: 1rem;
+  }
+`;
+
+const ModalOverlay = styled(motion.div)`
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  @media (min-width: 640px) {
+    padding: 1rem;
+  }
+`;
+
+const ModalContent = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 48rem;
+  @media (min-width: 640px) {
+    max-width: 96rem;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+  transition: color 0.2s;
+  z-index: 50;
+  &:hover {
+    color: #FFD700;
+  }
+  @media (min-width: 640px) {
+    top: 1rem;
+    right: 1rem;
+  }
+`;
+
+const ModalTitle = styled(motion.div)<ColorProps>`
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: ${({ $primaryColor }) => $primaryColor};
+    text-align: center;
+    background: rgba(0,0,0,0.75);
+    padding: 0.25rem 1.5rem;
+    border-radius: 9999px;
+    @media (min-width: 640px) {
+      font-size: 1.5rem;
+      padding: 0.5rem 2rem;
+    }
+  }
+`;
+
+const ModalImageWrapper = styled.div`
+  position: relative;
+`;
+
+const ModalImage = styled(motion.img)`
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+`;
+
+const NavButton = styled.button<{ disabled?: boolean }>`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  transition: color 0.2s, opacity 0.2s;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  &:hover {
+    color: #FFD700;
+  }
+  &.left {
+    left: 0.5rem;
+    @media (min-width: 640px) {
+      left: 1rem;
+    }
+  }
+  &.right {
+    right: 0.5rem;
+    @media (min-width: 640px) {
+      right: 1rem;
+    }
+  }
+`;
+
+const ImageCounter = styled.div`
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  @media (min-width: 640px) {
+    bottom: 1rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.5rem;
+  }
+`;
+
+const CTASection = styled.div`
+  margin-top: 4rem;
+  text-align: center;
+  @media (min-width: 640px) {
+    margin-top: 5rem;
+  }
+`;
+
+const CTATitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
+`;
+
+const CTASubtitle = styled.p`
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.875rem;
+  @media (min-width: 640px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+`;
+
+const CTAButton = styled(Link)<ColorProps>`
+  background: ${({ $primaryColor }) => $primaryColor};
+  color: #000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: inline-block;
+  &:hover {
+    background: ${({ $primaryColor }) => $primaryColor}cc;
+  }
+  @media (min-width: 640px) {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+  }
+`;
+
+// Dynamically retrieving the client-specific configuration
 const projectConfig = getClientConfig();
 
 const ProjectsPage = () => {
@@ -13,7 +324,6 @@ const ProjectsPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const location = useLocation();
 
-  // Check if a project ID is passed in the location state (for deep-linking)
   useEffect(() => {
     const state = location.state as { selectedProjectId?: number };
     if (state?.selectedProjectId) {
@@ -22,25 +332,21 @@ const ProjectsPage = () => {
     }
   }, [location]);
 
-  // Open modal for selected project
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
     setCurrentImageIndex(0);
   };
 
-  // Close modal
   const handleClose = () => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
   };
 
-  // Show previous image in modal
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
-  // Show next image in modal
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     const project = projectConfig.projects.find((p) => p.id === selectedProject);
@@ -49,131 +355,100 @@ const ProjectsPage = () => {
     }
   };
 
+  const primaryColor = projectConfig.primaryColor || "#FFD700";
+
   return (
-    <div className="py-16 sm:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PageWrapper>
+      <Container>
         {/* Section: Page Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{projectConfig.header.title}</h1>
-          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            {projectConfig.header.subtitle}
-          </p>
-        </div>
+        <Header>
+          <Title>{projectConfig.header.title}</Title>
+          <Subtitle>{projectConfig.header.subtitle}</Subtitle>
+        </Header>
 
         {/* Section: Project Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <Grid>
           {projectConfig.projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1 group relative cursor-pointer"
-              onClick={() => handleProjectClick(project.id)}
-            >
-              <div className="relative h-56 sm:h-64">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                {/* Category label that animates on hover */}
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#FFD700] text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ease-in-out transform 
-                  group-hover:scale-150 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:bg-opacity-90
-                  group-hover:rounded-md group-hover:px-4 group-hover:py-2 group-hover:text-base group-hover:font-bold group-hover:shadow-lg group-hover:z-10">
-                  {project.category}
-                </div>
-              </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 text-sm sm:text-base">{project.description}</p>
-              </div>
-            </div>
+            <ProjectCard key={project.id} onClick={() => handleProjectClick(project.id)}>
+              <CardImageWrapper>
+                <CardImage src={project.image} alt={project.title} />
+                <CategoryLabel $primaryColor={primaryColor}>{project.category}</CategoryLabel>
+              </CardImageWrapper>
+              <CardContent>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDesc>{project.description}</CardDesc>
+              </CardContent>
+            </ProjectCard>
           ))}
-        </div>
+        </Grid>
 
         {/* Section: Modal Gallery */}
         <AnimatePresence>
           {selectedProject !== null && (
-            <motion.div
+            <ModalOverlay
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={handleClose}
-              className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-2 sm:p-4"
             >
-              <div className="relative w-full max-w-3xl sm:max-w-6xl">
-                {/* Close button */}
-                <button
-                  onClick={handleClose}
-                  className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-[#FFD700] transition-colors z-50"
-                >
+              <ModalContent>
+                <CloseButton onClick={handleClose}>
                   <FontAwesomeIcon icon={faTimes} size="lg" />
-                </button>
-
-                {/* Modal: Project title */}
-                <motion.div
+                </CloseButton>
+                <ModalTitle
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-4 left-1/2 transform -translate-x-1/2 z-50"
+                  $primaryColor={primaryColor}
                 >
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#FFD700] text-center bg-black bg-opacity-75 px-4 sm:px-6 py-1 sm:py-2 rounded-full">
+                  <h2>
                     {projectConfig.projects.find(p => p.id === selectedProject)?.title}
                   </h2>
-                </motion.div>
-
-                {/* Modal: Image viewer */}
-                <div className="relative">
-                  <motion.img
+                </ModalTitle>
+                <ModalImageWrapper>
+                  <ModalImage
                     key={currentImageIndex}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     src={projectConfig.projects.find(p => p.id === selectedProject)?.gallery[currentImageIndex]}
                     alt="Project"
-                    className="w-full max-h-[70vh] object-contain"
                   />
-
-                  {/* Previous Image Button */}
-                  <button
+                  <NavButton
+                    className="left"
                     onClick={handlePrevImage}
-                    className={`absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white hover:text-[#FFD700] transition-colors ${currentImageIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
                     disabled={currentImageIndex === 0}
                   >
                     <FontAwesomeIcon icon={faChevronLeft} size="2x" />
-                  </button>
-
-                  {/* Next Image Button */}
-                  <button
+                  </NavButton>
+                  <NavButton
+                    className="right"
                     onClick={handleNextImage}
-                    className={`absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white hover:text-[#FFD700] transition-colors ${currentImageIndex === (projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    disabled={currentImageIndex === (projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1}
+                    disabled={
+                      currentImageIndex ===
+                      ((projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1)
+                    }
                   >
                     <FontAwesomeIcon icon={faChevronRight} size="2x" />
-                  </button>
-
-                  {/* Image index counter */}
-                  <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">
+                  </NavButton>
+                  <ImageCounter>
                     {currentImageIndex + 1} / {projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+                  </ImageCounter>
+                </ModalImageWrapper>
+              </ModalContent>
+            </ModalOverlay>
           )}
         </AnimatePresence>
 
         {/* Section: Call to Action */}
-        <div className="mt-16 sm:mt-20 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{projectConfig.cta.title}</h2>
-          <p className="text-gray-600 mb-6 sm:mb-8 max-w-xl mx-auto text-sm sm:text-base">
-            {projectConfig.cta.subtitle}
-          </p>
-          <Link
-            to={projectConfig.cta.link}
-            className="bg-[#FFD700] text-black px-6 sm:px-8 py-2 sm:py-3 rounded-md text-base sm:text-lg font-semibold hover:bg-[#E6C200] transition-colors inline-block"
-          >
+        <CTASection>
+          <CTATitle>{projectConfig.cta.title}</CTATitle>
+          <CTASubtitle>{projectConfig.cta.subtitle}</CTASubtitle>
+          <CTAButton to={projectConfig.cta.link} $primaryColor={primaryColor}>
             {projectConfig.cta.buttonText}
-          </Link>
-        </div>
-      </div>
-    </div>
+          </CTAButton>
+        </CTASection>
+      </Container>
+    </PageWrapper>
   );
 };
 

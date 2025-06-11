@@ -24,7 +24,7 @@ function ConfigTest() {
 
         {/* Navigation Button to go to project page */}
         <NavButton bg={client.primaryColor} onClick={goToProjects}>
-          View Our Projects
+          View Our Recent Projects
         </NavButton>
       </main>
     </Container>

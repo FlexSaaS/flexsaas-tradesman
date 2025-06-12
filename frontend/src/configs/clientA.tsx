@@ -1,9 +1,11 @@
+import { faShieldAlt, faCrown, faStopwatch, faHandshake, faAward, faStar } from "@fortawesome/free-solid-svg-icons";
 import type { ClientConfig } from "../types/Config";
 
 const clientAConfig: ClientConfig = {
   name: "Client A",
   logo: "/clientA-logo.png",
   primaryColor: "#1e90ff",
+  primaryColorLight: "#FFD700",
   tagline: "Book your sessions in seconds!",
   fontFamily: "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
   // Project template config starts here
@@ -17,6 +19,7 @@ const clientAConfig: ClientConfig = {
     buttonText: "Contact Us",
     link: "/contact" // when the contact page is converted should be added here.
   },
+
   projects: [{
     id: 1,
     title: "Modern Kitchen Renovation",
@@ -51,7 +54,40 @@ const clientAConfig: ClientConfig = {
       "/images/projects/kitchen-2.jpg",
       "/images/projects/kitchen-3.jpg"
     ]
-  }
+  },
+
+  ],
+  features: [
+    {
+      icon:  faShieldAlt ,
+      title: "Quality Guaranteed",
+      description: "Premium materials and expert craftsmanship in every project"
+    },
+    {
+      icon:  faCrown ,
+      title: "Luxury Finish",
+      description: "Exceptional attention to detail for a premium result"
+    },
+    {
+      icon:  faStopwatch ,
+      title: "Timely Delivery",
+      description: "Meeting deadlines with precision and efficiency"
+    },
+    {
+      icon:  faHandshake ,
+      title: "Reliability",
+      description: "Consistent quality and dependable service"
+    },
+    {
+      icon:  faAward ,
+      title: "Trust",
+      description: "Building lasting relationships with our clients"
+    },
+    {
+      icon:  faStar ,
+      title: "Customer Satisfaction",
+      description: "Your satisfaction is our top priority"
+    }
   ],
   about: {
     title: "About Us",
@@ -82,6 +118,7 @@ const clientAConfig: ClientConfig = {
     // seoKeywords: "about Client A, construction company, experienced builders, construction history",
     // seoUrl: "https://yourdomain.com/about"
   }
-};
+}
+;
 
 export default clientAConfig;

@@ -1,9 +1,12 @@
+
 import { Route, Routes } from "react-router-dom";
 import ConfigTest from "./Components/ConfigTest";
 import ProjectPageTemp from "./pages/ProjectPageTemp";
+import HomePage from "./pages/HomePage";
 import AboutPageTemp from "./pages/AboutPageTemp";
 import styled, { createGlobalStyle } from "styled-components";
 import { getClientConfig } from "./lib/getClientConfig";
+
 
 function App() {
   const client = getClientConfig();
@@ -11,13 +14,12 @@ function App() {
   return (
     <AppContainer fontFamily={client.fontFamily}>
       <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<ConfigTest />} />
-        <Route path="/projects" element={<ProjectPageTemp />} />
-        <Route path="/about" element={<AboutPageTemp />} />
-      </Routes>
+    <Routes>
+      <Route path="/projects" element={<ProjectPageTemp />} />
+      <Route path="/" element={<HomePage/>} />
+      <Route path="/about" element={<AboutPageTemp />} />
+    </Routes>
     </AppContainer>
-  );
 }
 
 export default App;

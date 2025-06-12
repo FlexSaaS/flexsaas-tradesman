@@ -53,8 +53,8 @@ export interface ClientConfig {
 
   //Optional SEO fields
   seoTitle?: string;
- seoDescription?: string;
+  seoDescription?: string;
   seoKeywords?: string;
   seoUrl?: string;
-};
+  }
 }

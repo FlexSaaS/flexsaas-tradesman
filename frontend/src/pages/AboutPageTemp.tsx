@@ -9,6 +9,133 @@ interface ColorProps {
   $primaryColor: string;
 }
 
+
+
+const AboutPageTemp = () => {
+  const config = getClientConfig();
+  const primaryColor = config.primaryColor || "#FFD700";
+
+  const values = [
+  {
+    icon: <FontAwesomeIcon icon={faShieldAlt} size="3x" color={primaryColor} />,
+    title: "Quality",
+    description: "We never compromise on quality, using only the finest materials and proven construction methods."
+  },
+  {
+    icon: <FontAwesomeIcon icon={faUsers} size="3x" color={primaryColor} />,
+    title: "Trust",
+    description: "Building lasting relationships with our clients through transparency and reliability."
+  },
+  {
+    icon: <FontAwesomeIcon icon={faClock} size="3x" color={primaryColor} />,
+    title: "Timeliness",
+    description: "We respect deadlines and deliver projects on schedule without compromising quality."
+  },
+  {
+    icon: <FontAwesomeIcon icon={faThumbsUp} size="3x" color={primaryColor} />,
+    title: "Customer Satisfaction",
+    description: "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it."
+  }
+];
+
+  return (
+    <>
+      {/* <SEOHead 
+        title={config.about?.seoTitle || "About " + config.name}
+        description={config.about?.seoDescription || config.about?.description}
+        keywords={config.about?.seoKeywords}
+        url={config.about?.seoUrl || "/about"}
+      /> */}
+      <PageWrapper>
+        <Container>
+          {/* Header Section */}
+          <Header>
+            <Title>{config.about?.title || "About Us"}</Title>
+            <Subtitle>
+              {config.about?.subtitle ||
+                "With over 9 years of experience in the construction industry, we've built our reputation on quality, reliability, and exceptional customer service."}
+            </Subtitle>
+          </Header>
+
+          {/* Story Section */}
+          <StoryGrid>
+            <div>
+              <StoryImage 
+                src={config.about?.mainImage || "/printable resoultion-01.jpg"}
+                alt={config.about?.mainImageAlt || "Construction Team"}
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+            </div>
+            <StoryText>
+              <h2>{config.about?.storyTitle || "Our Story"}</h2>
+              <p>
+                {config.about?.story1 ||
+                  "Founded in 2016 by Mr Lucian Picior, XPro Build LTD has grown from a small local contractor to one of the region's most trusted construction companies. Our journey has been built on a foundation of excellence, integrity, and dedication to our craft."}
+              </p>
+              <p>
+                {config.about?.story2 ||
+                  "With a team of highly skilled professionals and a commitment to using the latest construction technologies, we've successfully completed hundreds of projects, from small renovations to large-scale commercial builds."}
+              </p>
+              <p>
+                {config.about?.story3 ||
+                  "Our mission is simple: to transform our clients' visions into reality while exceeding expectations in quality, safety, and service."}
+              </p>
+            </StoryText>
+          </StoryGrid>
+
+          {/* Values Section */}
+          <ValuesSection>
+            <ValuesTitle>Our Values</ValuesTitle>
+            <ValuesGrid>
+              {values.map((value, idx) => (
+                <ValueCard key={idx}>
+                  <ValueIcon $primaryColor={primaryColor}>{value.icon}</ValueIcon>
+                  <ValueTitle>{value.title}</ValueTitle>
+                  <ValueDesc>{value.description}</ValueDesc>
+                </ValueCard>
+              ))}
+            </ValuesGrid>
+          </ValuesSection>
+
+          {/* Team Section */}
+          <TeamSection>
+            <TeamTitle>Meet The Founder</TeamTitle>
+            <div className="flex flex-col items-center">
+              <FounderImage 
+                src={config.about?.founderImage || "/CEOB.jpeg"}
+                alt={config.about?.founderName || "Lucian Picior"}
+                loading="lazy"
+                width="192"
+                height="192"
+              />
+              <FounderName>{config.about?.founderName || "Lucian Picior"}</FounderName>
+              <FounderRole>{config.about?.founderRole || "Founder & CEO"}</FounderRole>
+              <FounderBio>
+                <p>
+                  {config.about?.founderBio1 ||
+                    "With over 15 years of experience in the construction industry, Lucian Picior has established himself as a visionary leader in London's construction sector. His journey began as a skilled craftsman, where he developed a deep understanding of construction fundamentals and an unwavering commitment to quality."}
+                </p>
+                <p>
+                  {config.about?.founderBio2 ||
+                    "In 2016, driven by his passion for excellence and innovative construction solutions, Lucian founded XPro Build. Under his leadership, the company has grown from handling small residential projects to managing complex commercial developments, all while maintaining the same attention to detail and commitment to quality that defined its beginnings."}
+                </p>
+                <p>
+                  {config.about?.founderBio3 ||
+                    "Lucian's hands-on approach and dedication to client satisfaction have been instrumental in building XPro Build's reputation as one of London's most trusted construction companies. He personally oversees major projects and maintains direct relationships with clients, ensuring that every project meets the high standards that XPro Build is known for."}
+                </p>
+              </FounderBio>
+            </div>
+          </TeamSection>
+        </Container>
+      </PageWrapper>
+    </>
+  );
+};
+
+export default AboutPageTemp;
+
 const PageWrapper = styled.div`
   padding: 5rem 0;
   background: #f9fafb;
@@ -178,128 +305,3 @@ const FounderBio = styled.div`
     line-height: 1.7;
   }
 `;
-
-const AboutPageTemp = () => {
-  const config = getClientConfig();
-  const primaryColor = config.primaryColor || "#FFD700";
-
-  const values = [
-  {
-    icon: <FontAwesomeIcon icon={faShieldAlt} size="3x" color={primaryColor} />,
-    title: "Quality",
-    description: "We never compromise on quality, using only the finest materials and proven construction methods."
-  },
-  {
-    icon: <FontAwesomeIcon icon={faUsers} size="3x" color={primaryColor} />,
-    title: "Trust",
-    description: "Building lasting relationships with our clients through transparency and reliability."
-  },
-  {
-    icon: <FontAwesomeIcon icon={faClock} size="3x" color={primaryColor} />,
-    title: "Timeliness",
-    description: "We respect deadlines and deliver projects on schedule without compromising quality."
-  },
-  {
-    icon: <FontAwesomeIcon icon={faThumbsUp} size="3x" color={primaryColor} />,
-    title: "Customer Satisfaction",
-    description: "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it."
-  }
-];
-
-  return (
-    <>
-      {/* <SEOHead 
-        title={config.about?.seoTitle || "About " + config.name}
-        description={config.about?.seoDescription || config.about?.description}
-        keywords={config.about?.seoKeywords}
-        url={config.about?.seoUrl || "/about"}
-      /> */}
-      <PageWrapper>
-        <Container>
-          {/* Header Section */}
-          <Header>
-            <Title>{config.about?.title || "About Us"}</Title>
-            <Subtitle>
-              {config.about?.subtitle ||
-                "With over 9 years of experience in the construction industry, we've built our reputation on quality, reliability, and exceptional customer service."}
-            </Subtitle>
-          </Header>
-
-          {/* Story Section */}
-          <StoryGrid>
-            <div>
-              <StoryImage 
-                src={config.about?.mainImage || "/printable resoultion-01.jpg"}
-                alt={config.about?.mainImageAlt || "Construction Team"}
-                loading="lazy"
-                width="600"
-                height="400"
-              />
-            </div>
-            <StoryText>
-              <h2>{config.about?.storyTitle || "Our Story"}</h2>
-              <p>
-                {config.about?.story1 ||
-                  "Founded in 2016 by Mr Lucian Picior, XPro Build LTD has grown from a small local contractor to one of the region's most trusted construction companies. Our journey has been built on a foundation of excellence, integrity, and dedication to our craft."}
-              </p>
-              <p>
-                {config.about?.story2 ||
-                  "With a team of highly skilled professionals and a commitment to using the latest construction technologies, we've successfully completed hundreds of projects, from small renovations to large-scale commercial builds."}
-              </p>
-              <p>
-                {config.about?.story3 ||
-                  "Our mission is simple: to transform our clients' visions into reality while exceeding expectations in quality, safety, and service."}
-              </p>
-            </StoryText>
-          </StoryGrid>
-
-          {/* Values Section */}
-          <ValuesSection>
-            <ValuesTitle>Our Values</ValuesTitle>
-            <ValuesGrid>
-              {values.map((value, idx) => (
-                <ValueCard key={idx}>
-                  <ValueIcon $primaryColor={primaryColor}>{value.icon}</ValueIcon>
-                  <ValueTitle>{value.title}</ValueTitle>
-                  <ValueDesc>{value.description}</ValueDesc>
-                </ValueCard>
-              ))}
-            </ValuesGrid>
-          </ValuesSection>
-
-          {/* Team Section */}
-          <TeamSection>
-            <TeamTitle>Meet The Founder</TeamTitle>
-            <div className="flex flex-col items-center">
-              <FounderImage 
-                src={config.about?.founderImage || "/CEOB.jpeg"}
-                alt={config.about?.founderName || "Lucian Picior"}
-                loading="lazy"
-                width="192"
-                height="192"
-              />
-              <FounderName>{config.about?.founderName || "Lucian Picior"}</FounderName>
-              <FounderRole>{config.about?.founderRole || "Founder & CEO"}</FounderRole>
-              <FounderBio>
-                <p>
-                  {config.about?.founderBio1 ||
-                    "With over 15 years of experience in the construction industry, Lucian Picior has established himself as a visionary leader in London's construction sector. His journey began as a skilled craftsman, where he developed a deep understanding of construction fundamentals and an unwavering commitment to quality."}
-                </p>
-                <p>
-                  {config.about?.founderBio2 ||
-                    "In 2016, driven by his passion for excellence and innovative construction solutions, Lucian founded XPro Build. Under his leadership, the company has grown from handling small residential projects to managing complex commercial developments, all while maintaining the same attention to detail and commitment to quality that defined its beginnings."}
-                </p>
-                <p>
-                  {config.about?.founderBio3 ||
-                    "Lucian's hands-on approach and dedication to client satisfaction have been instrumental in building XPro Build's reputation as one of London's most trusted construction companies. He personally oversees major projects and maintains direct relationships with clients, ensuring that every project meets the high standards that XPro Build is known for."}
-                </p>
-              </FounderBio>
-            </div>
-          </TeamSection>
-        </Container>
-      </PageWrapper>
-    </>
-  );
-};
-
-export default AboutPageTemp;

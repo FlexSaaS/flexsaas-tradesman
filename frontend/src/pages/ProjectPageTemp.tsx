@@ -12,6 +12,7 @@ interface ColorProps {
 }
 
 // Styled Components
+// Default colour can be overidden by props with client specified config.
 const PageWrapper = styled.div`
   padding: 4rem 0;
   background: #f9fafb;
@@ -39,17 +40,17 @@ const Header = styled.div`
     margin-bottom: 4rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const Title = styled.h1`
   font-size: 1.875rem;
   font-weight: 700;
-  color: #111827;
+  color: #111827; 
   margin-bottom: 1rem;
   @media (min-width: 640px) {
     font-size: 2.25rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const Subtitle = styled.p`
   font-size: 1rem;
   color: #4b5563;
@@ -146,7 +147,7 @@ const CardTitle = styled.h3`
     font-size: 1.25rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const CardDesc = styled.p`
   color: #4b5563;
   font-size: 0.875rem;
@@ -177,7 +178,7 @@ const ModalContent = styled.div`
     max-width: 96rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const CloseButton = styled.button`
   position: absolute;
   top: 0.5rem;
@@ -224,7 +225,7 @@ const ModalImage = styled(motion.img)`
   max-height: 70vh;
   object-fit: contain;
 `;
-
+// Default colour can be overidden by props with client specified config.
 const NavButton = styled.button<{ disabled?: boolean }>`
   position: absolute;
   top: 50%;
@@ -274,7 +275,7 @@ const CTASection = styled.div`
     margin-top: 5rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const CTATitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 700;
@@ -284,7 +285,7 @@ const CTATitle = styled.h2`
     font-size: 1.875rem;
   }
 `;
-
+// Default colour can be overidden by props with client specified config.
 const CTASubtitle = styled.p`
   color: #4b5563;
   margin-bottom: 1.5rem;

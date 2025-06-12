@@ -44,7 +44,36 @@ export interface ClientConfig {
     category: string;
     gallery: string[];
   }[];
-
   // Features configuration (just the data, icons will be created dynamically)
   features: FeatureIconConfig[];
+
+  // About section starts here
+  about: {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string; // main about/team image
+
+  // Story section fields
+  mainImage?: string;         // Story section image
+  mainImageAlt?: string;      // Alt text for story image
+  storyTitle?: string;
+  story1?: string;
+  story2?: string;
+  story3?: string;
+
+  founderImage?: string;
+  founderName?: string;
+  founderRole?: string;
+  founderBio1?: string;
+  founderBio2?: string;
+  founderBio3?: string;
+
+  //Optional SEO fields
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
+  seoUrl?: string;
+  }
 }
+

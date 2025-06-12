@@ -12,6 +12,10 @@ function ConfigTest() {
     navigate("/projects");
   };
 
+  const goToAbout = () => {
+    navigate("/about");
+  };
+  
   return (
     <Container>
       <Header>
@@ -25,6 +29,10 @@ function ConfigTest() {
         {/* Navigation Button to go to project page */}
         <NavButton bg={client.primaryColor} onClick={goToProjects}>
           View Our Recent Projects
+        </NavButton>
+        {/* Navigation Button to go to about page */}
+        <NavButton bg={client.primaryColor} onClick={goToAbout}>
+          About Us
         </NavButton>
       </main>
     </Container>

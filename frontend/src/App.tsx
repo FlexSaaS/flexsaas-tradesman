@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import ConfigTest from "./Components/ConfigTest";
 import ProjectPageTemp from "./pages/ProjectPageTemp";
+import HomePage from "./pages/HomePage";
 
 function App() {
+  
   return (
     <Routes>
-      <Route path="/" element={<ConfigTest />} />
-
       <Route path="/projects" element={<ProjectPageTemp />} />
+      <Route path="/" element={<HomePage/>} />
     </Routes>
   );
 }

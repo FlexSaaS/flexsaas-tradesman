@@ -1,7 +1,23 @@
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import type { ReactNode } from 'react';
+
+export interface Feature {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+export interface FeatureIconConfig {
+  icon: IconDefinition;
+  title: string;
+  description: string;
+}
+
 export interface ClientConfig {
   name: string;
   logo: string;
   primaryColor: string;
+  primaryColorLight: string;
   tagline: string;
 
   //section for page header for the projects 
@@ -29,4 +45,6 @@ export interface ClientConfig {
     gallery: string[];
   }[];
 
+  // Features configuration (just the data, icons will be created dynamically)
+  features: FeatureIconConfig[];
 }

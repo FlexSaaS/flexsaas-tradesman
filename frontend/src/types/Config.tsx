@@ -3,6 +3,7 @@ export interface ClientConfig {
   logo: string;
   primaryColor: string;
   tagline: string;
+  fontFamily: string;
 
   //section for page header for the projects 
   header: {

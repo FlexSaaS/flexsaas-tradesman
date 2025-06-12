@@ -5,6 +5,7 @@ const clientBConfig: ClientConfig = {
   logo: "/clientB-logo.png",
   primaryColor: "#e63946",
   tagline: "Premium beauty appointments made easy.",
+  fontFamily: "Montserrat",
   header: {
     title: "",
     subtitle: ""

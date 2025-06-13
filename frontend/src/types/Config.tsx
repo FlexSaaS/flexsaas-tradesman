@@ -19,6 +19,7 @@ export interface ClientConfig {
   primaryColor: string;
   primaryColorLight: string;
   tagline: string;
+  fontFamily: string;
 
   //section for page header for the projects 
   header: {

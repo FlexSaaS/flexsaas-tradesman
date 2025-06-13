@@ -3,6 +3,8 @@ import type { ClientConfig } from "../types/Config";
 const clientBConfig: ClientConfig = {
   name: "Client B",
   logo: "/clientB-logo.png",
+  tagline: "Premium beauty appointments made easy.",
+  fontFamily: "Montserrat",
   primaryColor: "#16a34a",
   tagline: "Transform your space with ease.",
   primaryColorLight: "lightgreen",

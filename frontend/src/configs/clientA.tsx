@@ -7,7 +7,7 @@ const clientAConfig: ClientConfig = {
   primaryColor: "#1e90ff",
   primaryColorLight: "#FFD700",
   tagline: "Book your sessions in seconds!",
-
+  fontFamily: "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
   // Project template config starts here
   header: {
     title: "Our Projects",

@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import ConfigTest from "./Components/ConfigTest";
 import ProjectPageTemp from "./pages/ProjectPageTemp";
-import HomePage from "./pages/HomePage"; 
+import HomePage from "./pages/HomePage";
 import AboutPageTemp from "./pages/AboutPageTemp";
 import styled, { createGlobalStyle } from "styled-components";
 import { getClientConfig } from "./lib/getClientConfig";
 import Footer from "./pages/Footer";
+import ContactPage from "./pages/ContactUsPage";
+import ServicesPage from "./pages/ServicesPage";
 
 function App() {
   const client = getClientConfig();
@@ -15,8 +16,11 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
         <Route path="/projects" element={<ProjectPageTemp />} />
         <Route path="/about" element={<AboutPageTemp />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Routes>
       <Footer />
     </AppContainer>

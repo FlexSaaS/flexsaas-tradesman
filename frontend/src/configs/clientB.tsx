@@ -3,8 +3,6 @@ import type { ClientConfig } from "../types/Config";
 const clientBConfig: ClientConfig = {
   name: "Client B",
   logo: "/clientB-logo.png",
-  tagline: "Premium beauty appointments made easy.",
-  fontFamily: "Montserrat",
   primaryColor: "#16a34a",
   primaryColorLight: "lightgreen",
   secondaryColor: "#FF6347",
@@ -56,7 +54,30 @@ const clientBConfig: ClientConfig = {
       ]
     }
   ],
-  features: []
+  features: [],
+  about: {
+    title: "",
+    subtitle: "",
+    description: "",
+    image: "",
+    mainImage: undefined,
+    mainImageAlt: undefined,
+    storyTitle: undefined,
+    story1: undefined,
+    story2: undefined,
+    story3: undefined,
+    founderImage: undefined,
+    founderName: undefined,
+    founderRole: undefined,
+    founderBio1: undefined,
+    founderBio2: undefined,
+    founderBio3: undefined,
+    seoTitle: undefined,
+    seoDescription: undefined,
+    seoKeywords: undefined,
+    seoUrl: undefined
+  },
+  fontFamily: ""
 };
 
 export default clientBConfig;

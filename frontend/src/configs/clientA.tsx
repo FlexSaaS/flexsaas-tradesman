@@ -41,7 +41,7 @@ const clientAConfig: ClientConfig = {
     image: "/images/projects/bathroom-main.jpg",
     gallery: [
       "/images/projects/bathroom-1.jpg",
-      "/images/projects/bathroom-2.jpg"
+      "https://unsplash.com/photos/brown-wooden-table-and-chairs-ZMK4lzeuCLo?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash"
     ]
   },
   {

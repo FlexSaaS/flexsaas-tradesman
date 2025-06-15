@@ -11,6 +11,144 @@ interface ColorProps {
   $primaryColor: string;
 }
 
+// Dynamically retrieving the client-specific configuration
+const projectConfig = getClientConfig();
+
+const ProjectsPage = () => {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    const state = location.state as { selectedProjectId?: number };
+    if (state?.selectedProjectId) {
+      setSelectedProject(state.selectedProjectId);
+      setCurrentImageIndex(0);
+    }
+  }, [location]);
+
+  const handleProjectClick = (projectId: number) => {
+    setSelectedProject(projectId);
+    setCurrentImageIndex(0);
+  };
+
+  const handleClose = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const project = projectConfig.projects.find((p) => p.id === selectedProject);
+    if (project) {
+      setCurrentImageIndex((prev) => (prev < project.gallery.length - 1 ? prev + 1 : prev));
+    }
+  };
+
+  const primaryColor = projectConfig.primaryColor || "#FFD700";
+
+  return (
+    <PageWrapper>
+      <Container>
+        {/* Section: Page Header */}
+        <Header>
+          <Title>{projectConfig.header.title}</Title>
+          <Subtitle>{projectConfig.header.subtitle}</Subtitle>
+        </Header>
+
+        {/* Section: Project Grid */}
+        <Grid>
+          {projectConfig.projects.map((project) => (
+            <ProjectCard key={project.id} onClick={() => handleProjectClick(project.id)}>
+              <CardImageWrapper>
+                <CardImage src={project.image} alt={project.title} />
+                <CategoryLabel $primaryColor={primaryColor}>{project.category}</CategoryLabel>
+              </CardImageWrapper>
+              <CardContent>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDesc>{project.description}</CardDesc>
+              </CardContent>
+            </ProjectCard>
+          ))}
+        </Grid>
+
+        {/* Section: Modal Gallery */}
+        <AnimatePresence>
+          {selectedProject !== null && (
+            <ModalOverlay
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleClose}
+            >
+              <ModalContent>
+                <CloseButton onClick={handleClose}>
+                  <FontAwesomeIcon icon={faTimes} size="lg" />
+                </CloseButton>
+                <ModalTitle
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  $primaryColor={primaryColor}
+                >
+                  <h2>
+                    {projectConfig.projects.find(p => p.id === selectedProject)?.title}
+                  </h2>
+                </ModalTitle>
+                <ModalImageWrapper>
+                  <ModalImage
+                    key={currentImageIndex}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    src={projectConfig.projects.find(p => p.id === selectedProject)?.gallery[currentImageIndex]}
+                    alt="Project"
+                  />
+                  <NavButton
+                    className="left"
+                    onClick={handlePrevImage}
+                    disabled={currentImageIndex === 0}
+                  >
+                    <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+                  </NavButton>
+                  <NavButton
+                    className="right"
+                    onClick={handleNextImage}
+                    disabled={
+                      currentImageIndex ===
+                      ((projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1)
+                    }
+                  >
+                    <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                  </NavButton>
+                  <ImageCounter>
+                    {currentImageIndex + 1} / {projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length}
+                  </ImageCounter>
+                </ModalImageWrapper>
+              </ModalContent>
+            </ModalOverlay>
+          )}
+        </AnimatePresence>
+
+        {/* Section: Call to Action */}
+        <CTASection>
+          <CTATitle>{projectConfig.cta.title}</CTATitle>
+          <CTASubtitle>{projectConfig.cta.subtitle}</CTASubtitle>
+          <CTAButton to={projectConfig.cta.link} $primaryColor={primaryColor}>
+            {projectConfig.cta.buttonText}
+          </CTAButton>
+        </CTASection>
+      </Container>
+    </PageWrapper>
+  );
+};
+
+export default ProjectsPage;
+
 // Styled Components
 // Default colour can be overidden by props with client specified config.
 const PageWrapper = styled.div`
@@ -316,141 +454,3 @@ const CTAButton = styled(Link)<ColorProps>`
     font-size: 1.125rem;
   }
 `;
-
-// Dynamically retrieving the client-specific configuration
-const projectConfig = getClientConfig();
-
-const ProjectsPage = () => {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const location = useLocation();
-
-  useEffect(() => {
-    const state = location.state as { selectedProjectId?: number };
-    if (state?.selectedProjectId) {
-      setSelectedProject(state.selectedProjectId);
-      setCurrentImageIndex(0);
-    }
-  }, [location]);
-
-  const handleProjectClick = (projectId: number) => {
-    setSelectedProject(projectId);
-    setCurrentImageIndex(0);
-  };
-
-  const handleClose = () => {
-    setSelectedProject(null);
-    setCurrentImageIndex(0);
-  };
-
-  const handlePrevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : 0));
-  };
-
-  const handleNextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const project = projectConfig.projects.find((p) => p.id === selectedProject);
-    if (project) {
-      setCurrentImageIndex((prev) => (prev < project.gallery.length - 1 ? prev + 1 : prev));
-    }
-  };
-
-  const primaryColor = projectConfig.primaryColor || "#FFD700";
-
-  return (
-    <PageWrapper>
-      <Container>
-        {/* Section: Page Header */}
-        <Header>
-          <Title>{projectConfig.header.title}</Title>
-          <Subtitle>{projectConfig.header.subtitle}</Subtitle>
-        </Header>
-
-        {/* Section: Project Grid */}
-        <Grid>
-          {projectConfig.projects.map((project) => (
-            <ProjectCard key={project.id} onClick={() => handleProjectClick(project.id)}>
-              <CardImageWrapper>
-                <CardImage src={project.image} alt={project.title} />
-                <CategoryLabel $primaryColor={primaryColor}>{project.category}</CategoryLabel>
-              </CardImageWrapper>
-              <CardContent>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDesc>{project.description}</CardDesc>
-              </CardContent>
-            </ProjectCard>
-          ))}
-        </Grid>
-
-        {/* Section: Modal Gallery */}
-        <AnimatePresence>
-          {selectedProject !== null && (
-            <ModalOverlay
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={handleClose}
-            >
-              <ModalContent>
-                <CloseButton onClick={handleClose}>
-                  <FontAwesomeIcon icon={faTimes} size="lg" />
-                </CloseButton>
-                <ModalTitle
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  $primaryColor={primaryColor}
-                >
-                  <h2>
-                    {projectConfig.projects.find(p => p.id === selectedProject)?.title}
-                  </h2>
-                </ModalTitle>
-                <ModalImageWrapper>
-                  <ModalImage
-                    key={currentImageIndex}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    src={projectConfig.projects.find(p => p.id === selectedProject)?.gallery[currentImageIndex]}
-                    alt="Project"
-                  />
-                  <NavButton
-                    className="left"
-                    onClick={handlePrevImage}
-                    disabled={currentImageIndex === 0}
-                  >
-                    <FontAwesomeIcon icon={faChevronLeft} size="2x" />
-                  </NavButton>
-                  <NavButton
-                    className="right"
-                    onClick={handleNextImage}
-                    disabled={
-                      currentImageIndex ===
-                      ((projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1)
-                    }
-                  >
-                    <FontAwesomeIcon icon={faChevronRight} size="2x" />
-                  </NavButton>
-                  <ImageCounter>
-                    {currentImageIndex + 1} / {projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length}
-                  </ImageCounter>
-                </ModalImageWrapper>
-              </ModalContent>
-            </ModalOverlay>
-          )}
-        </AnimatePresence>
-
-        {/* Section: Call to Action */}
-        <CTASection>
-          <CTATitle>{projectConfig.cta.title}</CTATitle>
-          <CTASubtitle>{projectConfig.cta.subtitle}</CTASubtitle>
-          <CTAButton to={projectConfig.cta.link} $primaryColor={primaryColor}>
-            {projectConfig.cta.buttonText}
-          </CTAButton>
-        </CTASection>
-      </Container>
-    </PageWrapper>
-  );
-};
-
-export default ProjectsPage;

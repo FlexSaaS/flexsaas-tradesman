@@ -18,6 +18,7 @@ export interface ClientConfig {
   logo: string;
   primaryColor: string;
   primaryColorLight: string;
+  secondaryColor: string;
   tagline: string;
   fontFamily: string;
 

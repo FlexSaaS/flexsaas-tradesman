@@ -56,7 +56,29 @@ const clientBConfig: ClientConfig = {
       ]
     }
   ],
-  features: []
+  features: [],
+  about: {
+    title: "",
+    subtitle: "",
+    description: "",
+    image: "",
+    mainImage: undefined,
+    mainImageAlt: undefined,
+    storyTitle: undefined,
+    story1: undefined,
+    story2: undefined,
+    story3: undefined,
+    founderImage: undefined,
+    founderName: undefined,
+    founderRole: undefined,
+    founderBio1: undefined,
+    founderBio2: undefined,
+    founderBio3: undefined,
+    seoTitle: undefined,
+    seoDescription: undefined,
+    seoKeywords: undefined,
+    seoUrl: undefined
+  }
 };
 
 export default clientBConfig;

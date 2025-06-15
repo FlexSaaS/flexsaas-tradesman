@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import AboutPageTemp from "./pages/AboutPageTemp";
 import styled, { createGlobalStyle } from "styled-components";
 import { getClientConfig } from "./lib/getClientConfig";
+import Footer from "./pages/Footer";
 
 function App() {
   const client = getClientConfig();
@@ -17,6 +18,7 @@ function App() {
         <Route path="/projects" element={<ProjectPageTemp />} />
         <Route path="/about" element={<AboutPageTemp />} />
       </Routes>
+      <Footer />
     </AppContainer>
   );
 }

@@ -6,8 +6,8 @@ const clientBConfig: ClientConfig = {
   tagline: "Premium beauty appointments made easy.",
   fontFamily: "Montserrat",
   primaryColor: "#16a34a",
-  tagline: "Transform your space with ease.",
   primaryColorLight: "lightgreen",
+  secondaryColor: "#FF6347",
   // Project template config starts here
   header: {
     title: "Completed Creations",

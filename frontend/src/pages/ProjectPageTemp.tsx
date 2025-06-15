@@ -11,7 +11,6 @@ interface ColorProps {
   $primaryColor: string;
 }
 
-
 // Dynamically retrieving the client-specific configuration
 const projectConfig = getClientConfig();
 
@@ -149,7 +148,6 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
-
 
 // Styled Components
 // Default colour can be overidden by props with client specified config.

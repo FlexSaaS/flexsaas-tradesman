@@ -26,11 +26,11 @@ const clientAConfig: ClientConfig = {
     title: "Modern Kitchen Renovation",
     description: "A full kitchen remodel with custom cabinetry and lighting.",
     category: "Renovation",
-    image: "/images/projects/kitchen-main.jpg",
+    image: "../sample-imgs/office-sample.jpg",
     gallery: [
-      "/images/projects/kitchen-1.jpg",
-      "/images/projects/kitchen-2.jpg",
-      "/images/projects/kitchen-3.jpg"
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg"
     ]
   },
   {
@@ -38,10 +38,11 @@ const clientAConfig: ClientConfig = {
     title: "Luxury Bathroom Upgrade",
     description: "Spa-inspired bathroom with walk-in shower and heated floors.",
     category: "Bathroom",
-    image: "/images/projects/bathroom-main.jpg",
+    image: "../sample-imgs/office-sample.jpg",
     gallery: [
-      "/images/projects/bathroom-1.jpg",
-      "/images/projects/bathroom-2.jpg"
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg"
     ]
   },
   {
@@ -49,11 +50,11 @@ const clientAConfig: ClientConfig = {
     title: "Custom office Design",
     description: "A modern office space with ergonomic furniture and collaborative areas.",
     category: "Custom Build",
-    image: "/images/projects/office-main.jpg",
+    image: "../sample-imgs/office-sample.jpg",
     gallery: [
-      "/images/projects/kitchen-1.jpg",
-      "/images/projects/kitchen-2.jpg",
-      "/images/projects/kitchen-3.jpg"
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg",
+      "../sample-imgs/office-sample.jpg"
     ]
   },
 

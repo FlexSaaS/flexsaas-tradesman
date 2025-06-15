@@ -23,11 +23,11 @@ const clientBConfig: ClientConfig = {
       title: "Eco-Friendly Kitchen Makeover",
       description: "A sustainable kitchen revamp with bamboo finishes and energy-saving lighting.",
       category: "Kitchen",
-      image: "/images/clientB/kitchen-feature.jpg",
+      image: "../sample-imgs/office-sample.jpg",
       gallery: [
-        "/images/clientB/kitchen-1.jpg",
-        "/images/clientB/kitchen-2.jpg",
-        "/images/clientB/kitchen-3.jpg"
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg"
       ]
     },
     {
@@ -35,10 +35,11 @@ const clientBConfig: ClientConfig = {
       title: "Tranquil Bathroom Retreat",
       description: "A calming bath redesign with natural stone, soft lighting, and rainfall shower.",
       category: "Bathroom",
-      image: "/images/clientB/bathroom-feature.jpg",
+      image: "../sample-imgs/office-sample.jpg",
       gallery: [
-        "/images/clientB/bathroom-1.jpg",
-        "/images/clientB/bathroom-2.jpg"
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg"
       ]
     },
     {
@@ -46,11 +47,11 @@ const clientBConfig: ClientConfig = {
       title: "Smart Home Office",
       description: "An intelligent office setup with modular workstations and acoustic paneling.",
       category: "Workspace",
-      image: "/images/clientB/office-feature.jpg",
+      image: "../sample-imgs/office-sample.jpg",
       gallery: [
-        "/images/clientB/office-1.jpg",
-        "/images/clientB/office-2.jpg",
-        "/images/clientB/office-3.jpg"
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg",
+        "../sample-imgs/office-sample.jpg"
       ]
     }
   ],

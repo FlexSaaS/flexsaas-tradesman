@@ -11,8 +11,6 @@ interface ColorProps {
   $primaryColor: string;
 }
 
-
-
 // Dynamically retrieving the client-specific configuration
 const projectConfig = getClientConfig();
 

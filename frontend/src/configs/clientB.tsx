@@ -3,8 +3,6 @@ import type { ClientConfig } from "../types/Config";
 const clientBConfig: ClientConfig = {
   name: "Client B",
   logo: "/clientB-logo.png",
-  tagline: "Premium beauty appointments made easy.",
-  fontFamily: "Montserrat",
   primaryColor: "#16a34a",
   primaryColorLight: "lightgreen",
   secondaryColor: "#FF6347",
@@ -79,7 +77,8 @@ const clientBConfig: ClientConfig = {
     seoDescription: undefined,
     seoKeywords: undefined,
     seoUrl: undefined
-  }
+  },
+  fontFamily: ""
 };
 
 export default clientBConfig;

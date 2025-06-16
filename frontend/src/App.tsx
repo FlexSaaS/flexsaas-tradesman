@@ -8,6 +8,8 @@ import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import ContactPage from "./pages/ContactUsPage";
 import ServicesPage from "./pages/ServicesPage";
+import ScrollToTopButton from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   const client = getClientConfig();
@@ -24,6 +26,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/services" element={<ServicesPage />} />
       </Routes>
+      <ScrollToTopButton />
+      <WhatsAppButton />
       <Footer />
     </AppContainer>
   );

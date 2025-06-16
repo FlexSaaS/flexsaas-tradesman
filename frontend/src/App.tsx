@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import ConfigTest from "./Components/ConfigTest";
 import ProjectPageTemp from "./pages/ProjectPageTemp";
 import HomePage from "./pages/HomePage"; 
 import AboutPageTemp from "./pages/AboutPageTemp";
 import styled, { createGlobalStyle } from "styled-components";
 import { getClientConfig } from "./lib/getClientConfig";
+import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   return (
     <AppContainer fontFamily={client.fontFamily || "sans-serif"}>
       <GlobalStyle />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectPageTemp />} />

@@ -44,6 +44,11 @@ export interface ClientConfig {
     subtitle: string;
   };
 
+  hero:{
+    title: string;
+    subtitle: string;
+    backgroundImage: string;
+  }
   //for the call-to-action
   cta: {
     title: string;

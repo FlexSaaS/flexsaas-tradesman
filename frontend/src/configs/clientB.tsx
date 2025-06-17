@@ -78,7 +78,12 @@ const clientBConfig: ClientConfig = {
     seoKeywords: undefined,
     seoUrl: undefined
   },
-  fontFamily: ""
+  fontFamily: "",
+  hero: {
+    title: "Building Your Vision with Precision",
+    backgroundImage: "/clientB-logo.png",
+    subtitle: " Transform your space with XPro Build's expert construction services. We bring your dreams to life with quality craftsmanship and attention to detail."
+  }
 };
 
 export default clientBConfig;

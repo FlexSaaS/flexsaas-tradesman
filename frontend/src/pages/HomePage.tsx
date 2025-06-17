@@ -51,7 +51,7 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <HeroTitle>Building Your Vision with Precision</HeroTitle>
+              <HeroTitle>{client.hero.title}</HeroTitle>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -59,8 +59,7 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <HeroSubtitle>
-                Transform your space with XPro Build's expert construction services. 
-                We bring your dreams to life with quality craftsmanship and attention to detail.
+                {client.hero.subtitle}
               </HeroSubtitle>
             </motion.div>
             <motion.div 
@@ -205,14 +204,14 @@ const HomePage = () => {
 export default HomePage;
 
 
-// Styled Components
 const HeroSection = styled.div`
   position: relative;
   height: 90vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/homeimage.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${() => client.hero.backgroundImage});
   background-size: cover;
   background-position: center;
 `;
+
 
 const HeroContent = styled.div`
   position: absolute;

@@ -190,5 +190,10 @@ const clientAConfig: ClientConfig = {
         "Keep your property in perfect condition with our regular maintenance and repair services.",
     },
   ],
+  hero: {
+    title: "Building Your Vision with Precision",
+    subtitle: " Transform your space with XPro Build's expert construction services. We bring your dreams to life with quality craftsmanship and attention to detail.",
+    backgroundImage: "/clientA-logo.png"
+  }
 };
 export default clientAConfig;

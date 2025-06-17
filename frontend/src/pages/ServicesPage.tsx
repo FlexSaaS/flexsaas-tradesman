@@ -4,6 +4,47 @@ import { getClientConfig } from "../lib/getClientConfig";
 
 const client = getClientConfig();
 
+function ServicesPage() {
+  return (
+    <PageWrapper>
+      <Container>
+        <Header>
+          <Title>Our Services</Title>
+          <Subtitle>
+            We offer a comprehensive range of construction and renovation
+            services, each delivered with the highest standards of quality and
+            professionalism.
+          </Subtitle>
+        </Header>
+
+        <Grid>
+          {client.services.map((service, idx) => (
+            <Card key={idx}>
+              <IconWrapper className="icon-wrapper">
+                <FontAwesomeIcon icon={service.icon} />
+              </IconWrapper>
+              <CardTitle>{service.title}</CardTitle>
+              <CardDesc>{service.description}</CardDesc>
+              <Underline className="underline" />
+            </Card>
+          ))}
+        </Grid>
+
+        <CTASection>
+          <CTATitle>Ready to Start Your Project?</CTATitle>
+          <CTADesc>
+            Contact us today for a free consultation and quote. We're here to
+            help bring your vision to life.
+          </CTADesc>
+          <CTAButton href="/contact">Get in Touch</CTAButton>
+        </CTASection>
+      </Container>
+    </PageWrapper>
+  );
+}
+
+export default ServicesPage;
+
 const PageWrapper = styled.div`
   padding: 5rem 0;
   background: #f9fafb;
@@ -177,44 +218,3 @@ const CTAButton = styled.a`
     background: #e6c200;
   }
 `;
-
-const ServicesPage = () => {
-  return (
-    <PageWrapper>
-      <Container>
-        <Header>
-          <Title>Our Services</Title>
-          <Subtitle>
-            We offer a comprehensive range of construction and renovation
-            services, each delivered with the highest standards of quality and
-            professionalism.
-          </Subtitle>
-        </Header>
-
-        <Grid>
-          {client.services.map((service, idx) => (
-            <Card key={idx}>
-              <IconWrapper className="icon-wrapper">
-                <FontAwesomeIcon icon={service.icon} />
-              </IconWrapper>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDesc>{service.description}</CardDesc>
-              <Underline className="underline" />
-            </Card>
-          ))}
-        </Grid>
-
-        <CTASection>
-          <CTATitle>Ready to Start Your Project?</CTATitle>
-          <CTADesc>
-            Contact us today for a free consultation and quote. We're here to
-            help bring your vision to life.
-          </CTADesc>
-          <CTAButton href="/contact">Get in Touch</CTAButton>
-        </CTASection>
-      </Container>
-    </PageWrapper>
-  );
-};
-
-export default ServicesPage;

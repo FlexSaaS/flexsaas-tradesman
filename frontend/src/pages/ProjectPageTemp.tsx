@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { motion, AnimatePresence } from 'framer-motion';
-import styled from 'styled-components';
-import { getClientConfig } from '../lib/getClientConfig';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTimes,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
+import { getClientConfig } from "../lib/getClientConfig";
 
-// Types for styled-components props
-interface ColorProps {
-  $primaryColor: string;
-}
+const client = getClientConfig();
 
-// Dynamically retrieving the client-specific configuration
-const projectConfig = getClientConfig();
-
-const ProjectsPage = () => {
+function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const location = useLocation();
@@ -44,30 +42,33 @@ const ProjectsPage = () => {
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    const project = projectConfig.projects.find((p) => p.id === selectedProject);
+    const project = client.projects.find((p) => p.id === selectedProject);
     if (project) {
-      setCurrentImageIndex((prev) => (prev < project.gallery.length - 1 ? prev + 1 : prev));
+      setCurrentImageIndex((prev) =>
+        prev < project.gallery.length - 1 ? prev + 1 : prev
+      );
     }
   };
-
-  const primaryColor = projectConfig.primaryColor || "#FFD700";
 
   return (
     <PageWrapper>
       <Container>
         {/* Section: Page Header */}
         <Header>
-          <Title>{projectConfig.header.title}</Title>
-          <Subtitle>{projectConfig.header.subtitle}</Subtitle>
+          <Title>{client.header.title}</Title>
+          <Subtitle>{client.header.subtitle}</Subtitle>
         </Header>
 
         {/* Section: Project Grid */}
         <Grid>
-          {projectConfig.projects.map((project) => (
-            <ProjectCard key={project.id} onClick={() => handleProjectClick(project.id)}>
+          {client.projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              onClick={() => handleProjectClick(project.id)}
+            >
               <CardImageWrapper>
                 <CardImage src={project.image} alt={project.title} />
-                <CategoryLabel $primaryColor={primaryColor}>{project.category}</CategoryLabel>
+                <CategoryLabel>{project.category}</CategoryLabel>
               </CardImageWrapper>
               <CardContent>
                 <CardTitle>{project.title}</CardTitle>
@@ -93,10 +94,12 @@ const ProjectsPage = () => {
                 <ModalTitle
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  $primaryColor={primaryColor}
                 >
                   <h2>
-                    {projectConfig.projects.find(p => p.id === selectedProject)?.title}
+                    {
+                      client.projects.find((p) => p.id === selectedProject)
+                        ?.title
+                    }
                   </h2>
                 </ModalTitle>
                 <ModalImageWrapper>
@@ -105,7 +108,10 @@ const ProjectsPage = () => {
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
-                    src={projectConfig.projects.find(p => p.id === selectedProject)?.gallery[currentImageIndex]}
+                    src={
+                      client.projects.find((p) => p.id === selectedProject)
+                        ?.gallery[currentImageIndex]
+                    }
                     alt="Project"
                   />
                   <NavButton
@@ -120,13 +126,19 @@ const ProjectsPage = () => {
                     onClick={handleNextImage}
                     disabled={
                       currentImageIndex ===
-                      ((projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length || 0) - 1)
+                      (client.projects.find((p) => p.id === selectedProject)
+                        ?.gallery.length || 0) -
+                        1
                     }
                   >
                     <FontAwesomeIcon icon={faChevronRight} size="2x" />
                   </NavButton>
                   <ImageCounter>
-                    {currentImageIndex + 1} / {projectConfig.projects.find(p => p.id === selectedProject)?.gallery.length}
+                    {currentImageIndex + 1} /{" "}
+                    {
+                      client.projects.find((p) => p.id === selectedProject)
+                        ?.gallery.length
+                    }
                   </ImageCounter>
                 </ModalImageWrapper>
               </ModalContent>
@@ -136,16 +148,14 @@ const ProjectsPage = () => {
 
         {/* Section: Call to Action */}
         <CTASection>
-          <CTATitle>{projectConfig.cta.title}</CTATitle>
-          <CTASubtitle>{projectConfig.cta.subtitle}</CTASubtitle>
-          <CTAButton to={projectConfig.cta.link} $primaryColor={primaryColor}>
-            {projectConfig.cta.buttonText}
-          </CTAButton>
+          <CTATitle>{client.cta.title}</CTATitle>
+          <CTASubtitle>{client.cta.subtitle}</CTASubtitle>
+          <CTAButton to={client.cta.link}>{client.cta.buttonText}</CTAButton>
         </CTASection>
       </Container>
     </PageWrapper>
   );
-};
+}
 
 export default ProjectsPage;
 
@@ -182,7 +192,7 @@ const Header = styled.div`
 const Title = styled.h1`
   font-size: 1.875rem;
   font-weight: 700;
-  color: #111827; 
+  color: #111827;
   margin-bottom: 1rem;
   @media (min-width: 640px) {
     font-size: 2.25rem;
@@ -216,7 +226,7 @@ const ProjectCard = styled.div`
   background: #fff;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s;
   cursor: pointer;
   position: relative;
@@ -239,11 +249,11 @@ const CardImage = styled.img`
   object-fit: cover;
 `;
 
-const CategoryLabel = styled.div<ColorProps>`
+const CategoryLabel = styled.div`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: ${({ $primaryColor }) => $primaryColor};
+  background: ${client.primaryColor};
   color: #000;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -261,11 +271,11 @@ const CategoryLabel = styled.div<ColorProps>`
     transform: scale(1.5) translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    background: ${({ $primaryColor }) => $primaryColor}e6;
+    background: ${client.primaryColorLight};
     border-radius: 0.375rem;
     font-size: 1rem;
     font-weight: 700;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     padding: 0.5rem 1.5rem;
   }
 `;
@@ -297,7 +307,7 @@ const CardDesc = styled.p`
 const ModalOverlay = styled(motion.div)`
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -325,7 +335,7 @@ const CloseButton = styled.button`
   transition: color 0.2s;
   z-index: 50;
   &:hover {
-    color: #FFD700;
+    color: #ffd700;
   }
   @media (min-width: 640px) {
     top: 1rem;
@@ -333,7 +343,7 @@ const CloseButton = styled.button`
   }
 `;
 
-const ModalTitle = styled(motion.div)<ColorProps>`
+const ModalTitle = styled(motion.div)`
   position: absolute;
   top: 1rem;
   left: 50%;
@@ -342,9 +352,9 @@ const ModalTitle = styled(motion.div)<ColorProps>`
   h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: ${({ $primaryColor }) => $primaryColor};
+    color: ${client.primaryColor};
     text-align: center;
-    background: rgba(0,0,0,0.75);
+    background: rgba(0, 0, 0, 0.75);
     padding: 0.25rem 1.5rem;
     border-radius: 9999px;
     @media (min-width: 640px) {
@@ -371,9 +381,9 @@ const NavButton = styled.button<{ disabled?: boolean }>`
   color: #fff;
   transition: color 0.2s, opacity 0.2s;
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   &:hover {
-    color: #FFD700;
+    color: #ffd700;
   }
   &.left {
     left: 0.5rem;
@@ -395,7 +405,7 @@ const ImageCounter = styled.div`
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 0.25rem 1rem;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -437,17 +447,17 @@ const CTASubtitle = styled.p`
   }
 `;
 
-const CTAButton = styled(Link)<ColorProps>`
-  background: ${({ $primaryColor }) => $primaryColor};
+const CTAButton = styled(Link)`
+  background: ${client.primaryColor};
   color: #000;
   padding: 0.5rem 1.5rem;
   border-radius: 0.375rem;
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: 0.2s;
   display: inline-block;
   &:hover {
-    background: ${({ $primaryColor }) => $primaryColor}cc;
+    background: ${client.primaryColorLight};
   }
   @media (min-width: 640px) {
     padding: 0.75rem 2rem;

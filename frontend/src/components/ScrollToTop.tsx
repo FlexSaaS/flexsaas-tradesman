@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -6,7 +6,7 @@ import { getClientConfig } from "../lib/getClientConfig";
 
 const client = getClientConfig();
 
-const ScrollToTopButton = () => {
+function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ScrollToTopButton = () => {
       )}
     </>
   );
-};
+}
 
 export default ScrollToTopButton;
 

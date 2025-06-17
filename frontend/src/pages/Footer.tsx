@@ -2,12 +2,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const client = getClientConfig();
 
-const Footer = () => {
+function Footer() {
   return (
     <FooterContainer>
       <FooterContent>
@@ -18,7 +27,9 @@ const Footer = () => {
               <FooterLogo src="/logofooter.png" alt="XPro Build Logo" />
             </LogoContainer>
             <CompanyInfo>Company No.: 10042248</CompanyInfo>
-            <Description>Building dreams into reality with precision and excellence.</Description>
+            <Description>
+              Building dreams into reality with precision and excellence.
+            </Description>
             <SocialLinks>
               <SocialLink href="#" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebookF} />
@@ -79,11 +90,13 @@ const Footer = () => {
           </FooterColumn>
         </FooterGrid>
 
-        <Copyright>&copy; {new Date().getFullYear()} XPro Build. All rights reserved.</Copyright>
+        <Copyright>
+          &copy; {new Date().getFullYear()} XPro Build. All rights reserved.
+        </Copyright>
       </FooterContent>
     </FooterContainer>
   );
-};
+}
 
 export default Footer;
 
@@ -210,5 +223,5 @@ const Copyright = styled.div`
   padding-top: 2rem;
   border-top: 1px solid ${client.secondaryColor};
   text-align: center;
-  color: ${client.secondaryColor };
+  color: ${client.secondaryColor};
 `;

@@ -1,9 +1,13 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { getClientConfig } from '../lib/getClientConfig';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faXmark,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { getClientConfig } from "../lib/getClientConfig";
 
 interface Project {
   id: number;
@@ -13,7 +17,7 @@ interface Project {
 
 const client = getClientConfig();
 
-interface ProjectGalleryProps {
+interface Props {
   project: Project | null;
   onClose: () => void;
   currentImageIndex: number;
@@ -21,14 +25,13 @@ interface ProjectGalleryProps {
   onNextImage: (e: React.MouseEvent) => void;
 }
 
-
-const ProjectGallery: React.FC<ProjectGalleryProps> = ({
+function ProjectGallery({
   project,
   onClose,
   currentImageIndex,
   onPrevImage,
-  onNextImage
-}) => {
+  onNextImage,
+}: Props) {
   if (!project) return null;
 
   return (
@@ -43,15 +46,15 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
           <CloseButton onClick={onClose}>
             <FontAwesomeIcon icon={faXmark} size="xl" />
           </CloseButton>
-          
+
           <TitleContainer
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <Title>{project.title}</Title>
           </TitleContainer>
-          
-          <div style={{ position: 'relative' }}>
+
+          <div style={{ position: "relative" }}>
             <GalleryImage
               key={currentImageIndex}
               initial={{ opacity: 0, x: 100 }}
@@ -60,14 +63,14 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
               src={project.gallery[currentImageIndex]}
               alt="Project"
             />
-            
+
             <PrevButton
               onClick={onPrevImage}
               disabled={currentImageIndex === 0}
             >
               <FontAwesomeIcon icon={faChevronLeft} size="2x" />
             </PrevButton>
-            
+
             <NextButton
               onClick={onNextImage}
               disabled={currentImageIndex === project.gallery.length - 1}
@@ -83,7 +86,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       </GalleryOverlay>
     </AnimatePresence>
   );
-};
+}
 
 export default ProjectGallery;
 
@@ -112,7 +115,7 @@ const CloseButton = styled.button`
   color: white;
   transition: color 0.3s;
   z-index: 50;
-  
+
   &:hover {
     color: ${client.secondaryColor};
   }
@@ -148,9 +151,9 @@ const NavButton = styled.button<{ disabled?: boolean }>`
   transform: translateY(-50%);
   color: white;
   transition: color 0.3s;
-  opacity: ${props => props.disabled ? 0.5 : 1};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+
   &:hover {
     color: ${client.secondaryColor};
   }

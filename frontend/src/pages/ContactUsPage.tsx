@@ -21,7 +21,7 @@ const Alert = styled.div<{ type: "success" | "error" }>`
   color: ${({ type }) => (type === "success" ? "#065f46" : "#b91c1c")};
 `;
 
-const ContactPage = () => {
+function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -206,7 +206,7 @@ const ContactPage = () => {
       </Container>
     </PageWrapper>
   );
-};
+}
 
 export default ContactPage;
 

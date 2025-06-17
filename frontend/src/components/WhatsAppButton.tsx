@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -6,16 +6,22 @@ import { getClientConfig } from "../lib/getClientConfig";
 
 const client = getClientConfig();
 
-const WhatsAppButton = () => {
+function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
   const phoneNumber = "+447778970161";
   const message = "Hi! I'm interested in your construction services.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
 
   return (
     <>
       {/* Mobile Button */}
-      <MobileWhatsAppLink href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+      <MobileWhatsAppLink
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon icon={faWhatsapp} />
       </MobileWhatsAppLink>
 
@@ -25,7 +31,8 @@ const WhatsAppButton = () => {
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}>
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <DesktopButtonContent $isHovered={isHovered}>
           <WhatsAppIcon $isHovered={isHovered}>
             <FontAwesomeIcon icon={faWhatsapp} />
@@ -35,7 +42,7 @@ const WhatsAppButton = () => {
       </DesktopWhatsAppLink>
     </>
   );
-};
+}
 
 export default WhatsAppButton;
 
@@ -56,7 +63,7 @@ const WhatsAppLinkBase = styled.a`
   cursor: pointer;
 
   &:hover {
-    background-color: ${client.primaryColorLight || "#E6C200"};
+    background-color: ${client.primaryColorLight};
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   }
@@ -111,7 +118,8 @@ const DesktopButtonContent = styled.div<DesktopButtonProps>`
   padding: 0.75rem 1rem;
   border-radius: 0.375rem 0 0 0.375rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: ${({ $isHovered }) => ($isHovered ? "translateX(0)" : "translateX(calc(100% - 3rem))")};
+  transform: ${({ $isHovered }) =>
+    $isHovered ? "translateX(0)" : "translateX(calc(100% - 3rem))"};
   transition: all 0.3s ease-in-out;
 `;
 

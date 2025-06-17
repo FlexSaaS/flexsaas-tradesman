@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import { getClientConfig } from '../lib/getClientConfig';
-import ProjectGallery from '../components/ProjectGallery';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { getClientConfig } from "../lib/getClientConfig";
+import ProjectGallery from "../components/ProjectGallery";
 // import RatingsSection from '../../components/RatingsSection';
-
 
 const client = getClientConfig();
 
-const HomePage = () => {
+function HomePage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-
 
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
@@ -36,7 +33,9 @@ const HomePage = () => {
     e.stopPropagation();
     const project = client.projects.find((p) => p.id === selectedProject);
     if (project) {
-      setCurrentImageIndex((prev) => (prev < project.gallery.length - 1 ? prev + 1 : prev));
+      setCurrentImageIndex((prev) =>
+        prev < project.gallery.length - 1 ? prev + 1 : prev
+      );
     }
   };
 
@@ -46,34 +45,34 @@ const HomePage = () => {
       <HeroSection>
         <HeroContent>
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <HeroTitle>{client.hero.title}</HeroTitle>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <HeroSubtitle>
-                {client.hero.subtitle}
-              </HeroSubtitle>
+              <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <ButtonGroup>
-                <PrimaryButton color={client.primaryColor} hoverColor={client.primaryColorLight} to="/contact">
-                  Get in Touch <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '0.5rem' }} />
+                <PrimaryButton to="/contact">
+                  Get in Touch{" "}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{ marginLeft: "0.5rem" }}
+                  />
                 </PrimaryButton>
-                <SecondaryButton to="/services">
-                  Our Services
-                </SecondaryButton>
+                <SecondaryButton to="/services">Our Services</SecondaryButton>
               </ButtonGroup>
             </motion.div>
           </div>
@@ -83,7 +82,7 @@ const HomePage = () => {
       {/* Recent Projects Preview */}
       <SectionContainer>
         <InnerContainer>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -93,25 +92,25 @@ const HomePage = () => {
               <SectionSubtitle>Take a look at our latest work</SectionSubtitle>
             </SectionHeader>
           </motion.div>
-          
+
           <ProjectsGrid>
             {client.projects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
                   transition: {
                     duration: 2,
                     repeat: Infinity,
                     repeatType: "reverse",
-                    delay: index * 0.2
-                  }
+                    delay: index * 0.2,
+                  },
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 <ProjectCard onClick={() => handleProjectClick(project.id)}>
@@ -125,15 +124,19 @@ const HomePage = () => {
               </motion.div>
             ))}
           </ProjectsGrid>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            style={{ textAlign: 'center' }}
+            style={{ textAlign: "center" }}
           >
-            <ViewAllLink color={client.primaryColor} hoverColor={client.primaryColorLight} to="/projects">
-              View All Projects <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '0.5rem' }} />
+            <ViewAllLink to="/projects">
+              View All Projects{" "}
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                style={{ marginLeft: "0.5rem" }}
+              />
             </ViewAllLink>
           </motion.div>
         </InnerContainer>
@@ -142,17 +145,19 @@ const HomePage = () => {
       {/* Features Section */}
       <FeaturesSection>
         <InnerContainer>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <SectionHeader>
               <SectionTitle>Why Choose XPro Build?</SectionTitle>
-              <SectionSubtitle>We deliver excellence in every project</SectionSubtitle>
+              <SectionSubtitle>
+                We deliver excellence in every project
+              </SectionSubtitle>
             </SectionHeader>
           </motion.div>
-          
+
           {/* Mobile View - Grid */}
           <FeaturesGrid>
             {client.features.map((feature, index) => (
@@ -163,7 +168,9 @@ const HomePage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <FeatureCard>
-                <FeatureIcon color={client.primaryColor}><FontAwesomeIcon icon={feature.icon} /></FeatureIcon>
+                  <FeatureIcon>
+                    <FontAwesomeIcon icon={feature.icon} />
+                  </FeatureIcon>
                   <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureDescription>{feature.description}</FeatureDescription>
                 </FeatureCard>
@@ -174,13 +181,19 @@ const HomePage = () => {
           {/* Desktop View - Infinite Carousel */}
           <FeaturesCarousel>
             <CarouselTrack>
-              {[...client.features, ...client.features].map((feature, index) => (
-                <CarouselItem key={index}>
-                 <FeatureIcon color={client.primaryColor}><FontAwesomeIcon icon={feature.icon} /></FeatureIcon>
-                  <FeatureTitle>{feature.title}</FeatureTitle>
-                  <FeatureDescription>{feature.description}</FeatureDescription>
-                </CarouselItem>
-              ))}
+              {[...client.features, ...client.features].map(
+                (feature, index) => (
+                  <CarouselItem key={index}>
+                    <FeatureIcon>
+                      <FontAwesomeIcon icon={feature.icon} />
+                    </FeatureIcon>
+                    <FeatureTitle>{feature.title}</FeatureTitle>
+                    <FeatureDescription>
+                      {feature.description}
+                    </FeatureDescription>
+                  </CarouselItem>
+                )
+              )}
             </CarouselTrack>
           </FeaturesCarousel>
         </InnerContainer>
@@ -191,7 +204,7 @@ const HomePage = () => {
 
       {/* Project Gallery Modal */}
       <ProjectGallery
-        project={client.projects.find(p => p.id === selectedProject) || null}
+        project={client.projects.find((p) => p.id === selectedProject) || null}
         onClose={handleClose}
         currentImageIndex={currentImageIndex}
         onPrevImage={handlePrevImage}
@@ -199,19 +212,18 @@ const HomePage = () => {
       />
     </div>
   );
-};
+}
 
 export default HomePage;
-
 
 const HeroSection = styled.div`
   position: relative;
   height: 90vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${() => client.hero.backgroundImage});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${() => client.hero.backgroundImage});
   background-size: cover;
   background-position: center;
 `;
-
 
 const HeroContent = styled.div`
   position: absolute;
@@ -228,7 +240,7 @@ const HeroTitle = styled.h1`
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: white;
-  
+
   @media (min-width: 768px) {
     font-size: 3.75rem;
   }
@@ -241,7 +253,7 @@ const HeroSubtitle = styled.p`
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
-  
+
   @media (min-width: 768px) {
     font-size: 1.5rem;
   }
@@ -251,14 +263,14 @@ const ButtonGroup = styled.div`
   display: flex;
   gap: 0.5rem;
   justify-content: center;
-  
+
   @media (min-width: 768px) {
     gap: 1rem;
   }
 `;
 
-const PrimaryButton = styled(Link)<{ color: string, hoverColor: string }>`
-  background-color: ${({ color }) => color};
+const PrimaryButton = styled(Link)`
+  background-color: ${client.primaryColor};
   color: black;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
@@ -267,29 +279,29 @@ const PrimaryButton = styled(Link)<{ color: string, hoverColor: string }>`
   transition: background-color 0.2s;
   display: inline-flex;
   align-items: center;
-  
+
   &:hover {
-    background-color: ${({ hoverColor }) => hoverColor};
+    background-color: ${client.primaryColorLight};
     transform: scale(1.05);
     color: black;
   }
-  
+
   @media (min-width: 768px) {
     padding: 0.75rem 2rem;
     font-size: 1.125rem;
   }
 `;
 
-const ViewAllLink = styled(Link)<{ color: string, hoverColor: string }>`
+const ViewAllLink = styled(Link)`
   display: inline-flex;
   align-items: center;
-  color:${({ color }) => color};
+  color: ${client.primaryColor};
   font-weight: 600;
   margin-top: 3rem;
   text-align: center;
-  
+
   &:hover {
-    color:${({ hoverColor }) => hoverColor};
+    color: ${client.primaryColorLight};
     transform: scale(1.05);
   }
 `;
@@ -298,12 +310,13 @@ const FeatureCard = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;
 `;
 
-const FeatureIcon = styled.div<{ color: string }>`
-  color: ${({ color }) => color};
+const FeatureIcon = styled.div`
+  color: ${client.primaryColor};
   font-size: 3rem;
   margin: 0 auto;
 `;
@@ -322,7 +335,7 @@ const FeatureDescription = styled.p`
 const FeaturesCarousel = styled.div`
   position: relative;
   display: none;
-  
+
   @media (min-width: 768px) {
     display: block;
   }
@@ -337,12 +350,12 @@ const SecondaryButton = styled(Link)`
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s;
-  
+
   &:hover {
     background-color: white;
     color: black;
   }
-  
+
   @media (min-width: 768px) {
     padding: 0.75rem 2rem;
     font-size: 1.125rem;
@@ -358,11 +371,11 @@ const InnerContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
-  
+
   @media (min-width: 640px) {
     padding: 0 1.5rem;
   }
-  
+
   @media (min-width: 1024px) {
     padding: 0 2rem;
   }
@@ -389,7 +402,7 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -399,7 +412,8 @@ const ProjectCard = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   background-color: white;
 `;
@@ -414,7 +428,7 @@ const ProjectImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
-  
+
   ${ProjectCard}:hover & {
     transform: scale(1.1);
   }
@@ -435,7 +449,6 @@ const ProjectTitle = styled.h3`
   padding: 1.5rem;
 `;
 
-
 const FeaturesSection = styled.div`
   padding: 5rem 0;
   background-color: #f7fafc;
@@ -446,18 +459,17 @@ const FeaturesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  
+
   @media (min-width: 768px) {
     display: none;
   }
 `;
 
-
 const CarouselTrack = styled.div`
   display: flex;
   gap: 2rem;
   animation: scroll 30s linear infinite;
-  
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -473,10 +485,11 @@ const CarouselItem = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;
   transition: all 0.3s;
-  
+
   &:hover {
     transform: scale(1.05);
   }

@@ -5,7 +5,7 @@ import { getClientConfig } from "../lib/getClientConfig";
 
 const client = getClientConfig();
 
-const Header = () => {
+function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -48,7 +48,10 @@ const Header = () => {
             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavLink>
-            <MobileContactLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+            <MobileContactLink
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Contact Us
             </MobileContactLink>
           </MobileNavContent>
@@ -56,7 +59,7 @@ const Header = () => {
       </NavContainer>
     </HeaderContainer>
   );
-};
+}
 
 export default Header;
 
@@ -160,11 +163,17 @@ const HamburgerLine = styled.span<HamburgerLineProps>`
   ${({ $line }) => $line === 2 && `top: 0.5rem;`}
   ${({ $line }) => $line === 3 && `top: 1rem;`}
 
-  ${({ $isOpen, $line }) => $isOpen && $line === 1 && `transform: rotate(45deg) translate(0.35rem, 0.35rem);`}
+  ${({ $isOpen, $line }) =>
+    $isOpen &&
+    $line === 1 &&
+    `transform: rotate(45deg) translate(0.35rem, 0.35rem);`}
 
   ${({ $isOpen, $line }) => $isOpen && $line === 2 && `opacity: 0;`}
 
-  ${({ $isOpen, $line }) => $isOpen && $line === 3 && `transform: rotate(-45deg) translate(0.35rem, -0.35rem);`}
+  ${({ $isOpen, $line }) =>
+    $isOpen &&
+    $line === 3 &&
+    `transform: rotate(-45deg) translate(0.35rem, -0.35rem);`}
 `;
 
 interface MobileNavProps {

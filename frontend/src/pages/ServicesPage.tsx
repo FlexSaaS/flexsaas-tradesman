@@ -215,6 +215,6 @@ const CTAButton = styled.a`
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background: #e6c200;
+    background: ${client.primaryColorLight};
   }
 `;

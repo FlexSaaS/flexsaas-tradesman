@@ -19,7 +19,7 @@ const clientAConfig: ClientConfig = {
   name: "Client A",
   logo: "/clientA-logo.png",
   primaryColor: "#1e90ff",
-  primaryColorLight: "#FFD700",
+  primaryColorLight: "#00ffc3",
   secondaryColor: "#2c3e50",
   tagline: "Book your sessions in seconds!",
   fontFamily: "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
@@ -192,8 +192,9 @@ const clientAConfig: ClientConfig = {
   ],
   hero: {
     title: "Building Your Vision with Precision",
-    subtitle: " Transform your space with XPro Build's expert construction services. We bring your dreams to life with quality craftsmanship and attention to detail.",
-    backgroundImage: "/clientA-logo.png"
-  }
+    subtitle:
+      " Transform your space with XPro Build's expert construction services. We bring your dreams to life with quality craftsmanship and attention to detail.",
+    backgroundImage: "/clientA-logo.png",
+  },
 };
 export default clientAConfig;

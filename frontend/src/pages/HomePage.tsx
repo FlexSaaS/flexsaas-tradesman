@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import { getClientConfig } from '../lib/getClientConfig';
+import ProjectGallery from '../components/ProjectGallery';
 // import RatingsSection from '../../components/RatingsSection';
-// import ProjectGallery from '../components/ProjectGallery';
 
 
 const client = getClientConfig();
@@ -191,13 +191,13 @@ const HomePage = () => {
       {/* <RatingsSection /> */}
 
       {/* Project Gallery Modal */}
-      {/* <ProjectGallery
-        project={projects.find(p => p.id === selectedProject) || null}
+      <ProjectGallery
+        project={client.projects.find(p => p.id === selectedProject) || null}
         onClose={handleClose}
         currentImageIndex={currentImageIndex}
         onPrevImage={handlePrevImage}
         onNextImage={handleNextImage}
-      /> */}
+      />
     </div>
   );
 };

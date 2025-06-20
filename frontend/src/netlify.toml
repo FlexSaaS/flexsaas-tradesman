@@ -1,0 +1,7 @@
+[build]
+  logLevel = "debug"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

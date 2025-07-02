@@ -42,9 +42,9 @@ function ProjectGallery({
         exit={{ opacity: 0 }}
         onClick={onClose}
       >
-        <GalleryContainer>
-          <CloseButton onClick={onClose}>
-            <FontAwesomeIcon icon={faXmark} size="xl" />
+        <GalleryContainer onClick={(e) => e.stopPropagation()}>
+          <CloseButton onClick={onClose} aria-label="Close gallery">
+            <FontAwesomeIcon icon={faXmark} size="lg" />
           </CloseButton>
 
           <TitleContainer
@@ -67,15 +67,17 @@ function ProjectGallery({
             <PrevButton
               onClick={onPrevImage}
               disabled={currentImageIndex === 0}
+              aria-label="Previous image"
             >
-              <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+              <FontAwesomeIcon icon={faChevronLeft} size="lg" />
             </PrevButton>
 
             <NextButton
               onClick={onNextImage}
               disabled={currentImageIndex === project.gallery.length - 1}
+              aria-label="Next image"
             >
-              <FontAwesomeIcon icon={faChevronRight} size="2x" />
+              <FontAwesomeIcon icon={faChevronRight} size="lg" />
             </NextButton>
 
             <ImageCounter>
@@ -90,7 +92,7 @@ function ProjectGallery({
 
 export default ProjectGallery;
 
-// Styled components
+// Styled Components
 const GalleryOverlay = styled(motion.div)`
   position: fixed;
   inset: 0;
@@ -110,14 +112,20 @@ const GalleryContainer = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  transition: color 0.3s;
+  top: 0.5rem;
+  right: 0.5rem;
   z-index: 50;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(225, 7, 7, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
-  &:hover {
-    color: ${client.secondaryColor};
+  @media (min-width: 640px) {
+    top: 1rem;
+    right: 1rem;
   }
 `;
 
@@ -127,6 +135,14 @@ const TitleContainer = styled(motion.div)`
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+
+    @media (max-width: 639px) {
+    position: static;
+    transform: none;
+    margin: 1rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -143,20 +159,25 @@ const GalleryImage = styled(motion.img)`
   width: 100%;
   height: 80vh;
   object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 `;
 
 const NavButton = styled.button<{ disabled?: boolean }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
-  transition: color 0.3s;
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-size: 1.25rem;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  opacity: ${(props) => (props.disabled ? 0.3 : 1)};
+  transition: background 0.3s, color 0.3s;
 
-  &:hover {
-    color: ${client.secondaryColor};
-  }
+
 `;
 
 const PrevButton = styled(NavButton)`
@@ -175,5 +196,7 @@ const ImageCounter = styled.div`
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.5rem 1rem;
+  font-size: 0.875rem;
   border-radius: 9999px;
 `;
+

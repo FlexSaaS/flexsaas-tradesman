@@ -279,6 +279,7 @@ const PrimaryButton = styled(Link)`
   transition: background-color 0.2s;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 
   &:hover {
     background-color: ${client.primaryColorLight};
@@ -299,6 +300,7 @@ const ViewAllLink = styled(Link)`
   font-weight: 600;
   margin-top: 3rem;
   text-align: center;
+  text-decoration: none;
 
   &:hover {
     color: ${client.primaryColorLight};
@@ -350,6 +352,7 @@ const SecondaryButton = styled(Link)`
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s;
+  text-decoration: none;
 
   &:hover {
     background-color: white;

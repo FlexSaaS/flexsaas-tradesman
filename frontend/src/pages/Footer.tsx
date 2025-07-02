@@ -211,6 +211,7 @@ const QuickLinks = styled.div`
 const QuickLink = styled(Link)`
   color: ${client.secondaryColor};
   transition: color 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     color: ${client.primaryColor};

@@ -456,6 +456,7 @@ const CTAButton = styled(Link)`
   font-weight: 600;
   transition: 0.2s;
   display: inline-block;
+  text-decoration: none;
   &:hover {
     background: ${client.primaryColorLight};
   }

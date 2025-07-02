@@ -119,7 +119,7 @@ function ProjectsPage() {
                     onClick={handlePrevImage}
                     disabled={currentImageIndex === 0}
                   >
-                    <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+                    <FontAwesomeIcon icon={faChevronLeft} size="lg" />
                   </NavButton>
                   <NavButton
                     className="right"
@@ -131,7 +131,7 @@ function ProjectsPage() {
                         1
                     }
                   >
-                    <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                    <FontAwesomeIcon icon={faChevronRight}size="lg" />
                   </NavButton>
                   <ImageCounter>
                     {currentImageIndex + 1} /{" "}
@@ -331,17 +331,26 @@ const CloseButton = styled.button`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  color: #fff;
-  transition: color 0.2s;
   z-index: 50;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(225, 7, 7, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
   &:hover {
-    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: ${client.primaryColor};
   }
+
   @media (min-width: 640px) {
     top: 1rem;
     right: 1rem;
   }
 `;
+
 
 const ModalTitle = styled(motion.div)`
   position: absolute;
@@ -349,6 +358,7 @@ const ModalTitle = styled(motion.div)`
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+
   h2 {
     font-size: 1.25rem;
     font-weight: 700;
@@ -357,12 +367,24 @@ const ModalTitle = styled(motion.div)`
     background: rgba(0, 0, 0, 0.75);
     padding: 0.25rem 1.5rem;
     border-radius: 9999px;
-    @media (min-width: 640px) {
+  }
+
+  @media (max-width: 639px) {
+    position: static;
+    transform: none;
+    margin: 1rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px) {
+    h2 {
       font-size: 1.5rem;
       padding: 0.5rem 2rem;
     }
   }
 `;
+
 
 const ModalImageWrapper = styled.div`
   position: relative;
@@ -376,21 +398,25 @@ const ModalImage = styled(motion.img)`
 // Default colour can be overidden by props with client specified config.
 const NavButton = styled.button<{ disabled?: boolean }>`
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
-  color: #fff;
-  transition: color 0.2s, opacity 0.2s;
-  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  z-index: 40;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  border: none;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  &:hover {
-    color: #ffd700;
-  }
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  transition: background-color 0.3s ease, color 0.3s ease;
+
   &.left {
     left: 0.5rem;
     @media (min-width: 640px) {
       left: 1rem;
     }
   }
+
   &.right {
     right: 0.5rem;
     @media (min-width: 640px) {
@@ -398,6 +424,7 @@ const NavButton = styled.button<{ disabled?: boolean }>`
     }
   }
 `;
+
 
 const ImageCounter = styled.div`
   position: absolute;

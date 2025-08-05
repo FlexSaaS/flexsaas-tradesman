@@ -42,6 +42,7 @@ function ProjectsPage() {
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (!Array.isArray(client.projects)) return;
     const project = client.projects.find((p) => p.id === selectedProject);
     if (project) {
       setCurrentImageIndex((prev) =>
@@ -49,6 +50,11 @@ function ProjectsPage() {
       );
     }
   };
+
+  // Check if client.projects is undefined or empty
+  if (!client.projects || client.projects.length === 0) {
+    return null;
+  }
 
   return (
     <PageWrapper>
@@ -58,7 +64,6 @@ function ProjectsPage() {
           <Title>{client.header.title}</Title>
           <Subtitle>{client.header.subtitle}</Subtitle>
         </Header>
-
         {/* Section: Project Grid */}
         <Grid>
           {client.projects.map((project) => (
@@ -77,7 +82,6 @@ function ProjectsPage() {
             </ProjectCard>
           ))}
         </Grid>
-
         {/* Section: Modal Gallery */}
         <AnimatePresence>
           {selectedProject !== null && (
@@ -131,7 +135,7 @@ function ProjectsPage() {
                         1
                     }
                   >
-                    <FontAwesomeIcon icon={faChevronRight}size="lg" />
+                    <FontAwesomeIcon icon={faChevronRight} size="lg" />
                   </NavButton>
                   <ImageCounter>
                     {currentImageIndex + 1} /{" "}
@@ -145,7 +149,6 @@ function ProjectsPage() {
             </ModalOverlay>
           )}
         </AnimatePresence>
-
         {/* Section: Call to Action */}
         <CTASection>
           <CTATitle>{client.cta.title}</CTATitle>

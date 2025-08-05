@@ -10,6 +10,7 @@ import ContactPage from "./pages/ContactUsPage";
 import ServicesPage from "./pages/ServicesPage";
 import ScrollToTopButton from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ProductsPage from "./components/ProductsPage";
 
 function App() {
   const client = getClientConfig();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<AboutPageTemp />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/products" element={<ProductsPage />} />
       </Routes>
       <ScrollToTopButton />
       <WhatsAppButton />

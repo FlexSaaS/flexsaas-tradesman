@@ -81,8 +81,9 @@ function Footer() {
           <FooterColumn>
             <ColumnTitle>Quick Links</ColumnTitle>
             <QuickLinks>
-              <QuickLink to="/services">Services</QuickLink>
-              <QuickLink to="/projects">Projects</QuickLink>
+            {client.services && client.services.length > 0 && (<QuickLink to="/services">Services</QuickLink>)}
+            {client.projects && client.projects.length > 0 && ( <QuickLink to="/projects">Projects</QuickLink>)}
+            {client.products && client.products.length > 0 && (<QuickLink to="/products">Products</QuickLink>)}
               <QuickLink to="/about">About Us</QuickLink>
               <QuickLink to="/contact">Contact</QuickLink>
               <QuickLink to="/privacy-policy">Privacy Policy</QuickLink>

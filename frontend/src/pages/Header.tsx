@@ -19,8 +19,9 @@ function Header() {
           {/* Desktop Navigation */}
           <DesktopNav>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
+            {client.projects && client.projects.length > 0 && (<NavLink to="/services">Services</NavLink> )}
+            {client.projects && client.projects.length > 0 && (<NavLink to="/projects">Projects</NavLink> )}
+            {client.products && client.products.length > 0 && (<NavLink to="/products">Products</NavLink>)}
             <NavLink to="/about">About</NavLink>
             <ContactLink to="/contact">Contact Us</ContactLink>
           </DesktopNav>
@@ -39,12 +40,22 @@ function Header() {
             <MobileNavLink to="/" onClick={() => setIsMenuOpen(false)}>
               Home
             </MobileNavLink>
-            <MobileNavLink to="/services" onClick={() => setIsMenuOpen(false)}>
-              Services
-            </MobileNavLink>
-            <MobileNavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
-              Projects
-            </MobileNavLink>
+
+            {client.services && client.services.length > 0 && 
+            (<MobileNavLink to="/services" onClick={() => setIsMenuOpen(false)}>
+               Services
+             </MobileNavLink>
+            )}
+
+            {client.projects && client.projects.length > 0 && 
+            (<MobileNavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
+               Projects
+             </MobileNavLink>
+            )}
+
+            {client.products && client.products.length > 0 && (
+              <MobileNavLink to="/products" onClick={() => setIsMenuOpen(false)} >Products</MobileNavLink>
+            )}
             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavLink>

@@ -19,6 +19,54 @@ export interface FeatureIconConfig {
   description: string;
 }
 
+export interface Product {
+  id: string;
+  code: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  vatPrice: number;
+  stock: number;
+  description: string;
+  material?: string;
+  finish?: string;
+  size?: string;
+  images: string[];
+  specifications: { key: string; value: string }[];
+}
+
+interface FilterOption {
+  name: string;
+  count: number;
+  selected: boolean;
+}
+
+export interface FilterGroup {
+  title: string;
+  options: FilterOption[];
+  type: 'checkbox' | 'radio';
+}
+
+export interface FeaturedProduct {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  originalPrice: number;
+  stock: number;
+  priceRange: {
+    min: number;
+    max: number;
+  };
+  rating: number;
+}
+
+export interface FeaturedItems {
+  products: FeaturedProduct[];
+  title?: string;
+  subtitle?: string;
+}
+
 export interface ClientConfig {
   name: string;
   logo: string;
@@ -35,8 +83,9 @@ export interface ClientConfig {
   openHours2: string;
   openHours3: string;
   location: string;
+  currencySymbol?: string;
 
-  services: Service[];
+  services?: Service[];
 
   //section for page header for the projects
   header: {
@@ -44,11 +93,11 @@ export interface ClientConfig {
     subtitle: string;
   };
 
-  hero:{
+  hero: {
     title: string;
     subtitle: string;
     backgroundImage: string;
-  }
+  };
   //for the call-to-action
   cta: {
     title: string;
@@ -59,7 +108,7 @@ export interface ClientConfig {
 
   // Projects array to hold project details(mainly gallery images and card display)
   // we need to come up with a faster way to render images
-  projects: {
+  projects?: {
     id: number;
     title: string;
     description: string;
@@ -98,4 +147,11 @@ export interface ClientConfig {
     seoKeywords?: string;
     seoUrl?: string;
   };
+
+  // featured items configuration
+  featuredItems?: FeaturedItems;
+
+  // for products page
+  filterGroup? : FilterGroup[];
+  products? : Product[];
 }

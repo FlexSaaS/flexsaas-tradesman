@@ -5,6 +5,10 @@ import { getClientConfig } from "../lib/getClientConfig";
 const client = getClientConfig();
 
 function ServicesPage() {
+  if (!Array.isArray(client.services) || client.services.length === 0) {
+    return null; 
+  }
+
   return (
     <PageWrapper>
       <Container>

@@ -10,6 +10,6 @@ const configMap: Record<string, ClientConfig> = {
 };
 
 export function getClientConfig(): ClientConfig {
-  const key = import.meta.env.VITE_CLIENT || "A";
+  const key = import.meta.env.VITE_CLIENT || "B";
   return configMap[key] || clientAConfig;
 }

@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShieldAlt,
-  faUsers,
-  faClock,
-  faThumbsUp,
-  type IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { type IconDefinition } from "@fortawesome/free-solid-svg-icons";
 //import SEOHead from '../components/SEOHead'; will create an SEOHead if need requested by the client.
 import { getClientConfig } from "../lib/getClientConfig";
 

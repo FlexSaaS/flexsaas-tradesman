@@ -5,6 +5,7 @@ import {
   faUsers,
   faClock,
   faThumbsUp,
+  type IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 //import SEOHead from '../components/SEOHead'; will create an SEOHead if need requested by the client.
 import { getClientConfig } from "../lib/getClientConfig";
@@ -12,105 +13,77 @@ import { getClientConfig } from "../lib/getClientConfig";
 const client = getClientConfig();
 
 function AboutPageTemp() {
-  const values = [
-    {
-      icon: <FontAwesomeIcon icon={faShieldAlt} size="3x" />,
-      title: "Quality",
-      description:
-        "We never compromise on quality, using only the finest materials and proven construction methods.",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faUsers} size="3x" />,
-      title: "Trust",
-      description:
-        "Building lasting relationships with our clients through transparency and reliability.",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faClock} size="3x" />,
-      title: "Timeliness",
-      description:
-        "We respect deadlines and deliver projects on schedule without compromising quality.",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faThumbsUp} size="3x" />,
-      title: "Customer Satisfaction",
-      description:
-        "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it.",
-    },
-  ];
+  const { about } = client;
 
   return (
-    <>
-      {/* <SEOHead 
-        title={config.about?.seoTitle || "About " + config.name}
-        description={config.about?.seoDescription || config.about?.description}
-        keywords={config.about?.seoKeywords}
-        url={config.about?.seoUrl || "/about"}
-      /> */}
-      <PageWrapper>
-        <Container>
-          {/* Header Section */}
-          <Header>
-            <Title>{client.about?.title}</Title>
-            <Subtitle>{client.about?.subtitle}</Subtitle>
-          </Header>
+    <PageWrapper>
+      <Container>
+        {/* Header Section */}
+        <Header>
+          <Title>{about?.title}</Title>
+          <Subtitle>{about?.subtitle}</Subtitle>
+        </Header>
 
-          {/* Story Section */}
-          <StoryGrid>
-            <div>
-              <StoryImage
-                src={client.about?.mainImage}
-                alt={client.about?.mainImageAlt}
-                loading="lazy"
-                width="600"
-                height="400"
-              />
-            </div>
-            <StoryText>
-              <h2>{client.about?.storyTitle}</h2>
-              <p>{client.about?.story1}</p>
-              <p>{client.about?.story2}</p>
-              <p>{client.about?.story3}</p>
-            </StoryText>
-          </StoryGrid>
+        {/* Story Section */}
+        <StoryGrid>
+          <div>
+            <StoryImage
+              src={about?.mainImage}
+              alt={about?.mainImageAlt}
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
+          <StoryText>
+            <h2>{about?.storyTitle}</h2>
+            <p>{about?.story1}</p>
+            <p>{about?.story2}</p>
+            <p>{about?.story3}</p>
+          </StoryText>
+        </StoryGrid>
 
-          {/* Values Section */}
-          <ValuesSection>
-            <ValuesTitle>Our Values</ValuesTitle>
-            <ValuesGrid>
-              {values.map((value, idx) => (
-                <ValueCard key={idx}>
-                  <ValueIcon>{value.icon}</ValueIcon>
-                  <ValueTitle>{value.title}</ValueTitle>
-                  <ValueDesc>{value.description}</ValueDesc>
-                </ValueCard>
-              ))}
-            </ValuesGrid>
-          </ValuesSection>
+        {/* Values Section */}
+        <ValuesSection>
+          <ValuesTitle>Our Values</ValuesTitle>
+          <ValuesGrid>
+            {about?.values?.map((value, idx) => (
+              <ValueCard key={idx}>
+                <ValueIcon>
+                  <FontAwesomeIcon
+                    icon={value.icon as IconDefinition}
+                    size="3x"
+                  />
+                </ValueIcon>
+                <ValueTitle>{value.title}</ValueTitle>
+                <ValueDesc>{value.description}</ValueDesc>
+              </ValueCard>
+            ))}
+          </ValuesGrid>
+        </ValuesSection>
 
-          {/* Team Section */}
-          <TeamSection>
-            <TeamTitle>Meet The Founder</TeamTitle>
-            <div className="flex flex-col items-center">
-              <FounderImage
-                src={client.about?.founderImage}
-                alt={client.about?.founderName}
-                loading="lazy"
-                width="192"
-                height="192"
-              />
-              <FounderName>{client.about?.founderName}</FounderName>
-              <FounderRole>{client.about?.founderRole}</FounderRole>
-              <FounderBio>
-                <p>{client.about?.founderBio1}</p>
-                <p>{client.about?.founderBio2}</p>
-                <p>{client.about?.founderBio3}</p>
-              </FounderBio>
-            </div>
-          </TeamSection>
-        </Container>
-      </PageWrapper>
-    </>
+        {/* Team Section */}
+        <TeamSection>
+          <TeamTitle>{about?.founderTitle}</TeamTitle>
+          <div className="flex flex-col items-center">
+            <FounderImage
+              src={about?.founderImage}
+              alt={about?.founderName}
+              loading="lazy"
+              width="192"
+              height="192"
+            />
+            <FounderName>{about?.founderName}</FounderName>
+            <FounderRole>{about?.founderRole}</FounderRole>
+            <FounderBio>
+              <p>{about?.founderBio1}</p>
+              <p>{about?.founderBio2}</p>
+              <p>{about?.founderBio3}</p>
+            </FounderBio>
+          </div>
+        </TeamSection>
+      </Container>
+    </PageWrapper>
   );
 }
 

@@ -24,23 +24,21 @@ function Footer() {
           {/* Logo and Description Column */}
           <FooterColumn>
             <LogoContainer>
-              <FooterLogo src="/logofooter.png" alt="XPro Build Logo" />
+              <FooterLogo src={client.logo} />
             </LogoContainer>
-            <CompanyInfo>Company No.: 10042248</CompanyInfo>
-            <Description>
-              Building dreams into reality with precision and excellence.
-            </Description>
+            <CompanyInfo>Company No.: {client.companyNo}</CompanyInfo>
+            <Description>{client.tagline}</Description>
             <SocialLinks>
-              <SocialLink href="#" aria-label="Facebook">
+              <SocialLink href={client.companyNo} aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebookF} />
               </SocialLink>
-              <SocialLink href="#" aria-label="Instagram">
+              <SocialLink href={client.instagram} aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} />
               </SocialLink>
-              <SocialLink href="#" aria-label="Twitter">
+              <SocialLink href={client.twitter} aria-label="Twitter">
                 <FontAwesomeIcon icon={faTwitter} />
               </SocialLink>
-              <SocialLink href="#" aria-label="LinkedIn">
+              <SocialLink href={client.linkedIn} aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </SocialLink>
             </SocialLinks>
@@ -54,25 +52,25 @@ function Footer() {
                 <IconWrapper>
                   <FontAwesomeIcon icon={faPhone} />
                 </IconWrapper>
-                <span>Office: 020 8457 2921</span>
+                <span>Office: {client.phoneOffice}</span>
               </ContactItem>
               <ContactItem>
                 <IconWrapper>
                   <FontAwesomeIcon icon={faPhone} />
                 </IconWrapper>
-                <span>Mobile: (+44) 07778970161</span>
+                <span>Mobile: {client.phoneMobile}</span>
               </ContactItem>
               <ContactItem>
                 <IconWrapper>
                   <FontAwesomeIcon icon={faEnvelope} />
                 </IconWrapper>
-                <span>xprobuild4@gmail.com</span>
+                <span>Email: {client.email}</span>
               </ContactItem>
               <ContactItem>
                 <IconWrapper>
                   <FontAwesomeIcon icon={faMapMarkerAlt} />
                 </IconWrapper>
-                <span>137-139 Brent Street, London England, NW4 4DJ</span>
+                <span>{client.address}</span>
               </ContactItem>
             </ContactInfo>
           </FooterColumn>
@@ -81,9 +79,15 @@ function Footer() {
           <FooterColumn>
             <ColumnTitle>Quick Links</ColumnTitle>
             <QuickLinks>
-            {client.services && client.services.length > 0 && (<QuickLink to="/services">Services</QuickLink>)}
-            {client.projects && client.projects.length > 0 && ( <QuickLink to="/projects">Projects</QuickLink>)}
-            {client.products && client.products.length > 0 && (<QuickLink to="/products">Products</QuickLink>)}
+              {client.services && client.services.length > 0 && (
+                <QuickLink to="/services">Services</QuickLink>
+              )}
+              {client.projects && client.projects.length > 0 && (
+                <QuickLink to="/projects">Projects</QuickLink>
+              )}
+              {client.products && client.products.length > 0 && (
+                <QuickLink to="/products">Products</QuickLink>
+              )}
               <QuickLink to="/about">About Us</QuickLink>
               <QuickLink to="/contact">Contact</QuickLink>
               <QuickLink to="/privacy-policy">Privacy Policy</QuickLink>
@@ -92,7 +96,7 @@ function Footer() {
         </FooterGrid>
 
         <Copyright>
-          &copy; {new Date().getFullYear()} XPro Build. All rights reserved.
+          &copy; {new Date().getFullYear()} {client.name}. All rights reserved.
         </Copyright>
       </FooterContent>
     </FooterContainer>
@@ -197,7 +201,7 @@ const ContactItem = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  color: ${client.primaryColor};
+  color: ${client.secondaryColor};
   width: 1.25rem;
   display: flex;
   justify-content: center;

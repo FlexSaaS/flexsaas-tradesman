@@ -1,6 +1,12 @@
 import { faBuilding } from "@fortawesome/free-solid-svg-icons/faBuilding";
 import type { ClientConfig } from "../types/Config";
-import { faHammer, faHome, faPaintRoller, faRulerCombined, faWrench } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHammer,
+  faHome,
+  faPaintRoller,
+  faRulerCombined,
+  faWrench,
+} from "@fortawesome/free-solid-svg-icons";
 
 const clientBConfig: ClientConfig = {
   name: "Client B",
@@ -30,27 +36,32 @@ const clientBConfig: ClientConfig = {
     {
       title: "New Builds",
       icon: faHome,
-      description: "Create your dream home from the ground up with our comprehensive new build service, tailored to your specifications.",
+      description:
+        "Create your dream home from the ground up with our comprehensive new build service, tailored to your specifications.",
     },
     {
       title: "Full Renovations",
       icon: faWrench,
-      description: "Transform your existing property with our complete renovation service, modernizing and enhancing every aspect of your home.",
+      description:
+        "Transform your existing property with our complete renovation service, modernizing and enhancing every aspect of your home.",
     },
     {
       title: "Loft Conversions",
       icon: faRulerCombined,
-      description: "Maximise your home's potential with a professionally designed and executed loft conversion.",
+      description:
+        "Maximise your home's potential with a professionally designed and executed loft conversion.",
     },
     {
       title: "Home Refurbishments",
       icon: faPaintRoller,
-      description: "Update and refresh your living space with our comprehensive refurbishment services.",
+      description:
+        "Update and refresh your living space with our comprehensive refurbishment services.",
     },
     {
       title: "Property Maintenance",
       icon: faHammer,
-      description: "Keep your property in perfect condition with our regular maintenance and repair services.",
+      description:
+        "Keep your property in perfect condition with our regular maintenance and repair services.",
     },
   ],
   projects: [
@@ -133,6 +144,8 @@ const clientBConfig: ClientConfig = {
   openHours2: "",
   openHours3: "",
   location: "",
+  featuredTitle: "",
+  featuredSubTitle: "",
 };
 
 export default clientBConfig;

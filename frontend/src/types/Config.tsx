@@ -44,7 +44,7 @@ interface FilterOption {
 export interface FilterGroup {
   title: string;
   options: FilterOption[];
-  type: 'checkbox' | 'radio';
+  type: "checkbox" | "radio";
 }
 
 export interface FeaturedProduct {
@@ -84,6 +84,11 @@ export interface ClientConfig {
   openHours3: string;
   location: string;
   currencySymbol?: string;
+  companyNo?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  linkedIn?: string;
 
   services?: Service[];
 
@@ -134,14 +139,23 @@ export interface ClientConfig {
     story2?: string;
     story3?: string;
 
+    // Values section fields
+    values?: {
+      icon: IconDefinition;
+      title: string;
+      description: string;
+    }[];
+
+    // Founder section fields
     founderImage?: string;
+    founderTitle?: string;
     founderName?: string;
     founderRole?: string;
     founderBio1?: string;
     founderBio2?: string;
     founderBio3?: string;
 
-    //Optional SEO fields
+    // Optional SEO fields
     seoTitle?: string;
     seoDescription?: string;
     seoKeywords?: string;
@@ -149,9 +163,11 @@ export interface ClientConfig {
   };
 
   // featured items configuration
+  featuredTitle: String;
+  featuredSubTitle: String;
   featuredItems?: FeaturedItems;
 
   // for products page
-  filterGroup? : FilterGroup[];
-  products? : Product[];
+  filterGroup?: FilterGroup[];
+  products?: Product[];
 }

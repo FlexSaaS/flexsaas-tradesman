@@ -16,11 +16,11 @@ import { useEffect } from "react";
 function App() {
   const client = getClientConfig();
 
+  // Set favicon
   useEffect(() => {
     if (!client.favicon) return;
 
-    let link: HTMLLinkElement | null =
-      document.querySelector("link[rel*='icon']");
+    let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
     if (!link) {
       link = document.createElement("link");
       link.rel = "shortcut icon";
@@ -29,6 +29,31 @@ function App() {
     link.type = "image/png";
     link.href = client.favicon;
   }, [client.favicon]);
+
+  // Set title + meta tags
+  useEffect(() => {
+    document.title = client.about?.seoTitle || client.name || "Default Title";
+
+    if (client.about?.seoDescription) {
+      let metaDesc = document.querySelector("meta[name='description']");
+      if (!metaDesc) {
+        metaDesc = document.createElement("meta");
+        metaDesc.setAttribute("name", "description");
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute("content", client.about.seoDescription);
+    }
+
+    if (client.about?.seoKeywords) {
+      let metaKeywords = document.querySelector("meta[name='keywords']");
+      if (!metaKeywords) {
+        metaKeywords = document.createElement("meta");
+        metaKeywords.setAttribute("name", "keywords");
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute("content", client.about.seoKeywords);
+    }
+  }, [client]);
 
   return (
     <AppContainer fontFamily={client.fontFamily || "sans-serif"}>

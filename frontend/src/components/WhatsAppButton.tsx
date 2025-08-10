@@ -8,7 +8,7 @@ const client = getClientConfig();
 
 function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = "+447778970161";
+  const phoneNumber = "+233 53 135 6424";
   const message = "Hi! I'm interested in your construction services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message

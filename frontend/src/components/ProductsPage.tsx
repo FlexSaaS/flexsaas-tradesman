@@ -284,7 +284,7 @@ const OptionCount = styled.span`
 const ApplyFiltersButton = styled.button`
   width: 100%;
   padding: 10px;
-  background: ${client.primaryColor};
+  background: green;
   color: white;
   border: none;
   border-radius: 4px;

@@ -20,9 +20,11 @@ function FeaturedProducts() {
           <SectionTitle>{client.featuredItems?.title}</SectionTitle>
           <SectionSubtitle>{client.featuredItems?.subtitle}</SectionSubtitle>
         </div>
-        <ViewAllButton to="/products">
-          View All <FontAwesomeIcon icon={faArrowRight} />
-        </ViewAllButton>
+        {client.products && client.products.length > 0 && (
+          <ViewAllButton to="/products">
+            View All <FontAwesomeIcon icon={faArrowRight} />
+          </ViewAllButton>
+        )}
       </SectionHeader>
 
       <ProductsGrid>
@@ -64,11 +66,9 @@ function FeaturedProducts() {
                   Price range: ₵{product.priceRange.min.toFixed(2)} - ₵{product.priceRange.max.toFixed(2)}
                 </PriceRange>
 
-
                 {/* <AddToCartButton disabled={product.stock === 0}>
                   <FontAwesomeIcon icon={faShoppingCart} /> Add to Cart
                 </AddToCartButton> */}
-
               </ProductDetails>
             </ProductCard>
           );

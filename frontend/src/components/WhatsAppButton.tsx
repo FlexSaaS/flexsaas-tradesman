@@ -8,20 +8,14 @@ const client = getClientConfig();
 
 function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = "+233 53 135 6424";
+  const phoneNumber = client.phoneMobile.replace(/\D/g, ""); // Remove non-numeric characters
   const message = "Hi! I'm interested in your construction services.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
-  )}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <>
       {/* Mobile Button */}
-      <MobileWhatsAppLink
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <MobileWhatsAppLink href={whatsappUrl} target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faWhatsapp} />
       </MobileWhatsAppLink>
 
@@ -31,8 +25,7 @@ function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+        onMouseLeave={() => setIsHovered(false)}>
         <DesktopButtonContent $isHovered={isHovered}>
           <WhatsAppIcon $isHovered={isHovered}>
             <FontAwesomeIcon icon={faWhatsapp} />

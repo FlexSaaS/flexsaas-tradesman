@@ -12,16 +12,18 @@ function Header() {
     <HeaderContainer>
       <NavContainer>
         {/* Logo/Brand can go on the left */}
-        <Logo to="/">Client Logo</Logo>
+        <Logo to="/">
+          <img src={client.logo} alt="Client Logo" />
+        </Logo>
 
         {/* Navigation aligned to the right */}
         <RightAlignedNav>
           {/* Desktop Navigation */}
           <DesktopNav>
             <NavLink to="/">Home</NavLink>
-            {client.projects && client.projects.length > 0 && (<NavLink to="/services">Services</NavLink> )}
-            {client.projects && client.projects.length > 0 && (<NavLink to="/projects">Projects</NavLink> )}
-            {client.products && client.products.length > 0 && (<NavLink to="/products">Products</NavLink>)}
+            {client.projects && client.projects.length > 0 && <NavLink to="/services">Services</NavLink>}
+            {client.projects && client.projects.length > 0 && <NavLink to="/projects">Projects</NavLink>}
+            {client.products && client.products.length > 0 && <NavLink to="/products">Products</NavLink>}
             <NavLink to="/about">About</NavLink>
             <ContactLink to="/contact">Contact Us</ContactLink>
           </DesktopNav>
@@ -41,28 +43,27 @@ function Header() {
               Home
             </MobileNavLink>
 
-            {client.services && client.services.length > 0 && 
-            (<MobileNavLink to="/services" onClick={() => setIsMenuOpen(false)}>
-               Services
-             </MobileNavLink>
+            {client.services && client.services.length > 0 && (
+              <MobileNavLink to="/services" onClick={() => setIsMenuOpen(false)}>
+                Services
+              </MobileNavLink>
             )}
 
-            {client.projects && client.projects.length > 0 && 
-            (<MobileNavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
-               Projects
-             </MobileNavLink>
+            {client.projects && client.projects.length > 0 && (
+              <MobileNavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
+                Projects
+              </MobileNavLink>
             )}
 
             {client.products && client.products.length > 0 && (
-              <MobileNavLink to="/products" onClick={() => setIsMenuOpen(false)} >Products</MobileNavLink>
+              <MobileNavLink to="/products" onClick={() => setIsMenuOpen(false)}>
+                Products
+              </MobileNavLink>
             )}
             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavLink>
-            <MobileContactLink
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <MobileContactLink to="/contact" onClick={() => setIsMenuOpen(false)}>
               Contact Us
             </MobileContactLink>
           </MobileNavContent>
@@ -92,11 +93,17 @@ const NavContainer = styled.div`
 `;
 
 const Logo = styled(Link)`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: ${client.primaryColor};
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+
+  img {
+    height: 70px;
+    width: auto;
+    display: block;
+  }
 `;
+
 
 const RightAlignedNav = styled.div`
   display: flex;

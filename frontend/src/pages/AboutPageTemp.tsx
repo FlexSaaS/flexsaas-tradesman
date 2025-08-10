@@ -134,6 +134,7 @@ const StoryGrid = styled.div`
 const StoryImage = styled.img`
   width: 100%;
   max-width: 600px;
+  height: auto;
   border-radius: 1rem;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
   display: block;

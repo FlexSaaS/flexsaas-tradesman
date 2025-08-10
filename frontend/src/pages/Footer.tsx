@@ -107,8 +107,9 @@ export default Footer;
 
 // Styled Components
 const FooterContainer = styled.footer`
-  background-color: ${client.primaryColor};
-  color: white;
+  background-color: white;
+  border-top: 3px solid ${client.primaryColor};
+  color: black;
   padding: 3rem 0;
 `;
 

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { faClose, faFilter } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
-import { getClientConfig } from '../lib/getClientConfig';
-import type { FilterGroup, Product } from '../types/Config';
-import { Pagination } from './Pagination';
-import { ProductCard } from './ProductCard';
+import { faClose, faFilter, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
+import { getClientConfig } from "../lib/getClientConfig";
+import type { FilterGroup, Product } from "../types/Config";
+import { Pagination } from "./Pagination";
+import { ProductCard } from "./ProductCard";
 
 const client = getClientConfig();
 
@@ -15,19 +15,19 @@ const ProductsPage = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(client.products || []);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [sortBy, setSortBy] = useState('price-asc');
+  const [sortBy, setSortBy] = useState("price-asc");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const sortProducts = (products: Product[]) => {
     let sortedProducts = [...products];
     switch (sortBy) {
-      case 'price-asc':
+      case "price-asc":
         sortedProducts.sort((a, b) => a.price - b.price);
         break;
-      case 'price-desc':
+      case "price-desc":
         sortedProducts.sort((a, b) => b.price - a.price);
         break;
-      case 'name-asc':
+      case "name-asc":
         sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
         break;
       default:
@@ -37,9 +37,7 @@ const ProductsPage = () => {
   };
 
   useEffect(() => {
-    const selectedFilters = filters.flatMap((group) =>
-      group.options.filter((opt) => opt.selected).map((opt) => opt.name)
-    );
+    const selectedFilters = filters.flatMap((group) => group.options.filter((opt) => opt.selected).map((opt) => opt.name));
 
     if (selectedFilters.length === 0) {
       setFilteredProducts(allProducts);
@@ -47,7 +45,10 @@ const ProductsPage = () => {
       const filtered = allProducts.filter(
         (product) =>
           selectedFilters.includes(product.material!) ||
-          selectedFilters.includes(product.finish!)
+          selectedFilters.includes(product.finish!) ||
+          selectedFilters.some(
+            (filter) => product.name.toLowerCase().includes(filter.toLowerCase()) || product.description.toLowerCase().includes(filter.toLowerCase())
+          )
       );
       setFilteredProducts(filtered);
     }
@@ -57,7 +58,7 @@ const ProductsPage = () => {
     const newFilters = [...filters];
     const option = newFilters[groupIndex].options[optionIndex];
 
-    if (newFilters[groupIndex].type === 'checkbox') {
+    if (newFilters[groupIndex].type === "checkbox") {
       option.selected = !option.selected;
     } else {
       newFilters[groupIndex].options.forEach((opt, idx) => {
@@ -74,12 +75,12 @@ const ProductsPage = () => {
   };
 
   const clearFilters = () => {
-    const resetFilters = filters.map(group => ({
+    const resetFilters = filters.map((group) => ({
       ...group,
-      options: group.options.map(option => ({
+      options: group.options.map((option) => ({
         ...option,
-        selected: false
-      }))
+        selected: false,
+      })),
     }));
 
     setFilters(resetFilters);
@@ -93,6 +94,9 @@ const ProductsPage = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
+
+  // Check if any filters are selected
+  const hasActiveFilters = filters.some((group) => group.options.some((option) => option.selected));
 
   return (
     <>
@@ -118,11 +122,7 @@ const ProductsPage = () => {
                   {group.options.map((option, optionIndex) => (
                     <FilterOptionItem key={option.name}>
                       <FilterOptionLabel>
-                        <FilterOptionInput
-                          type={group.type}
-                          checked={option.selected}
-                          onChange={() => toggleFilter(groupIndex, optionIndex)}
-                        />
+                        <FilterOptionInput type={group.type} checked={option.selected} onChange={() => toggleFilter(groupIndex, optionIndex)} />
                         {option.name} <OptionCount>({option.count})</OptionCount>
                       </FilterOptionLabel>
                     </FilterOptionItem>
@@ -146,8 +146,7 @@ const ProductsPage = () => {
                     onChange={(e) => {
                       setItemsPerPage(Number(e.target.value));
                       setCurrentPage(1);
-                    }}
-                  >
+                    }}>
                     <option value={6}>6 per page</option>
                     <option value={12}>12 per page</option>
                     <option value={24}>24 per page</option>
@@ -161,8 +160,7 @@ const ProductsPage = () => {
                     onChange={(e) => {
                       setSortBy(e.target.value);
                       setCurrentPage(1);
-                    }}
-                  >
+                    }}>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
                     <option value="name-asc">Name: A-Z</option>
@@ -170,17 +168,23 @@ const ProductsPage = () => {
                 </SortOptions>
               </ListingControls>
             </ListingHeader>
-            <ProductsGrid>
-              {currentProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </ProductsGrid>
-            {totalPages > 1 && (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-              />
+
+            {hasActiveFilters && filteredProducts.length === 0 ? (
+              <NoProductsFound>
+                <FontAwesomeIcon icon={faExclamationTriangle} size="3x" />
+                <h3>No Products Found</h3>
+                <p>We couldn't find any products matching your filters.</p>
+                <ClearFiltersButton onClick={clearFilters}>Clear All Filters</ClearFiltersButton>
+              </NoProductsFound>
+            ) : (
+              <>
+                <ProductsGrid>
+                  {currentProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </ProductsGrid>
+                {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
+              </>
             )}
           </ProductsListing>
         </ProductsContainer>
@@ -226,7 +230,7 @@ const FiltersSidebar = styled.aside<{ open: boolean }>`
     width: 80%;
     height: 100vh;
     z-index: 1000;
-    transform: translateX(${({ open }) => (open ? '0' : '-100%')});
+    transform: translateX(${({ open }) => (open ? "0" : "-100%")});
     transition: transform 0.3s;
     overflow-y: auto;
   }
@@ -347,6 +351,36 @@ const ProductsGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
+`;
+
+const NoProductsFound = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background: #fff8e1;
+  border-radius: 8px;
+  margin-bottom: 30px;
+
+  h3 {
+    margin: 20px 0 10px;
+    color: #ff6d00;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+
+  svg {
+    color: #ff6d00;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export default ProductsPage;

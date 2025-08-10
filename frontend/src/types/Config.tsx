@@ -27,6 +27,7 @@ export interface Product {
   originalPrice?: number;
   vatPrice: number;
   stock: number;
+  type?: string;
   description: string;
   material?: string;
   finish?: string;

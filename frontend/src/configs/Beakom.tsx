@@ -141,8 +141,8 @@ const clientBeakomConfig: ClientConfig = {
     products: [
       {
         id: 1,
-        name: "Premium Cordless Drill Kit",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        name: "Hex Bolt 16mm (Galvanized)",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
         price: 129.99,
         originalPrice: 179.99,
         stock: 42,
@@ -154,8 +154,8 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 2,
-        name: "Heavy-Duty Wheelbarrow",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        name: "Toggle Wing (Galvanized)",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp",
         price: 89.5,
         originalPrice: 119.99,
         stock: 15,
@@ -167,8 +167,8 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 3,
-        name: "Professional Tool Set (142pc)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        name: "Machine Screw (142pc)",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp",
         price: 249.99,
         originalPrice: 349.99,
         stock: 8,
@@ -180,8 +180,8 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 4,
-        name: "Safety Helmet with Visor",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        name: "Lock Nut (Galvanized)",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp",
         price: 24.99,
         originalPrice: 34.99,
         stock: 0, // Out of stock
@@ -193,8 +193,8 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 5,
-        name: "Laser Distance Measurer",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        name: "Tabular Rivet (Galvanized)",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp",
         price: 59.99,
         originalPrice: 79.99,
         stock: 23,

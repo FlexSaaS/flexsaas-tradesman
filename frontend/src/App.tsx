@@ -11,9 +11,24 @@ import ServicesPage from "./pages/ServicesPage";
 import ScrollToTopButton from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ProductsPage from "./components/ProductsPage";
+import { useEffect } from "react";
 
 function App() {
   const client = getClientConfig();
+
+  useEffect(() => {
+    if (!client.favicon) return;
+
+    let link: HTMLLinkElement | null =
+      document.querySelector("link[rel*='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "shortcut icon";
+      document.head.appendChild(link);
+    }
+    link.type = "image/png";
+    link.href = client.favicon;
+  }, [client.favicon]);
 
   return (
     <AppContainer fontFamily={client.fontFamily || "sans-serif"}>

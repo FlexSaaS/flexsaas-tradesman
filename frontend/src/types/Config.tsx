@@ -75,6 +75,7 @@ export interface ClientConfig {
   secondaryColor: string;
   tagline: string;
   fontFamily: string;
+  favicon: string;
   phoneOffice: string;
   phoneMobile: string;
   email: string;

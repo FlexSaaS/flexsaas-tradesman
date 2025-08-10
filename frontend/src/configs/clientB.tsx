@@ -146,6 +146,7 @@ const clientBConfig: ClientConfig = {
   location: "",
   featuredTitle: "",
   featuredSubTitle: "",
+  favicon: "",
 };
 
 export default clientBConfig;

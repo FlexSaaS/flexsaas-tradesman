@@ -144,7 +144,7 @@ const LecienConfig: ClientConfig = {
   hero: {
     title: "Le Chien London",
     subtitle: "Award Winning Styling By Cheryl Howard",
-    backgroundImage: "Beakom/beakom-background.png",
+    backgroundImage: "Lecien/background.png",
   },
   services: [
     {

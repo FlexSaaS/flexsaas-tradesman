@@ -355,6 +355,10 @@ const ProductsGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
 `;
 
 const NoProductsFound = styled.div`

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
 import type { FilterGroup, Product } from "../types/Config";
-import { Pagination } from "./Pagination";
+import  Pagination  from "./Pagination";
 import { ProductCard } from "./ProductCard";
 
 const client = getClientConfig();

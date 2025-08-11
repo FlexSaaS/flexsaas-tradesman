@@ -108,6 +108,9 @@ const ProductsPage = () => {
         <FontAwesomeIcon icon={faFilter} size="lg" />
         <span style={{ marginLeft: "12px" }}>Filters</span>
       </MobileFilterToggle>
+
+      <Overlay open={mobileFiltersOpen} onClick={() => setMobileFiltersOpen(false)} />
+
       <ProductsPageContainer>
         <ProductsContainer>
           <FiltersSidebar open={mobileFiltersOpen}>
@@ -309,6 +312,19 @@ const ClearFiltersButton = styled.button`
   cursor: pointer;
   margin-top: 10px;
 `;
+
+const Overlay = styled.div<{ open: boolean }>`
+  display: ${({ open }) => (open ? "block" : "none")};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;  // less than sidebar's 1000
+  cursor: pointer;
+`;
+
 
 const ProductsListing = styled.main`
   flex: 1;

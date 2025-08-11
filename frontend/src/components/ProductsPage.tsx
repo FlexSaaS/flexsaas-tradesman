@@ -38,7 +38,6 @@ const ProductsPage = () => {
 
   useEffect(() => {
     const selectedFilters = filters.flatMap((group) => group.options.filter((opt) => opt.selected).map((opt) => opt.name));
-
     if (selectedFilters.length === 0) {
       setFilteredProducts(allProducts);
     } else {
@@ -61,7 +60,6 @@ const ProductsPage = () => {
   const toggleFilter = (groupIndex: number, optionIndex: number) => {
     const newFilters = [...filters];
     const option = newFilters[groupIndex].options[optionIndex];
-
     if (newFilters[groupIndex].type === "checkbox") {
       option.selected = !option.selected;
     } else {
@@ -69,7 +67,6 @@ const ProductsPage = () => {
         opt.selected = idx === optionIndex;
       });
     }
-
     setFilters(newFilters);
   };
 
@@ -86,7 +83,6 @@ const ProductsPage = () => {
         selected: false,
       })),
     }));
-
     setFilters(resetFilters);
     setCurrentPage(1);
     setMobileFiltersOpen(false);
@@ -99,7 +95,6 @@ const ProductsPage = () => {
   const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
-  // Check if any filters are selected
   const hasActiveFilters = filters.some((group) => group.options.some((option) => option.selected));
 
   return (
@@ -108,9 +103,7 @@ const ProductsPage = () => {
         <FontAwesomeIcon icon={faFilter} size="lg" />
         <span style={{ marginLeft: "12px" }}>Filters</span>
       </MobileFilterToggle>
-
       <Overlay open={mobileFiltersOpen} onClick={() => setMobileFiltersOpen(false)} />
-
       <ProductsPageContainer>
         <ProductsContainer>
           <FiltersSidebar open={mobileFiltersOpen}>
@@ -122,21 +115,23 @@ const ProductsPage = () => {
                 </CloseButton>
               )}
             </FiltersHeader>
-            {filters.map((group, groupIndex) => (
-              <FilterGroupStyled key={group.title}>
-                <h3>{group.title}</h3>
-                <FilterOptionsList>
-                  {group.options.map((option, optionIndex) => (
-                    <FilterOptionItem key={option.name}>
-                      <FilterOptionLabel>
-                        <FilterOptionInput type={group.type} checked={option.selected} onChange={() => toggleFilter(groupIndex, optionIndex)} />
-                        {option.name} <OptionCount>({option.count})</OptionCount>
-                      </FilterOptionLabel>
-                    </FilterOptionItem>
-                  ))}
-                </FilterOptionsList>
-              </FilterGroupStyled>
-            ))}
+            <FilterOptionsContainer>
+              {filters.map((group, groupIndex) => (
+                <FilterGroupStyled key={group.title}>
+                  <h3>{group.title}</h3>
+                  <FilterOptionsList>
+                    {group.options.map((option, optionIndex) => (
+                      <FilterOptionItem key={option.name}>
+                        <FilterOptionLabel>
+                          <FilterOptionInput type={group.type} checked={option.selected} onChange={() => toggleFilter(groupIndex, optionIndex)} />
+                          {option.name} <OptionCount>({option.count})</OptionCount>
+                        </FilterOptionLabel>
+                      </FilterOptionItem>
+                    ))}
+                  </FilterOptionsList>
+                </FilterGroupStyled>
+              ))}
+            </FilterOptionsContainer>
             <ApplyFiltersButton onClick={applyFilters}>Apply Filters</ApplyFiltersButton>
             <ClearFiltersButton onClick={clearFilters}>Clear Filters</ClearFiltersButton>
           </FiltersSidebar>
@@ -175,7 +170,6 @@ const ProductsPage = () => {
                 </SortOptions>
               </ListingControls>
             </ListingHeader>
-
             {hasActiveFilters && filteredProducts.length === 0 ? (
               <NoProductsFound>
                 <FontAwesomeIcon icon={faExclamationTriangle} size="3x" />
@@ -230,17 +224,24 @@ const FiltersSidebar = styled.aside<{ open: boolean }>`
   padding: 20px;
   background: #f8f8f8;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
     left: 0;
     width: 80%;
-    height: 100vh;
+    height: 90vh;
     z-index: 1000;
     transform: translateX(${({ open }) => (open ? "0" : "-100%")});
     transition: transform 0.3s;
-    overflow-y: auto;
   }
+`;
+
+const FilterOptionsContainer = styled.div`
+  overflow-y: auto;
+  flex: 1;
 `;
 
 const FiltersHeader = styled.div`
@@ -300,6 +301,7 @@ const ApplyFiltersButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: auto;
 `;
 
 const ClearFiltersButton = styled.button`
@@ -321,10 +323,9 @@ const Overlay = styled.div<{ open: boolean }>`
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.4);
-  z-index: 999;  // less than sidebar's 1000
+  z-index: 999;
   cursor: pointer;
 `;
-
 
 const ProductsListing = styled.main`
   flex: 1;
@@ -371,10 +372,9 @@ const ProductsGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
-
   @media (max-width: 768px) {
-  grid-template-columns: 1fr;
-}
+    grid-template-columns: 1fr;
+  }
 `;
 
 const NoProductsFound = styled.div`
@@ -387,21 +387,17 @@ const NoProductsFound = styled.div`
   background: #fff8e1;
   border-radius: 8px;
   margin-bottom: 30px;
-
   h3 {
     margin: 20px 0 10px;
     color: #ff6d00;
   }
-
   p {
     margin-bottom: 20px;
     color: #666;
   }
-
   svg {
     color: #ff6d00;
   }
-
   @media (max-width: 768px) {
     padding: 20px;
   }

@@ -34,6 +34,9 @@ function AboutPageTemp() {
             <p>{about?.story1}</p>
             <p>{about?.story2}</p>
             <p>{about?.story3}</p>
+            <p>{about?.story4}</p>
+            <p>{about?.story5}</p>
+            <p>{about?.story6}</p>
           </StoryText>
         </StoryGrid>
 

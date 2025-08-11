@@ -35,12 +35,12 @@ function ServicesPage() {
         </Grid>
 
         <CTASection>
-          <CTATitle>Ready to Start Your Project?</CTATitle>
+          <CTATitle>Ready to Pamper Your Pup?</CTATitle>
           <CTADesc>
-            Contact us today for a free consultation and quote. We're here to
-            help bring your vision to life.
+            Book a grooming session today and give your furry friend the care they deserve. 
+            From baths to stylish trims, we’ll have them looking and feeling their best.
           </CTADesc>
-          <CTAButton href="/contact">Get in Touch</CTAButton>
+          <CTAButton href="/contact">Book an Appointment</CTAButton>
         </CTASection>
       </Container>
     </PageWrapper>

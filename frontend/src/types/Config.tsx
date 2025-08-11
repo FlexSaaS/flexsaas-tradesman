@@ -140,6 +140,9 @@ export interface ClientConfig {
     story1?: string;
     story2?: string;
     story3?: string;
+    story4?: string;
+    story5?: string;
+    story6?: string;
 
     // Values section fields
     values?: {

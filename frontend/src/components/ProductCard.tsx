@@ -36,7 +36,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
               </ProductSpec>
             ))}
           </ProductSpecs>
-          <AddToCartButton>Add to Cart</AddToCartButton>
+          {/* <AddToCartButton>Add to Cart</AddToCartButton> */}
         </ProductInfo>
       </ProductCardStyled>
     );
@@ -130,13 +130,13 @@ const ProductSpec = styled.li`
   margin-bottom: 5px;
 `;
 
-const AddToCartButton = styled.button`
-  width: 100%;
-  padding: 8px;
-  background: ${client.primaryColor};
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-`;
+// const AddToCartButton = styled.button`
+//   width: 100%;
+//   padding: 8px;
+//   background: ${client.primaryColor};
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin-top: 10px;
+// `;

@@ -93,6 +93,9 @@ export interface ClientConfig {
   linkedIn?: string;
 
   services?: Service[];
+  serviceDescription?: string;
+  serviceCTATitle?: string;
+  serviceCTADescription?: string;
 
   //section for page header for the projects
   header: {

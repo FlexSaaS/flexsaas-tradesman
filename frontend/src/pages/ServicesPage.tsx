@@ -15,9 +15,7 @@ function ServicesPage() {
         <Header>
           <Title>Our Services</Title>
           <Subtitle>
-            We offer a comprehensive range of construction and renovation
-            services, each delivered with the highest standards of quality and
-            professionalism.
+            {client.serviceDescription}
           </Subtitle>
         </Header>
 
@@ -35,10 +33,9 @@ function ServicesPage() {
         </Grid>
 
         <CTASection>
-          <CTATitle>Ready to Pamper Your Pup?</CTATitle>
+          <CTATitle>{client.serviceCTATitle || "Service Title Not Set"}</CTATitle>
           <CTADesc>
-            Book a grooming session today and give your furry friend the care they deserve. 
-            From baths to stylish trims, we’ll have them looking and feeling their best.
+              {client.serviceCTADescription || "Service Description Not Yet"}
           </CTADesc>
           <CTAButton href="/contact">Book an Appointment</CTAButton>
         </CTASection>

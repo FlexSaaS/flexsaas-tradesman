@@ -146,7 +146,7 @@ const LecienConfig: ClientConfig = {
     subtitle: "Award Winning Styling By Cheryl Howard",
     backgroundImage: "Lecien/background.png",
   },
-  serviceDescription: "We offer a comprehensive range of construction and renovation services, each delivered with the highest standards of quality and professionalism.",
+  serviceDescription: "We provide a full range of professional dog grooming services, ensuring your furry friend looks, feels, and smells their best.",
   serviceCTATitle: "Ready to Pamper Your Pup?",
   serviceCTADescription: "Book a grooming session today and give your furry friend the care they deserve. From baths to stylish trims, we’ll have them looking and feeling their best.",
   services: [

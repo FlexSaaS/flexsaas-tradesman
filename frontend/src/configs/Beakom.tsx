@@ -141,8 +141,8 @@ const clientBeakomConfig: ClientConfig = {
     products: [
       {
         id: 1,
-        name: "Hex Bolt 16mm (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
+        name: "Zinc plated Hex Bolt",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1755118751/zinc_plated_hex_bolt_and_nuts_oascwc.jpg",
         price: 129.99,
         originalPrice: 179.99,
         stock: 42,

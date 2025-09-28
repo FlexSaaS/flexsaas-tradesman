@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { getClientConfig } from "../lib/getClientConfig";
 import ProjectGallery from "../components/ProjectGallery";
-import FeaturedProducts from "../components/FeaturedItems";
 
 const client = getClientConfig();
 
@@ -45,7 +44,7 @@ function HomePage() {
     <div>
       <HeroSection>
         <HeroContent>
-          <div>
+          <HeroInner>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,7 +66,7 @@ function HomePage() {
             >
               <ButtonGroup>
                 <PrimaryButton to="/contact">
-                  Get in Touch{" "}
+                  BOOK{" "}
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     style={{ marginLeft: "0.5rem" }}
@@ -75,13 +74,13 @@ function HomePage() {
                 </PrimaryButton>
                 {/* either you offer services or sell products */}
                 {client.services && client.services.length > 0 ? (
-                  <SecondaryButton to="/services">Our Services</SecondaryButton>
+                  <SecondaryButton to="/services">SERVICES</SecondaryButton>
                 ) : (
                   <SecondaryButton to="/products">Our Products</SecondaryButton>
                 )}
               </ButtonGroup>
             </motion.div>
-          </div>
+          </HeroInner>
         </HeroContent>
       </HeroSection>
 
@@ -151,7 +150,7 @@ function HomePage() {
         </SectionContainer>
       )}
 
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
 
       <FeaturesSection>
         <InnerContainer>
@@ -225,20 +224,31 @@ export default HomePage;
 const HeroSection = styled.div`
   position: relative;
   height: 90vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0)
+    ),
     url(${() => client.hero.backgroundImage});
   background-size: cover;
   background-position: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 `;
 
 const HeroContent = styled.div`
-  position: absolute;
-  inset: 0;
+  max-width: 1400px;
+  width: 100%;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 1rem;
+`;
+
+const HeroInner = styled.div`
+  width: 40%;
+  text-align: left;
+  margin: 0;
 `;
 
 const HeroTitle = styled.h1`
@@ -254,21 +264,20 @@ const HeroTitle = styled.h1`
 
 const HeroSubtitle = styled.p`
   font-size: 1.125rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: white;
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
 
   @media (min-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
 
   @media (min-width: 768px) {
     gap: 1rem;
@@ -277,15 +286,15 @@ const ButtonGroup = styled.div`
 
 const PrimaryButton = styled(Link)`
   background-color: ${client.primaryColor};
-  color: black;
+  color: #ffffff;
   padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 450;
   transition: background-color 0.2s;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  letter-spacing: 0.1em;
 
   &:hover {
     background-color: ${client.primaryColorLight};
@@ -295,7 +304,7 @@ const PrimaryButton = styled(Link)`
 
   @media (min-width: 768px) {
     padding: 0.75rem 2rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 `;
 
@@ -317,7 +326,6 @@ const ViewAllLink = styled(Link)`
 const FeatureCard = styled.div`
   background-color: white;
   padding: 2rem;
-  border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;
@@ -350,24 +358,23 @@ const FeaturesCarousel = styled.div`
 `;
 
 const SecondaryButton = styled(Link)`
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
+  background-color: white;
+  color: #000000;
   padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 450;
   transition: all 0.2s;
+  letter-spacing: 0.1em;
   text-decoration: none;
 
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
   }
 
   @media (min-width: 768px) {
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
   }
 `;
 
@@ -420,7 +427,6 @@ const ProjectsGrid = styled.div`
 const ProjectCard = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
@@ -493,7 +499,6 @@ const CarouselItem = styled.div`
   flex: 0 0 20rem;
   background-color: white;
   padding: 2rem;
-  border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;

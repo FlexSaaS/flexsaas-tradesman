@@ -20,12 +20,18 @@ function Header() {
         <RightAlignedNav>
           {/* Desktop Navigation */}
           <DesktopNav>
-            <NavLink to="/">Home</NavLink>
-            {client.projects && client.projects.length > 0 && <NavLink to="/services">Services</NavLink>}
-            {client.projects && client.projects.length > 0 && <NavLink to="/projects">Projects</NavLink>}
-            {client.products && client.products.length > 0 && <NavLink to="/products">Products</NavLink>}
-            <NavLink to="/about">About</NavLink>
-            <ContactLink to="/contact">Contact Us</ContactLink>
+            <NavLink to="/">HOME</NavLink>
+            {client.projects && client.projects.length > 0 && (
+              <NavLink to="/services">SERVICES</NavLink>
+            )}
+            {client.projects && client.projects.length > 0 && (
+              <NavLink to="/projects">GROOMING</NavLink>
+            )}
+            {client.products && client.products.length > 0 && (
+              <NavLink to="/products">PRODUCTS</NavLink>
+            )}
+            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
           </DesktopNav>
 
           {/* Mobile menu button */}
@@ -44,26 +50,38 @@ function Header() {
             </MobileNavLink>
 
             {client.services && client.services.length > 0 && (
-              <MobileNavLink to="/services" onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                to="/services"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Services
               </MobileNavLink>
             )}
 
             {client.projects && client.projects.length > 0 && (
-              <MobileNavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                to="/projects"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Projects
               </MobileNavLink>
             )}
 
             {client.products && client.products.length > 0 && (
-              <MobileNavLink to="/products" onClick={() => setIsMenuOpen(false)}>
+              <MobileNavLink
+                to="/products"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Products
               </MobileNavLink>
             )}
             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavLink>
-            <MobileContactLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+            <MobileContactLink
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Contact Us
             </MobileContactLink>
           </MobileNavContent>
@@ -87,7 +105,7 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 `;
@@ -104,7 +122,6 @@ const Logo = styled(Link)`
   }
 `;
 
-
 const RightAlignedNav = styled.div`
   display: flex;
   align-items: center;
@@ -113,7 +130,7 @@ const RightAlignedNav = styled.div`
 const DesktopNav = styled.nav`
   display: none;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 
   @media (min-width: 768px) {
     display: flex;
@@ -122,27 +139,15 @@ const DesktopNav = styled.nav`
 
 const NavLink = styled(Link)`
   color: ${client.primaryColor};
-  font-weight: bold;
+  font-weight: 450;
   text-decoration: none;
   transition: color 0.3s ease;
   padding: 0.5rem 0;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
 
   &:hover {
-    color: ${client.primaryColorLight};
-  }
-`;
-
-const ContactLink = styled(Link)`
-  background-color: ${client.primaryColor};
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${client.primaryColorLight};
+    color: grey;
   }
 `;
 

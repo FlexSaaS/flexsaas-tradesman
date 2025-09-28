@@ -151,12 +151,12 @@ const FooterLogo = styled.img`
 
 const CompanyInfo = styled.p`
   margin-top: 1rem;
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
 `;
 
 const Description = styled.p`
   margin-top: 1rem;
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
 `;
 
 const SocialLinks = styled.div`
@@ -166,7 +166,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.a`
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
   font-size: 1.2rem;
   width: 2rem;
   height: 2rem;
@@ -198,11 +198,11 @@ const ContactItem = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
 `;
 
 const IconWrapper = styled.div`
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
   width: 1.25rem;
   display: flex;
   justify-content: center;
@@ -215,7 +215,7 @@ const QuickLinks = styled.div`
 `;
 
 const QuickLink = styled(Link)`
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
   transition: color 0.3s ease;
   text-decoration: none;
 
@@ -228,7 +228,7 @@ const QuickLink = styled(Link)`
 const Copyright = styled.div`
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid ${client.secondaryColor};
+  border-top: 1px solid ${client.primaryColor};
   text-align: center;
-  color: ${client.secondaryColor};
+  color: ${client.primaryColor};
 `;

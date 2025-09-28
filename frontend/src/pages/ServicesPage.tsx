@@ -6,7 +6,7 @@ const client = getClientConfig();
 
 function ServicesPage() {
   if (!Array.isArray(client.services) || client.services.length === 0) {
-    return null; 
+    return null;
   }
 
   return (
@@ -14,9 +14,7 @@ function ServicesPage() {
       <Container>
         <Header>
           <Title>Our Services</Title>
-          <Subtitle>
-            {client.serviceDescription}
-          </Subtitle>
+          <Subtitle>{client.serviceDescription}</Subtitle>
         </Header>
 
         <Grid>
@@ -33,9 +31,11 @@ function ServicesPage() {
         </Grid>
 
         <CTASection>
-          <CTATitle>{client.serviceCTATitle || "Service Title Not Set"}</CTATitle>
+          <CTATitle>
+            {client.serviceCTATitle || "Service Title Not Set"}
+          </CTATitle>
           <CTADesc>
-              {client.serviceCTADescription || "Service Description Not Yet"}
+            {client.serviceCTADescription || "Service Description Not Yet"}
           </CTADesc>
           <CTAButton href="/contact">Book an Appointment</CTAButton>
         </CTASection>
@@ -206,7 +206,7 @@ const CTADesc = styled.p`
 
 const CTAButton = styled.a`
   display: inline-block;
-  background: ${client.primaryColor};
+  background: ${client.primaryColorLight};
   color: black;
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
@@ -216,6 +216,6 @@ const CTAButton = styled.a`
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background: ${client.primaryColorLight};
+    background: ${client.primaryColor};
   }
 `;

@@ -130,7 +130,7 @@ const LecienConfig: ClientConfig = {
     ],
 
     // Founder section
-    founderImage: "/images/founder.jpg",
+    founderImage: "Lecien/leChien.jpg",
     founderTitle: "Meet The Founder",
     founderName: "Cheryl Howard",
     founderRole: "Founder & CEO",

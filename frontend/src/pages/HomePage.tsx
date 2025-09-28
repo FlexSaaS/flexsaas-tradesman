@@ -243,6 +243,10 @@ const HeroContent = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const HeroInner = styled.div`

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { getClientConfig } from "../lib/getClientConfig";
 import ProjectGallery from "../components/ProjectGallery";
-import FeaturedProducts from "../components/FeaturedItems";
 
 const client = getClientConfig();
 

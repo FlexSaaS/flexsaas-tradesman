@@ -147,6 +147,7 @@ const clientBConfig: ClientConfig = {
   featuredTitle: "",
   featuredSubTitle: "",
   favicon: "",
+  companyNo: "",
 };
 
 export default clientBConfig;

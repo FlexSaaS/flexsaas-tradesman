@@ -146,12 +146,12 @@ const LecienConfig: ClientConfig = {
   phoneOffice: "07352467408",
   phoneMobile: "(+44) 7352467408",
   email: "lechienlondon@gmail.com",
-  address: "Hanson lane, Arena station, London",
+  address: "362 Grand Dr, London SW20 9NQ",
   openHours1: "Monday - Friday: 8:00 AM - 4:30 PM",
   openHours2: "Saturday: Closed",
   openHours3: "Sunday: Closed",
   location:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.8832781725673!2d-0.22423112337504625!3d51.58870257183188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610cf8629b6f3%3A0x4802d5cd36a9a63!2s137%20Brent%20St%2C%20London%20NW4%204DJ!5e0!3m2!1sen!2suk!4v1747849113481!5m2!1sen!2suk",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.4687243926096!2d-0.22528528765834063!3d51.39186031901957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487608f9d6d3ef3f%3A0x6509f53f5714f6fa!2sLe%20Chien%20London!5e1!3m2!1sen!2suk!4v1759092551184!5m2!1sen!2suk",
 
   // Hero
   hero: {

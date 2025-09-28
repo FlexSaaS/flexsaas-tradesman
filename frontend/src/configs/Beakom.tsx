@@ -28,7 +28,8 @@ const clientBeakomConfig: ClientConfig = {
   },
   cta: {
     title: "Have a specific hardware fastener in mind?",
-    subtitle: "We'd love to hear about your needs. Contact us today for more information.",
+    subtitle:
+      "We'd love to hear about your needs. Contact us today for more information.",
     buttonText: "Contact Us",
     link: "/contact", // when the contact page is converted should be added here.
   },
@@ -52,7 +53,8 @@ const clientBeakomConfig: ClientConfig = {
     {
       icon: faHandshake,
       title: "Reliability",
-      description: "Count on us for consistent quality and dependable products.",
+      description:
+        "Count on us for consistent quality and dependable products.",
     },
     {
       icon: faAward,
@@ -68,7 +70,8 @@ const clientBeakomConfig: ClientConfig = {
   about: {
     title: "About Us",
     subtitle: "Who we are and what we do.",
-    description: "Beakom Enterprises is a leading provider of high-quality hardware fasteners.",
+    description:
+      "Beakom Enterprises is a leading provider of high-quality hardware fasteners.",
     image: "/images/about-team.jpg",
 
     // Story section fields
@@ -76,31 +79,38 @@ const clientBeakomConfig: ClientConfig = {
     mainImage: "Beakom/beakom-logo.png", // or your story image path
     mainImageAlt: "Beakom Team",
     storyTitle: "Our Story",
-    story1: "Founded in 2016 by Mrs Jasmine, Beakom has become a leader in the hardware fastener industry in Ghana.",
-    story2: "With a focus on quality and customer satisfaction, we have built a strong reputation for delivering reliable products and services.",
-    story3: "Our mission is to provide the best hardware solutions to our clients and to be a trusted partner in their success.",
+    story1:
+      "Founded in 2016 by Mrs Jasmine, Beakom has become a leader in the hardware fastener industry in Ghana.",
+    story2:
+      "With a focus on quality and customer satisfaction, we have built a strong reputation for delivering reliable products and services.",
+    story3:
+      "Our mission is to provide the best hardware solutions to our clients and to be a trusted partner in their success.",
 
     // Values section
     values: [
       {
         icon: faShieldAlt,
         title: "Quality",
-        description: "We never compromise on quality, using only the finest materials and proven construction methods.",
+        description:
+          "We never compromise on quality, using only the finest materials and proven construction methods.",
       },
       {
         icon: faUsers,
         title: "Trust",
-        description: "Building lasting relationships with our clients through transparency and reliability.",
+        description:
+          "Building lasting relationships with our clients through transparency and reliability.",
       },
       {
         icon: faClock,
         title: "Timeliness",
-        description: "We respect deadlines and deliver projects on schedule without compromising quality.",
+        description:
+          "We respect deadlines and deliver projects on schedule without compromising quality.",
       },
       {
         icon: faThumbsUp,
         title: "Customer Satisfaction",
-        description: "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it.",
+        description:
+          "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it.",
       },
     ],
 
@@ -113,7 +123,8 @@ const clientBeakomConfig: ClientConfig = {
       "With over 15 years of experience in the construction industry, Mrs Jasmine has established herself as a visionary leader providing innovative solutions.",
     founderBio2:
       "In 2016, driven by her passion for excellence, Mrs Jasmine founded Beakom. Under her leadership, the company has grown from handling small residential projects to managing complex commercial developments.",
-    founderBio3: "Mrs Jasmine's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
+    founderBio3:
+      "Mrs Jasmine's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
     // Optional SEO fields
     // seoTitle: "About Beakom - Expert Construction Company",
     // seoDescription: "Learn about Beakom, a trusted construction company with 9+ years experience in house extensions, renovations & new builds.",
@@ -131,7 +142,8 @@ const clientBeakomConfig: ClientConfig = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.8832781725673!2d-0.22423112337504625!3d51.58870257183188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610cf8629b6f3%3A0x4802d5cd36a9a63!2s137%20Brent%20St%2C%20London%20NW4%204DJ!5e0!3m2!1sen!2suk!4v1747849113481!5m2!1sen!2suk",
   hero: {
     title: "Building Your Vision with Precision",
-    subtitle: "Supplying you with all the hardware fasteners you need for your projects.",
+    subtitle:
+      "Supplying you with all the hardware fasteners you need for your projects.",
 
     backgroundImage: "Beakom/beakom-background.png",
   },
@@ -142,7 +154,8 @@ const clientBeakomConfig: ClientConfig = {
       {
         id: 1,
         name: "Hex Bolt 16mm (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
+        image:
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
         price: 129.99,
         originalPrice: 179.99,
         stock: 42,
@@ -155,7 +168,8 @@ const clientBeakomConfig: ClientConfig = {
       {
         id: 2,
         name: "Toggle Wing (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp",
+        image:
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp",
         price: 89.5,
         originalPrice: 119.99,
         stock: 15,
@@ -168,7 +182,8 @@ const clientBeakomConfig: ClientConfig = {
       {
         id: 3,
         name: "Machine Screw (142pc)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp",
+        image:
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp",
         price: 249.99,
         originalPrice: 349.99,
         stock: 8,
@@ -181,7 +196,8 @@ const clientBeakomConfig: ClientConfig = {
       {
         id: 4,
         name: "Lock Nut (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp",
+        image:
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp",
         price: 24.99,
         originalPrice: 34.99,
         stock: 0, // Out of stock
@@ -194,7 +210,8 @@ const clientBeakomConfig: ClientConfig = {
       {
         id: 5,
         name: "Tabular Rivet (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp",
+        image:
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp",
         price: 59.99,
         originalPrice: 79.99,
         stock: 23,
@@ -264,7 +281,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Stainless",
       size: "16mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/zinc_qkkiq0.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/zinc_qkkiq0.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Hex Bolt" },
         { key: "Material", value: "Stainless Steel" },
@@ -284,7 +303,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "12mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/stainless_steel_d14qmy.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/stainless_steel_d14qmy.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Button Flange Screw" },
         { key: "Material", value: "Mild Steel" },
@@ -304,7 +325,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "8mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
+      ],
       specifications: [
         { key: "Type", value: "Bolts" },
         { key: "Material", value: "Mild Steel" },
@@ -324,7 +347,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Brass",
       finish: "Coated",
       size: "10mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/brass_fftnix.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/brass_fftnix.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Hex Bolt" },
         { key: "Material", value: "Brass" },
@@ -344,7 +369,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Zinc",
       finish: "Stainless",
       size: "16mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822056/zinc_mpzy4i.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822056/zinc_mpzy4i.webp",
+      ],
       specifications: [
         { key: "Type", value: "Carriage Bolt" },
         { key: "Material", value: "Zinc" },
@@ -364,7 +391,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "10mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/galvanized_wct96v.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/galvanized_wct96v.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Carriage Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -384,7 +413,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "HDG",
       size: "12mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/galvanized_j3y0ks.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/galvanized_j3y0ks.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Hanger Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -404,7 +435,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Brass",
       finish: "Coated",
       size: "8mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/brass_miugee.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/brass_miugee.webp",
+      ],
       specifications: [
         { key: "Type", value: "Hanger Bolt" },
         { key: "Material", value: "Brass" },
@@ -424,7 +457,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "HDG",
       size: "16mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822059/HDG_eclies.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822059/HDG_eclies.jpg",
+      ],
       specifications: [
         { key: "Type", value: "J Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -444,7 +479,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "10mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/galvanized_zqmszv.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822058/galvanized_zqmszv.webp",
+      ],
       specifications: [
         { key: "Type", value: "J Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -464,7 +501,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Stainless Steel",
       size: "10mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822059/stainless_steel_gi4vc1.png"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822059/stainless_steel_gi4vc1.png",
+      ],
       specifications: [
         { key: "Type", value: "Stud Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -484,7 +523,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "16mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/HDG_h5ybj0.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/HDG_h5ybj0.webp",
+      ],
       specifications: [
         { key: "Type", value: "Threaded Rod" },
         { key: "Material", value: "Mild Steel" },
@@ -504,7 +545,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "20mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/galvanized_f5fqux.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/galvanized_f5fqux.webp",
+      ],
       specifications: [
         { key: "Type", value: "Threaded Rod" },
         { key: "Material", value: "Mild Steel" },
@@ -524,7 +567,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Coated",
       size: "25mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/HDG_rb0ozl.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/HDG_rb0ozl.jpg",
+      ],
       specifications: [
         { key: "Type", value: "U Bolt" },
         { key: "Material", value: "Mild Steel" },
@@ -544,7 +589,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "30mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/galvanized_vqsacp.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822060/galvanized_vqsacp.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Threaded Rod" },
         { key: "Material", value: "Mild Steel" },
@@ -565,7 +612,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "40mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp",
+      ],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Stainless Steel" },
@@ -585,7 +634,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/stainless_steel_q8u3tz.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/stainless_steel_q8u3tz.webp",
+      ],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Mild Steel" },
@@ -605,7 +656,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/sleeve_anchor_galvanized_ic6ncu.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/sleeve_anchor_galvanized_ic6ncu.webp",
+      ],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Mild Steel" },
@@ -625,7 +678,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822054/drop-in_anchor_galvanized_qk8d43.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822054/drop-in_anchor_galvanized_qk8d43.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Mild Steel" },
@@ -645,7 +700,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822054/hollow_wall_anchor_galvanized_r7k10u.avif"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822054/hollow_wall_anchor_galvanized_r7k10u.avif",
+      ],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Mild Steel" },
@@ -666,7 +723,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_nmgq60.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_nmgq60.webp",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel" },
@@ -686,7 +745,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel" },
@@ -706,7 +767,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/wood_screw_abkowq.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/wood_screw_abkowq.webp",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -726,7 +789,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Brass Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/brass_screw_e5aobb.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/brass_screw_e5aobb.jpg",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Brass Steel" },
@@ -746,7 +811,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Copper Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/copper_screw_ww5s2y.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/copper_screw_ww5s2y.jpg",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Copper Steel" },
@@ -766,7 +833,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/drywall_screw_cbny9c.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822061/drywall_screw_cbny9c.webp",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -786,7 +855,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Brass Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822063/roofing_screw_xkdwoc.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822063/roofing_screw_xkdwoc.jpg",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Brass Steel" },
@@ -806,7 +877,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/thumb_screw_itjt5w.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/thumb_screw_itjt5w.jpg",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -826,7 +899,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822063/thread_cutting_screw_k18rpr.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822063/thread_cutting_screw_k18rpr.jpg",
+      ],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -847,7 +922,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -867,7 +944,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/cap_nut_czag11.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/cap_nut_czag11.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -888,7 +967,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/hex_nut_wdqgp0.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822064/hex_nut_wdqgp0.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -908,7 +989,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/jam_nut_b9xagp.avif"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/jam_nut_b9xagp.avif",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -928,7 +1011,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/long_nut_yqaold.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/long_nut_yqaold.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -948,7 +1033,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/tee_nut_lwoxro.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/tee_nut_lwoxro.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -968,7 +1055,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/wood_nut_ssjx7k.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/wood_nut_ssjx7k.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -988,7 +1077,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824063/castle_nut_pwfjvw.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824063/castle_nut_pwfjvw.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -1008,7 +1099,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824069/flange_nut_dfivru.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824069/flange_nut_dfivru.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -1028,7 +1121,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824066/cross_barrel_nut_ufs2zz.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824066/cross_barrel_nut_ufs2zz.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -1048,7 +1143,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824075/rubber_nut_hog5c7.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754824075/rubber_nut_hog5c7.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
@@ -1069,7 +1166,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1089,7 +1188,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829162/clevis_pin_fmyocz.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829162/clevis_pin_fmyocz.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1109,7 +1210,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829165/cotter_split_pin_rl4zv0.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829165/cotter_split_pin_rl4zv0.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1129,7 +1232,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829168/hollow_dowel_pin_jcvkfx.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829168/hollow_dowel_pin_jcvkfx.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1149,7 +1254,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829159/blind_rivet_xoewko.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829159/blind_rivet_xoewko.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1169,7 +1276,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829171/inserts_tgeljn.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829171/inserts_tgeljn.webp",
+      ],
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
@@ -1190,7 +1299,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827963/tapered_retaining_rings_sex4ja.png"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827963/tapered_retaining_rings_sex4ja.png",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1210,7 +1321,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827954/push-on_ring_unf6li.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827954/push-on_ring_unf6li.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1230,7 +1343,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827957/snap_rings_m8hwpx.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827957/snap_rings_m8hwpx.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1250,7 +1365,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827945/feahter_shaft_key_ys0oop.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827945/feahter_shaft_key_ys0oop.webp",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1270,7 +1387,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827940/dowel_shaft_key_qjspbv.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827940/dowel_shaft_key_qjspbv.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1290,7 +1409,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827948/grip_ring_xayi1w.avif"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754827948/grip_ring_xayi1w.avif",
+      ],
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
@@ -1311,7 +1432,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/stainless_steel_yg3wh6.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/stainless_steel_yg3wh6.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -1331,7 +1454,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/mild_steel_hybl7g.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/mild_steel_hybl7g.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
@@ -1351,7 +1476,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized",
       finish: "Galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/galvanized_rwpotv.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/galvanized_rwpotv.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Galvanized" },
@@ -1371,7 +1498,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/stainless_steel_ulgvku.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822066/stainless_steel_ulgvku.webp",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -1391,7 +1520,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/stainless_steel_vvisf2.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/stainless_steel_vvisf2.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
@@ -1411,7 +1542,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "mild steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822068/socket_button_screw-mild_steel_vlvobl.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822068/socket_button_screw-mild_steel_vlvobl.webp",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
@@ -1431,7 +1564,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized",
       finish: "galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/socket-button_flange-screwg_galvanized_onoztv.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822067/socket-button_flange-screwg_galvanized_onoztv.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Galvanized" },
@@ -1452,7 +1587,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized",
       finish: "galvanized",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825737/flat_washer_fpkihq.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825737/flat_washer_fpkihq.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Galvanized" },
@@ -1471,7 +1608,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825748/spring_washer_xjxeru.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825748/spring_washer_xjxeru.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
@@ -1490,7 +1629,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Rubber",
       finish: "rubber",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825746/rubber-nylon_washer_m9vtv8.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825746/rubber-nylon_washer_m9vtv8.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Rubber" },
@@ -1509,7 +1650,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825740/internal_tooth_lock_washer_soguh3.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825740/internal_tooth_lock_washer_soguh3.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
@@ -1528,7 +1671,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825735/external_tooth_lock_washer_xauzkd.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825735/external_tooth_lock_washer_xauzkd.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
@@ -1547,7 +1692,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825732/crescent_washer_bh08bq.webp"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825732/crescent_washer_bh08bq.webp",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
@@ -1566,7 +1713,9 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825729/conical_washer_mafwbr.jpg"],
+      images: [
+        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825729/conical_washer_mafwbr.jpg",
+      ],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
@@ -1575,7 +1724,9 @@ const clientBeakomConfig: ClientConfig = {
     },
   ],
   featuredTitle: "Why buy your hardware fasteners from Beakom?",
-  featuredSubTitle: "Your one-stop shop for quality and reliability, providing you with the best products and services.",
+  featuredSubTitle:
+    "Your one-stop shop for quality and reliability, providing you with the best products and services.",
   favicon: "Beakom/beakom-favicon.png",
+  companyNo: "",
 };
 export default clientBeakomConfig;

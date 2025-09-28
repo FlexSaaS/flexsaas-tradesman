@@ -143,8 +143,8 @@ const LecienConfig: ClientConfig = {
   },
 
   // Contact Info
-  phoneOffice: "020 8544 2500",
-  phoneMobile: "(+44) 20 8544 2500",
+  phoneOffice: "07352467408",
+  phoneMobile: "(+44) 7352467408",
   email: "lechienlondon@gmail.com",
   address: "Hanson lane, Arena station, London",
   openHours1: "Monday - Friday: 8:00 AM - 4:30 PM",
@@ -241,6 +241,7 @@ const LecienConfig: ClientConfig = {
     "Your pet’s comfort and style are our top priority, with gentle care and professional grooming every time.",
 
   favicon: "Lecien/lechien-logo.png",
+  companyNo: "5234798",
 };
 
 export default LecienConfig;

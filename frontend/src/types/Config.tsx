@@ -86,7 +86,7 @@ export interface ClientConfig {
   openHours3: string;
   location: string;
   currencySymbol?: string;
-  companyNo?: string;
+  companyNo: string;
   facebook?: string;
   instagram?: string;
   twitter?: string;

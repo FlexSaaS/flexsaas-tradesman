@@ -78,12 +78,9 @@ function Header() {
             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavLink>
-            <MobileContactLink
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <MobileNavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
               Contact Us
-            </MobileContactLink>
+            </MobileNavLink>
           </MobileNavContent>
         </MobileNav>
       </NavContainer>
@@ -237,20 +234,5 @@ const MobileNavLink = styled(Link)`
 
   &:hover {
     color: ${client.primaryColorLight};
-  }
-`;
-
-const MobileContactLink = styled(Link)`
-  background-color: ${client.primaryColor};
-  color: black;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  text-align: center;
-
-  &:hover {
-    background-color: ${client.primaryColorLight};
   }
 `;

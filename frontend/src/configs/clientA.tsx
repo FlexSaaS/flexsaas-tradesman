@@ -496,5 +496,6 @@ const clientAConfig: ClientConfig = {
   featuredTitle: "Why Choose XPro Build?",
   featuredSubTitle: "We deliver excellence in every project",
   favicon: "",
+  companyNo: "",
 };
 export default clientAConfig;

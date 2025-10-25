@@ -20,7 +20,7 @@ const clientAConfig: ClientConfig = {
   secondaryColor: "#2c3e50",
   tagline: "Book your sessions in seconds!",
   fontFamily: "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
-  currencySymbol: "₵",
+  currencySymbol: "£",
   // Project template config starts here
   header: {
     title: "Our Projects",
@@ -28,8 +28,7 @@ const clientAConfig: ClientConfig = {
   },
   cta: {
     title: "Have a Project in Mind?",
-    subtitle:
-      "We'd love to hear about your project. Contact us today for a free consultation.",
+    subtitle: "We'd love to hear about your project. Contact us today for a free consultation.",
     buttonText: "Contact Us",
     link: "/contact", // when the contact page is converted should be added here.
   },
@@ -68,8 +67,7 @@ const clientAConfig: ClientConfig = {
     {
       icon: faShieldAlt,
       title: "Quality Guaranteed",
-      description:
-        "Premium materials and expert craftsmanship in every project",
+      description: "Premium materials and expert craftsmanship in every project",
     },
     {
       icon: faCrown,
@@ -112,34 +110,29 @@ const clientAConfig: ClientConfig = {
       "Founded in 2016 by Mr Lucian Picior, Client A has grown from a small local contractor to one of the region's most trusted construction companies.",
     story2:
       "With a team of highly skilled professionals and a commitment to using the latest construction technologies, we've successfully completed hundreds of projects.",
-    story3:
-      "Our mission is simple: to transform our clients' visions into reality while exceeding expectations in quality, safety, and service.",
+    story3: "Our mission is simple: to transform our clients' visions into reality while exceeding expectations in quality, safety, and service.",
 
     // Values section
     values: [
       {
         icon: faShieldAlt,
         title: "Quality",
-        description:
-          "We never compromise on quality, using only the finest materials and proven construction methods.",
+        description: "We never compromise on quality, using only the finest materials and proven construction methods.",
       },
       {
         icon: faUsers,
         title: "Trust",
-        description:
-          "Building lasting relationships with our clients through transparency and reliability.",
+        description: "Building lasting relationships with our clients through transparency and reliability.",
       },
       {
         icon: faClock,
         title: "Timeliness",
-        description:
-          "We respect deadlines and deliver projects on schedule without compromising quality.",
+        description: "We respect deadlines and deliver projects on schedule without compromising quality.",
       },
       {
         icon: faThumbsUp,
         title: "Customer Satisfaction",
-        description:
-          "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it.",
+        description: "Your satisfaction is our ultimate goal, and we go above and beyond to achieve it.",
       },
     ],
 
@@ -148,12 +141,10 @@ const clientAConfig: ClientConfig = {
     founderTitle: "Meet The Founder",
     founderName: "Lucian Picior",
     founderRole: "Founder & CEO",
-    founderBio1:
-      "With over 15 years of experience in the construction industry, Lucian Picior has established himself as a visionary leader.",
+    founderBio1: "With over 15 years of experience in the construction industry, Lucian Picior has established himself as a visionary leader.",
     founderBio2:
       "In 2016, driven by his passion for excellence, Lucian founded Client A. Under his leadership, the company has grown from handling small residential projects to managing complex commercial developments.",
-    founderBio3:
-      "Lucian's hands-on approach and dedication to client satisfaction have been instrumental in building Client A's reputation.",
+    founderBio3: "Lucian's hands-on approach and dedication to client satisfaction have been instrumental in building Client A's reputation.",
     // Optional SEO fields
     // seoTitle: "About Client A - Expert Construction Company",
     // seoDescription: "Learn about Client A, a trusted construction company with 9+ years experience in house extensions, renovations & new builds.",
@@ -182,8 +173,7 @@ const clientAConfig: ClientConfig = {
       {
         id: 1,
         name: "Premium Cordless Drill Kit",
-        image:
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
         price: 129.99,
         originalPrice: 179.99,
         stock: 42,
@@ -196,8 +186,7 @@ const clientAConfig: ClientConfig = {
       {
         id: 2,
         name: "Heavy-Duty Wheelbarrow",
-        image:
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
         price: 89.5,
         originalPrice: 119.99,
         stock: 15,
@@ -210,8 +199,7 @@ const clientAConfig: ClientConfig = {
       {
         id: 3,
         name: "Professional Tool Set (142pc)",
-        image:
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
         price: 249.99,
         originalPrice: 349.99,
         stock: 8,
@@ -224,8 +212,7 @@ const clientAConfig: ClientConfig = {
       {
         id: 4,
         name: "Safety Helmet with Visor",
-        image:
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
         price: 24.99,
         originalPrice: 34.99,
         stock: 0, // Out of stock
@@ -238,8 +225,7 @@ const clientAConfig: ClientConfig = {
       {
         id: 5,
         name: "Laser Distance Measurer",
-        image:
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
         price: 59.99,
         originalPrice: 79.99,
         stock: 23,
@@ -283,9 +269,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Galvanised",
       size: "16mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Galvanised Steel" },
         { key: "Diameter", value: "16mm" },
@@ -303,9 +287,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Raw Steel",
       size: "12mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Raw Steel" },
         { key: "Diameter", value: "12mm" },
@@ -323,9 +305,7 @@ const clientAConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Zinc Plated",
       size: "12mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Mild Steel" },
         { key: "Diameter", value: "12mm" },
@@ -343,9 +323,7 @@ const clientAConfig: ClientConfig = {
       material: "Cast Iron",
       finish: "Galvanised",
       size: "20mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Cast Iron" },
         { key: "Diameter", value: "20mm" },
@@ -363,9 +341,7 @@ const clientAConfig: ClientConfig = {
       material: "Mild Steel",
       finish: "Zinc Plated",
       size: "16mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Mild Steel" },
         { key: "Diameter", value: "16mm" },
@@ -383,9 +359,7 @@ const clientAConfig: ClientConfig = {
       material: "Malleable Iron",
       finish: "Galvanised",
       size: "16mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Malleable Iron" },
         { key: "Hole Size", value: "16mm" },
@@ -403,9 +377,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Galvanised",
       size: "33.7mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Diameter", value: "33.7mm" },
         { key: "Length", value: "3.5m" },
@@ -423,9 +395,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Raw Steel",
       size: "10mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Raw Steel" },
         { key: "Diameter", value: "10mm" },
@@ -443,9 +413,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Zinc Plated",
       size: "16mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Steel" },
         { key: "Diameter", value: "16mm" },
@@ -463,9 +431,7 @@ const clientAConfig: ClientConfig = {
       material: "Malleable Iron",
       finish: "Raw Steel",
       size: "20mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Malleable Iron" },
         { key: "Hole Size", value: "20mm" },
@@ -483,9 +449,7 @@ const clientAConfig: ClientConfig = {
       material: "Steel",
       finish: "Galvanised",
       size: "25mm",
-      images: [
-        "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg",
-      ],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754320978/tai-lung-prison-captioned-bottom_vy4tmn.jpg"],
       specifications: [
         { key: "Material", value: "Steel" },
         { key: "Diameter", value: "25mm" },

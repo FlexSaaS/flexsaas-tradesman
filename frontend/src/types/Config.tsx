@@ -52,6 +52,7 @@ export interface FeaturedProduct {
   id: number;
   name: string;
   image: string;
+  images?: string[];
   price: number;
   originalPrice: number;
   stock: number;

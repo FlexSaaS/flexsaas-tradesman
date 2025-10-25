@@ -19,7 +19,7 @@ const clientPrintifyConfig: ClientConfig = {
   secondaryColor: "#1e293b",
   tagline: "Custom Phone Covers, Perfectly Printed!",
   fontFamily: "Inter, system-ui, sans-serif",
-  currencySymbol: "₵",
+  currencySymbol: "£",
 
   // Project template config starts here
   header: {
@@ -143,16 +143,22 @@ const clientPrintifyConfig: ClientConfig = {
     products: [
       {
         id: 1,
-        name: "Glossy Premium Case",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/green_cover_fusk8g.jpg",
-        price: 45.99,
-        originalPrice: 59.99,
-        stock: 42,
+        name: "Designer Pattern Case",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
+        images: [
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
+          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+        ],
+        price: 49.99,
+        originalPrice: 64.99,
+        stock: 23,
         priceRange: {
-          min: 35.99,
-          max: 75.99,
+          min: 39.99,
+          max: 79.99,
         },
-        rating: 4.8,
+        rating: 4.7,
       },
       {
         id: 2,
@@ -195,16 +201,22 @@ const clientPrintifyConfig: ClientConfig = {
       },
       {
         id: 5,
-        name: "Designer Pattern Case",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-        price: 49.99,
-        originalPrice: 64.99,
-        stock: 23,
+        name: "Glossy Premium Case",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/green_cover_fusk8g.jpg",
+        images: [
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/green_cover_fusk8g.jpg",
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/pink_cover_hbwrn4.jpg",
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249121/black_cover_ciduok.jpg",
+          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
+        ],
+        price: 45.99,
+        originalPrice: 59.99,
+        stock: 42,
         priceRange: {
-          min: 39.99,
-          max: 79.99,
+          min: 35.99,
+          max: 75.99,
         },
-        rating: 4.7,
+        rating: 4.8,
       },
     ],
   },

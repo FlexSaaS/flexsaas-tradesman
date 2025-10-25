@@ -668,7 +668,7 @@ const VideoContainer = styled.div`
   max-height: 400px;
   border-radius: 8px;
   overflow: hidden;
-  background: #000;
+  // background: #000;
 `;
 
 const ModalVideo = styled.video`

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { getClientConfig } from "../lib/getClientConfig";
 import ProjectGallery from "../components/ProjectGallery";
+import FeaturedProducts from "../components/FeaturedItems";
 
 const client = getClientConfig();
 
@@ -34,9 +35,7 @@ function HomePage() {
 
     const project = client.projects.find((p) => p.id === selectedProject);
     if (project && Array.isArray(project.gallery)) {
-      setCurrentImageIndex((prev) =>
-        prev < project.gallery.length - 1 ? prev + 1 : prev
-      );
+      setCurrentImageIndex((prev) => (prev < project.gallery.length - 1 ? prev + 1 : prev));
     }
   };
 
@@ -45,38 +44,29 @@ function HomePage() {
       <HeroSection>
         <HeroContent>
           <HeroInner>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <HeroTitle>{client.hero.title}</HeroTitle>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
               <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
               <ButtonGroup>
-                <PrimaryButton to="/contact">
-                  BOOK{" "}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    style={{ marginLeft: "0.5rem" }}
-                  />
-                </PrimaryButton>
+                {/* either you offer booking or not */}
+                {client.isBooking ? (
+                  <PrimaryButton to="/contact">
+                    BOOK <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                  </PrimaryButton>
+                ) : (
+                  <PrimaryButton to="/contact">
+                    CONTACT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                  </PrimaryButton>
+                )}
                 {/* either you offer services or sell products */}
                 {client.services && client.services.length > 0 ? (
                   <SecondaryButton to="/services">SERVICES</SecondaryButton>
                 ) : (
-                  <SecondaryButton to="/products">Our Products</SecondaryButton>
+                  <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
                 )}
               </ButtonGroup>
             </motion.div>
@@ -87,16 +77,10 @@ function HomePage() {
       {Array.isArray(client.projects) && client.projects.length > 0 && (
         <SectionContainer>
           <InnerContainer>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <SectionHeader>
                 <SectionTitle>Recent Projects</SectionTitle>
-                <SectionSubtitle>
-                  Take a look at our latest work
-                </SectionSubtitle>
+                <SectionSubtitle>Take a look at our latest work</SectionSubtitle>
               </SectionHeader>
             </motion.div>
 
@@ -118,8 +102,7 @@ function HomePage() {
                   whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.3 },
-                  }}
-                >
+                  }}>
                   <ProjectCard onClick={() => handleProjectClick(project.id)}>
                     <ProjectImageWrapper>
                       <ProjectImage src={project.image} alt={project.title} />
@@ -136,29 +119,20 @@ function HomePage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ textAlign: "center" }}
-            >
+              style={{ textAlign: "center" }}>
               <ViewAllLink to="/projects">
-                View All Projects{" "}
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  style={{ marginLeft: "0.5rem" }}
-                />
+                View All Projects <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
               </ViewAllLink>
             </motion.div>
           </InnerContainer>
         </SectionContainer>
       )}
 
-      {/* <FeaturedProducts /> */}
+      <FeaturedProducts />
 
       <FeaturesSection>
         <InnerContainer>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <SectionHeader>
               <SectionTitle>{client.featuredTitle}</SectionTitle>
               <SectionSubtitle>{client.featuredSubTitle}</SectionSubtitle>
@@ -171,8 +145,7 @@ function HomePage() {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+                transition={{ duration: 0.5, delay: index * 0.1 }}>
                 <FeatureCard>
                   <FeatureIcon>
                     <FontAwesomeIcon icon={feature.icon} />
@@ -186,30 +159,22 @@ function HomePage() {
 
           <FeaturesCarousel>
             <CarouselTrack>
-              {[...client.features, ...client.features].map(
-                (feature, index) => (
-                  <CarouselItem key={index}>
-                    <FeatureIcon>
-                      <FontAwesomeIcon icon={feature.icon} />
-                    </FeatureIcon>
-                    <FeatureTitle>{feature.title}</FeatureTitle>
-                    <FeatureDescription>
-                      {feature.description}
-                    </FeatureDescription>
-                  </CarouselItem>
-                )
-              )}
+              {[...client.features, ...client.features].map((feature, index) => (
+                <CarouselItem key={index}>
+                  <FeatureIcon>
+                    <FontAwesomeIcon icon={feature.icon} />
+                  </FeatureIcon>
+                  <FeatureTitle>{feature.title}</FeatureTitle>
+                  <FeatureDescription>{feature.description}</FeatureDescription>
+                </CarouselItem>
+              ))}
             </CarouselTrack>
           </FeaturesCarousel>
         </InnerContainer>
       </FeaturesSection>
 
       <ProjectGallery
-        project={
-          (client.projects &&
-            client.projects.find((p) => p.id === selectedProject)) ||
-          null
-        }
+        project={(client.projects && client.projects.find((p) => p.id === selectedProject)) || null}
         onClose={handleClose}
         currentImageIndex={currentImageIndex}
         onPrevImage={handlePrevImage}

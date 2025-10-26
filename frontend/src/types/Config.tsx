@@ -52,6 +52,7 @@ export interface FeaturedProduct {
   id: number;
   name: string;
   image: string;
+  images?: string[];
   price: number;
   originalPrice: number;
   stock: number;
@@ -69,6 +70,7 @@ export interface FeaturedItems {
 }
 
 export interface ClientConfig {
+  isBooking: boolean;
   name: string;
   logo: string;
   primaryColor: string;

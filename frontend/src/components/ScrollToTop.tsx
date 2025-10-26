@@ -51,7 +51,7 @@ const ScrollButton = styled.button`
   bottom: 1rem;
   right: 1rem;
   background-color: ${client.primaryColor};
-  color: black;
+  color: ${client.secondaryColor};
   padding: 1rem;
   border-radius: 50%;
   border: none;
@@ -67,6 +67,7 @@ const ScrollButton = styled.button`
 
   &:hover {
     background-color: ${client.secondaryColor};
+    color: ${client.primaryColor};
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   }

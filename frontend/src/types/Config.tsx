@@ -87,13 +87,16 @@ export interface ClientConfig {
   openHours3: string;
   location: string;
   currencySymbol?: string;
-  companyNo?: string;
+  companyNo: string;
   facebook?: string;
   instagram?: string;
   twitter?: string;
   linkedIn?: string;
 
   services?: Service[];
+  serviceDescription?: string;
+  serviceCTATitle?: string;
+  serviceCTADescription?: string;
 
   //section for page header for the projects
   header: {
@@ -141,6 +144,9 @@ export interface ClientConfig {
     story1?: string;
     story2?: string;
     story3?: string;
+    story4?: string;
+    story5?: string;
+    story6?: string;
 
     // Values section fields
     values?: {

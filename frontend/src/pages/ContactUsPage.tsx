@@ -359,7 +359,7 @@ const TextArea = styled.textarea`
 
 const Button = styled.button<{ disabled: boolean }>`
   background-color: ${client.primaryColor};
-  color: black;
+  color: ${client.secondaryColor};
   padding: 0.75rem 1.5rem;
   font-size: 1.125rem;
   font-weight: 600;
@@ -375,6 +375,7 @@ const Button = styled.button<{ disabled: boolean }>`
   pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
 
   &:hover {
-    background-color: ${darken(0.2, client.primaryColor)};
+    background-color: ${darken(0.2, client.secondaryColor)};
+    color: ${client.primaryColor};
   }
 `;

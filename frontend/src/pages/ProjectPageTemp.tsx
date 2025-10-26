@@ -256,7 +256,7 @@ const CategoryLabel = styled.div`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: ${client.primaryColor};
+  background: ${client.secondaryColor};
   color: #000;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -345,7 +345,7 @@ const CloseButton = styled.button`
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: ${client.primaryColor};
+    color: ${client.secondaryColor};
   }
 
   @media (min-width: 640px) {
@@ -353,7 +353,6 @@ const CloseButton = styled.button`
     right: 1rem;
   }
 `;
-
 
 const ModalTitle = styled(motion.div)`
   position: absolute;
@@ -365,7 +364,7 @@ const ModalTitle = styled(motion.div)`
   h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: ${client.primaryColor};
+    color: ${client.secondaryColor};
     text-align: center;
     background: rgba(0, 0, 0, 0.75);
     padding: 0.25rem 1.5rem;
@@ -387,7 +386,6 @@ const ModalTitle = styled(motion.div)`
     }
   }
 `;
-
 
 const ModalImageWrapper = styled.div`
   position: relative;
@@ -427,7 +425,6 @@ const NavButton = styled.button<{ disabled?: boolean }>`
     }
   }
 `;
-
 
 const ImageCounter = styled.div`
   position: absolute;
@@ -478,7 +475,7 @@ const CTASubtitle = styled.p`
 `;
 
 const CTAButton = styled(Link)`
-  background: ${client.primaryColor};
+  background: ${client.secondaryColor};
   color: #000;
   padding: 0.5rem 1.5rem;
   border-radius: 0.375rem;
@@ -488,7 +485,8 @@ const CTAButton = styled(Link)`
   display: inline-block;
   text-decoration: none;
   &:hover {
-    background: ${client.primaryColorLight};
+    background: ${client.primaryColor};
+    color: ${client.secondaryColor};
   }
   @media (min-width: 640px) {
     padding: 0.75rem 2rem;

@@ -6,7 +6,7 @@ const client = getClientConfig();
 
 function ServicesPage() {
   if (!Array.isArray(client.services) || client.services.length === 0) {
-    return null; 
+    return null;
   }
 
   return (
@@ -14,11 +14,7 @@ function ServicesPage() {
       <Container>
         <Header>
           <Title>Our Services</Title>
-          <Subtitle>
-            We offer a comprehensive range of construction and renovation
-            services, each delivered with the highest standards of quality and
-            professionalism.
-          </Subtitle>
+          <Subtitle>{client.serviceDescription}</Subtitle>
         </Header>
 
         <Grid>
@@ -35,12 +31,13 @@ function ServicesPage() {
         </Grid>
 
         <CTASection>
-          <CTATitle>Ready to Start Your Project?</CTATitle>
+          <CTATitle>
+            {client.serviceCTATitle || "Service Title Not Set"}
+          </CTATitle>
           <CTADesc>
-            Contact us today for a free consultation and quote. We're here to
-            help bring your vision to life.
+            {client.serviceCTADescription || "Service Description Not Yet"}
           </CTADesc>
-          <CTAButton href="/contact">Get in Touch</CTAButton>
+          <CTAButton href="/contact">Book an Appointment</CTAButton>
         </CTASection>
       </Container>
     </PageWrapper>
@@ -209,7 +206,7 @@ const CTADesc = styled.p`
 
 const CTAButton = styled.a`
   display: inline-block;
-  background: ${client.primaryColor};
+  background: ${client.primaryColorLight};
   color: black;
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
@@ -219,6 +216,6 @@ const CTAButton = styled.a`
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background: ${client.primaryColorLight};
+    background: ${client.primaryColor};
   }
 `;

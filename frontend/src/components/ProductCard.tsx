@@ -36,7 +36,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
               </ProductSpec>
             ))}
           </ProductSpecs>
-          <AddToCartButton>Add to Cart</AddToCartButton>
+          {/* <AddToCartButton>Add to Cart</AddToCartButton> */}
         </ProductInfo>
       </ProductCardStyled>
     );
@@ -46,10 +46,15 @@ export const ProductCard = ({ product }: { product: Product }) => {
   border: 1px solid #eee;
   border-radius: 8px;
   overflow: hidden;
+  width: 100%;
   transition: box-shadow 0.3s;
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
+
+//   @media (max-width: 768px) {
+//    max-width: 370px;
+// }
 `;
 
 const ProductImage = styled.div`
@@ -125,13 +130,13 @@ const ProductSpec = styled.li`
   margin-bottom: 5px;
 `;
 
-const AddToCartButton = styled.button`
-  width: 100%;
-  padding: 8px;
-  background: ${client.primaryColor};
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-`;
+// const AddToCartButton = styled.button`
+//   width: 100%;
+//   padding: 8px;
+//   background: ${client.primaryColor};
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin-top: 10px;
+// `;

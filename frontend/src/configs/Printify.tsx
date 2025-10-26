@@ -20,6 +20,7 @@ const clientPrintifyConfig: ClientConfig = {
   tagline: "Custom Phone Covers, Perfectly Printed!",
   fontFamily: "Inter, system-ui, sans-serif",
   currencySymbol: "£",
+  isBooking: false,
 
   // Project template config starts here
   header: {
@@ -470,5 +471,6 @@ const clientPrintifyConfig: ClientConfig = {
   featuredTitle: "Why choose Printify Covers for your custom phone cases?",
   featuredSubTitle: "Your premier destination for high-quality printing and unique designs that protect your device in style.",
   favicon: "Printify/printify-favicon.png",
+  companyNo: "98765432",
 };
 export default clientPrintifyConfig;

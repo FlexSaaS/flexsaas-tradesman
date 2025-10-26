@@ -26,6 +26,7 @@ const LecienConfig: ClientConfig = {
   tagline: "Award Winning Styling By Cheryl Howard",
   fontFamily: "Roboto, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
   currencySymbol: "£",
+  isBooking: true,
 
   // Header
   header: {
@@ -36,8 +37,7 @@ const LecienConfig: ClientConfig = {
   // Call to action
   cta: {
     title: "Need a grooming appointment for your furry friend?",
-    subtitle:
-      "We’d love to pamper your pet. Book a session with our expert groomers today.",
+    subtitle: "We’d love to pamper your pet. Book a session with our expert groomers today.",
     buttonText: "Book Now",
     link: "/contact",
   },
@@ -98,34 +98,29 @@ const LecienConfig: ClientConfig = {
       "Our Team of highly experienced stylists will ensure your Dogs visit is a happy and enjoyable experience. We offer bespoke styling to cater for all Breeds in a style that best suits you and your dogs lifestyle",
     story5:
       "At Le Chien we have a great range of high end quality Products to suit every dogs coat and skin type and only use the best natural and Holistic products on the market to ensure we get the best results whilst caring for your dog.",
-    story6:
-      "We Welcome all prospected Custom to Visit the salon for a free Consultation to discuss your grooming needs.",
+    story6: "We Welcome all prospected Custom to Visit the salon for a free Consultation to discuss your grooming needs.",
 
     // Values
     values: [
       {
         icon: faPaw,
         title: "Gentle Care",
-        description:
-          "We treat every dog with kindness, patience, and respect to make grooming a positive experience.",
+        description: "We treat every dog with kindness, patience, and respect to make grooming a positive experience.",
       },
       {
         icon: faBath,
         title: "Professional Grooming",
-        description:
-          "From baths to haircuts, our grooming services keep your dog looking and feeling their best.",
+        description: "From baths to haircuts, our grooming services keep your dog looking and feeling their best.",
       },
       {
         icon: faClock,
         title: "On-Time Appointments",
-        description:
-          "We value your time and stick to our schedules so you and your pet are never left waiting.",
+        description: "We value your time and stick to our schedules so you and your pet are never left waiting.",
       },
       {
         icon: faHeart,
         title: "Happy, Healthy Pets",
-        description:
-          "Our ultimate goal is a wagging tail — ensuring your furry friend leaves looking fresh and feeling loved.",
+        description: "Our ultimate goal is a wagging tail — ensuring your furry friend leaves looking fresh and feeling loved.",
       },
     ],
 
@@ -170,38 +165,32 @@ const LecienConfig: ClientConfig = {
     {
       title: "Full Grooming",
       icon: faCut,
-      description:
-        "A complete grooming package including bath, haircut, brushing, and styling to keep your dog looking fresh and clean.",
+      description: "A complete grooming package including bath, haircut, brushing, and styling to keep your dog looking fresh and clean.",
     },
     {
       title: "Bath & Blow Dry",
       icon: faShower,
-      description:
-        "Gentle shampoo and conditioning followed by a blow dry, leaving your dog’s coat soft, shiny, and smelling great.",
+      description: "Gentle shampoo and conditioning followed by a blow dry, leaving your dog’s coat soft, shiny, and smelling great.",
     },
     {
       title: "Nail Trimming",
       icon: faPaw,
-      description:
-        "Safe and precise nail trimming to ensure your dog’s comfort and prevent overgrowth or splitting.",
+      description: "Safe and precise nail trimming to ensure your dog’s comfort and prevent overgrowth or splitting.",
     },
     {
       title: "Ear Cleaning",
       icon: faEarListen,
-      description:
-        "Careful ear cleaning to remove wax and dirt, helping to prevent infections and discomfort.",
+      description: "Careful ear cleaning to remove wax and dirt, helping to prevent infections and discomfort.",
     },
     {
       title: "Teeth Cleaning",
       icon: faTooth,
-      description:
-        "Gentle brushing and tartar removal to promote healthy teeth and fresh breath.",
+      description: "Gentle brushing and tartar removal to promote healthy teeth and fresh breath.",
     },
     {
       title: "Puppy Introduction Groom",
       icon: faBaby,
-      description:
-        "A short, gentle grooming session to introduce puppies to the grooming process in a calm and friendly way.",
+      description: "A short, gentle grooming session to introduce puppies to the grooming process in a calm and friendly way.",
     },
   ],
 
@@ -210,8 +199,7 @@ const LecienConfig: ClientConfig = {
     {
       id: 1,
       title: "Luxury Dog Spa Day",
-      description:
-        "A full pampering session with gentle wash, blow-dry, and coat conditioning for a silky shine.",
+      description: "A full pampering session with gentle wash, blow-dry, and coat conditioning for a silky shine.",
       category: "Grooming",
       image: "Lecien/dog1.png",
       gallery: ["Lecien/dog2.png", "Lecien/dog3.png", "Lecien/dog4.png"],
@@ -219,8 +207,7 @@ const LecienConfig: ClientConfig = {
     {
       id: 2,
       title: "Puppy’s First Groom",
-      description:
-        "A stress-free introduction to grooming with a warm bath, soft brushing, and nail trim for young pups.",
+      description: "A stress-free introduction to grooming with a warm bath, soft brushing, and nail trim for young pups.",
       category: "Puppy Care",
       image: "Lecien/dog2.png",
       gallery: ["Lecien/dog1.png", "Lecien/dog3.png", "Lecien/dog4.png"],
@@ -228,8 +215,7 @@ const LecienConfig: ClientConfig = {
     {
       id: 3,
       title: "Breed-Specific Styling",
-      description:
-        "Expert coat trimming and styling tailored to your dog’s breed for a show-quality finish.",
+      description: "Expert coat trimming and styling tailored to your dog’s breed for a show-quality finish.",
       category: "Styling",
       image: "Lecien/dog4.png",
       gallery: ["Lecien/dog3.png", "Lecien/dog1.png", "Lecien/dog4.png"],
@@ -237,8 +223,7 @@ const LecienConfig: ClientConfig = {
   ],
 
   featuredTitle: "Why choose Le Chien for your pet’s grooming?",
-  featuredSubTitle:
-    "Your pet’s comfort and style are our top priority, with gentle care and professional grooming every time.",
+  featuredSubTitle: "Your pet’s comfort and style are our top priority, with gentle care and professional grooming every time.",
 
   favicon: "Lecien/lechien-logo.png",
   companyNo: "5234798",

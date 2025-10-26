@@ -21,6 +21,7 @@ const clientAConfig: ClientConfig = {
   tagline: "Book your sessions in seconds!",
   fontFamily: "Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
   currencySymbol: "£",
+  isBooking: false,
   // Project template config starts here
   header: {
     title: "Our Projects",

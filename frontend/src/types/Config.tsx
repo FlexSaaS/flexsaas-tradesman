@@ -70,6 +70,7 @@ export interface FeaturedItems {
 }
 
 export interface ClientConfig {
+  isBooking: boolean;
   name: string;
   logo: string;
   primaryColor: string;

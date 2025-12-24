@@ -39,11 +39,13 @@ function HomePage() {
     }
   };
 
+  const isBeakom = client.name === "Beakom Enterprise";
+
   return (
     <div>
       <HeroSection>
-        <HeroContent>
-          <HeroInner>
+        <HeroContent style={{ justifyContent: isBeakom ? "center" : "flex-start" }}>
+          <HeroInner style={{ textAlign: isBeakom ? "center" : "left" }}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <HeroTitle>{client.hero.title}</HeroTitle>
             </motion.div>
@@ -51,7 +53,7 @@ function HomePage() {
               <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-              <ButtonGroup>
+              <ButtonGroup style={{ justifyContent: isBeakom ? "center" : "flex-start" }}>
                 {/* either you offer booking or not */}
                 {client.isBooking ? (
                   <PrimaryButton to="/contact">

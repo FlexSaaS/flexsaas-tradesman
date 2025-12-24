@@ -10,6 +10,7 @@ import {
   faExpand,
   faPlay,
   faPause,
+  faScrewdriverWrench,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
@@ -193,7 +194,7 @@ function FeaturedProducts() {
                   setCurrentImageIndex(0);
                 }}>
                 <ProductImage $imageUrl={product.image}>
-                  <Badge>
+                  <Badge style={{ display: "none" }}>
                     <FontAwesomeIcon icon={faFire} /> Best seller
                   </Badge>
                   <StockIndicator stock={product.stock}>
@@ -213,7 +214,7 @@ function FeaturedProducts() {
               <ProductDetails>
                 <ProductName>{product.name}</ProductName>
 
-                <Rating>
+                <Rating style={{ display: "none" }}>
                   <Stars>
                     {[...Array(5)].map((_, i) => (
                       <FontAwesomeIcon key={i} icon={faStar} color={i < Math.round(product.rating) ? "#FFC107" : "#ddd"} />
@@ -227,24 +228,33 @@ function FeaturedProducts() {
                     {client.currencySymbol}
                     {product.price.toFixed(2)}
                   </CurrentPrice>
-                  <OriginalPrice>
+                  <OriginalPrice style={{ display: "none" }}>
                     {client.currencySymbol}
                     {product.originalPrice.toFixed(2)}
                   </OriginalPrice>
-                  <Savings>
+                  <Savings style={{ display: "none" }}>
                     <FontAwesomeIcon icon={faTag} /> Save {client.currencySymbol}
                     {savings.amount.toFixed(2)} ({savings.percentage}%)
                   </Savings>
                 </PriceContainer>
 
-                <PriceRange>
+                <PriceRange style={{ display: "none" }}>
                   Price range: {client.currencySymbol}
                   {product.priceRange.min.toFixed(2)} - {client.currencySymbol}
                   {product.priceRange.max.toFixed(2)}
                 </PriceRange>
 
-                <AddToCartButton disabled={product.stock === 0}>
+                <AddToCartButton disabled={product.stock === 0} style={{ display: "none" }}>
                   <FontAwesomeIcon icon={faShoppingCart} /> Add to Cart
+                </AddToCartButton>
+
+                <AddToCartButton
+                  disabled={product.stock === 0}
+                  onClick={() => {
+                    setSelectedProduct(product);
+                    setCurrentImageIndex(0);
+                  }}>
+                  <FontAwesomeIcon icon={faScrewdriverWrench} /> View Details
                 </AddToCartButton>
               </ProductDetails>
             </ProductCard>
@@ -435,7 +445,7 @@ const ProductCard = styled.div`
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -451,7 +461,7 @@ const ProductImageContainer = styled.div`
 `;
 
 const ProductImage = styled.div<{ $imageUrl: string }>`
-  height: 200px;
+  height: 350px;
   background-image: url(${(props) => props.$imageUrl});
   background-size: cover;
   background-position: center;

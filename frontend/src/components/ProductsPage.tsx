@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { faClose, faFilter, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect, useMemo } from "react";
+import { faClose, faFilter, faExclamationTriangle, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
 import type { FilterGroup, Product } from "../types/Config";
-import  Pagination  from "./Pagination";
+import Pagination from "./Pagination";
 import { ProductCard } from "./ProductCard";
 
 const client = getClientConfig();
@@ -17,6 +17,28 @@ const ProductsPage = () => {
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [sortBy, setSortBy] = useState("price-asc");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Function to search products by keywords
+  const searchProducts = (products: Product[], query: string) => {
+    if (!query.trim()) return products;
+
+    const searchTerms = query
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((term) => term.length > 0);
+
+    return products.filter((product) => {
+      // Search in multiple fields
+      const searchableText = [product.name, product.description, product.material, product.type, product.finish]
+        .filter(Boolean)
+        .map((text) => text!.toLowerCase())
+        .join(" ");
+
+      // Check if all search terms are found in the searchable text
+      return searchTerms.every((term) => searchableText.includes(term));
+    });
+  };
 
   const sortProducts = (products: Product[]) => {
     let sortedProducts = [...products];
@@ -36,12 +58,17 @@ const ProductsPage = () => {
     return sortedProducts;
   };
 
+  // Memoized search results to avoid recalculating on every render
+  const searchedProducts = useMemo(() => {
+    return searchProducts(allProducts, searchQuery);
+  }, [allProducts, searchQuery]);
+
   useEffect(() => {
     const selectedFilters = filters.flatMap((group) => group.options.filter((opt) => opt.selected).map((opt) => opt.name));
     if (selectedFilters.length === 0) {
-      setFilteredProducts(allProducts);
+      setFilteredProducts(searchedProducts);
     } else {
-      const filtered = allProducts.filter(
+      const filtered = searchedProducts.filter(
         (product) =>
           selectedFilters.includes(product.material!) ||
           selectedFilters.includes(product.type!) ||
@@ -55,7 +82,10 @@ const ProductsPage = () => {
       );
       setFilteredProducts(filtered);
     }
-  }, [filters, allProducts]);
+
+    // Reset to first page when filters or search changes
+    setCurrentPage(1);
+  }, [filters, searchedProducts]);
 
   const toggleFilter = (groupIndex: number, optionIndex: number) => {
     const newFilters = [...filters];
@@ -88,6 +118,11 @@ const ProductsPage = () => {
     setMobileFiltersOpen(false);
   };
 
+  const clearSearch = () => {
+    setSearchQuery("");
+    setCurrentPage(1);
+  };
+
   const sortedProducts = sortProducts(filteredProducts);
   const totalItems = sortedProducts.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -96,6 +131,7 @@ const ProductsPage = () => {
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
   const hasActiveFilters = filters.some((group) => group.options.some((option) => option.selected));
+  const hasSearchQuery = searchQuery.trim().length > 0;
 
   return (
     <>
@@ -115,6 +151,25 @@ const ProductsPage = () => {
                 </CloseButton>
               )}
             </FiltersHeader>
+
+            {/* Search Input in Filters Sidebar */}
+            <SearchContainer>
+              <SearchInputWrapper>
+                <FontAwesomeIcon icon={faSearch} size="sm" />
+                <SearchInput type="text" placeholder="Search products..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                {hasSearchQuery && (
+                  <ClearSearchButton onClick={clearSearch}>
+                    <FontAwesomeIcon icon={faClose} size="sm" />
+                  </ClearSearchButton>
+                )}
+              </SearchInputWrapper>
+              {hasSearchQuery && (
+                <SearchResultsInfo>
+                  Found {searchedProducts.length} product{searchedProducts.length !== 1 ? "s" : ""} for "{searchQuery}"
+                </SearchResultsInfo>
+              )}
+            </SearchContainer>
+
             <FilterOptionsContainer>
               {filters.map((group, groupIndex) => (
                 <FilterGroupStyled key={group.title}>
@@ -134,11 +189,40 @@ const ProductsPage = () => {
             </FilterOptionsContainer>
             <ApplyFiltersButton onClick={applyFilters}>Apply Filters</ApplyFiltersButton>
             <ClearFiltersButton onClick={clearFilters}>Clear Filters</ClearFiltersButton>
+            {hasSearchQuery && <ClearSearchButtonFullWidth onClick={clearSearch}>Clear Search</ClearSearchButtonFullWidth>}
           </FiltersSidebar>
           <ProductsListing>
+            {/* Search Bar in Main Content Area */}
+            <SearchBarContainer>
+              <SearchBarWrapper>
+                <FontAwesomeIcon icon={faSearch} />
+                <SearchBarInput
+                  type="text"
+                  placeholder="Search products by name, description, material, type, finish..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                {hasSearchQuery && (
+                  <ClearSearchBarButton onClick={clearSearch}>
+                    <FontAwesomeIcon icon={faClose} />
+                  </ClearSearchBarButton>
+                )}
+              </SearchBarWrapper>
+              {hasSearchQuery && (
+                <SearchSummary>
+                  <span>
+                    Showing {Math.min(sortedProducts.length, 1)}-{Math.min(endIndex, sortedProducts.length)} of {sortedProducts.length} result
+                    {sortedProducts.length !== 1 ? "s" : ""} for "{searchQuery}"
+                  </span>
+                  <ClearSearchTextButton onClick={clearSearch}>Clear search</ClearSearchTextButton>
+                </SearchSummary>
+              )}
+            </SearchBarContainer>
+
             <ListingHeader>
               <p>
-                Showing {startIndex + 1} - {endIndex} of {totalItems} products
+                Showing {startIndex + 1} - {endIndex} of {totalItems} product{totalItems !== 1 ? "s" : ""}
+                {hasSearchQuery && ` for "${searchQuery}"`}
               </p>
               <ListingControls>
                 <DisplayOptions>
@@ -176,12 +260,17 @@ const ProductsPage = () => {
                 <h3>No Products Found</h3>
                 <p>We couldn't find any products matching your filters.</p>
                 <ClearFiltersButton onClick={clearFilters}>Clear All Filters</ClearFiltersButton>
+                {hasSearchQuery && (
+                  <ClearSearchButton onClick={clearSearch} style={{ marginTop: "12px" }}>
+                    Clear Search
+                  </ClearSearchButton>
+                )}
               </NoProductsFound>
             ) : (
               <>
                 <ProductsGrid>
                   {currentProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} highlightText={searchQuery} />
                   ))}
                 </ProductsGrid>
                 {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
@@ -193,6 +282,158 @@ const ProductsPage = () => {
     </>
   );
 };
+
+// Styled Components for Search Functionality
+const SearchContainer = styled.div`
+  padding: 0 16px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+`;
+
+const SearchInputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 12px;
+
+  &:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  }
+
+  svg {
+    color: #6b7280;
+    margin-right: 8px;
+  }
+`;
+
+const SearchInput = styled.input`
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  color: #111827;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+`;
+
+const ClearSearchButton = styled.button`
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #374151;
+  }
+`;
+
+const SearchResultsInfo = styled.div`
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 8px;
+  line-height: 1.4;
+`;
+
+const ClearSearchButtonFullWidth = styled.button`
+  width: 100%;
+  padding: 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #e5e7eb;
+  }
+`;
+
+const SearchBarContainer = styled.div`
+  margin-bottom: 24px;
+`;
+
+const SearchBarWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+
+  &:focus-within {
+    border-color: #3b82f6;
+  }
+
+  svg {
+    color: #6b7280;
+    margin-right: 12px;
+  }
+`;
+
+const SearchBarInput = styled.input`
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  color: #111827;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+`;
+
+const ClearSearchBarButton = styled.button`
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #374151;
+  }
+`;
+
+const SearchSummary = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b7280;
+`;
+
+const ClearSearchTextButton = styled.button`
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+
+  &:hover {
+    color: #2563eb;
+  }
+`;
 
 // Styled Components
 const ProductsPageContainer = styled.div`
@@ -322,7 +563,7 @@ const Overlay = styled.div<{ open: boolean }>`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   cursor: pointer;
 `;

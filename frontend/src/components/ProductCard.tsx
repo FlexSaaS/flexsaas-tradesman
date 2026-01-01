@@ -4,9 +4,53 @@ import { getClientConfig } from "../lib/getClientConfig";
 
 const client = getClientConfig();
 
-export const ProductCard = ({ product }: { product: Product }) => {
+interface ProductCardProps {
+  product: Product;
+  highlightText?: string;
+}
+
+export const ProductCard = ({ product, highlightText = "" }: ProductCardProps) => {
+  // Function to highlight search terms in text
+  const highlightTextInString = (text: string, searchText: string) => {
+    if (!searchText.trim() || !text) return text;
+
+    const searchTerms = searchText
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((term) => term.length > 0);
+    const lowerText = text.toLowerCase();
+
+    // Check if any search term appears in this text
+    const hasMatch = searchTerms.some((term) => lowerText.includes(term));
+
+    if (!hasMatch) return text;
+
+    // For simple highlighting, we'll just bold the entire text if it contains search terms
+    // For more advanced highlighting, we could use regex to wrap matched terms
+    return <span style={{ fontWeight: "bold" }}>{text}</span>;
+  };
+
+  // Function to highlight in multiple fields
+  const highlightField = (fieldValue: string | undefined) => {
+    if (!fieldValue || !highlightText) return fieldValue;
+    return highlightTextInString(fieldValue, highlightText);
+  };
+
+  // Check if this product matches the search query
+  const isSearchMatch =
+    highlightText.trim().length > 0 &&
+    (product.name.toLowerCase().includes(highlightText.toLowerCase()) ||
+      product.description?.toLowerCase().includes(highlightText.toLowerCase()) ||
+      product.material?.toLowerCase().includes(highlightText.toLowerCase()) ||
+      product.type?.toLowerCase().includes(highlightText.toLowerCase()) ||
+      product.finish?.toLowerCase().includes(highlightText.toLowerCase()) ||
+      product.specifications?.some(
+        (spec) => spec.key.toLowerCase().includes(highlightText.toLowerCase()) || spec.value.toLowerCase().includes(highlightText.toLowerCase())
+      ));
+
   return (
-    <ProductCardStyled>
+    <ProductCardStyled isHighlighted={isSearchMatch}>
+      {isSearchMatch && <SearchMatchIndicator>Search Match</SearchMatchIndicator>}
       <ProductImage>
         <ProductImageImg src={product.images[0]} alt={product.name} />
         {product.stock > 0 ? (
@@ -16,7 +60,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         )}
       </ProductImage>
       <ProductInfo>
-        <ProductTitle>{product.name}</ProductTitle>
+        <ProductTitle>{highlightField(product.name)}</ProductTitle>
         <ProductCode style={{ display: "none" }}>Product Code: {product.code}</ProductCode>
         <ProductPricing style={{ display: "none" }}>
           <Price>
@@ -29,25 +73,34 @@ export const ProductCard = ({ product }: { product: Product }) => {
           </VatPrice>
           {product.originalPrice && <OriginalPrice>Save {Math.round((1 - product.price / product.originalPrice) * 100)}%</OriginalPrice>}
         </ProductPricing>
+        {product.description && <ProductDescription>{highlightField(product.description)}</ProductDescription>}
         <ProductSpecs>
-          {product.specifications.slice(0, 2).map((spec) => (
+          {product.specifications?.slice(0, 2).map((spec) => (
             <ProductSpec key={spec.key}>
-              <strong>{spec.key}:</strong> {spec.value}
+              <strong>{highlightField(spec.key)}:</strong> {highlightField(spec.value)}
             </ProductSpec>
           ))}
         </ProductSpecs>
+        {/* Optional: Show matched search terms */}
+        {isSearchMatch && highlightText && (
+          <SearchMatchInfo>
+            <small>Matches: {highlightText}</small>
+          </SearchMatchInfo>
+        )}
         {/* <AddToCartButton>Add to Cart</AddToCartButton> */}
       </ProductInfo>
     </ProductCardStyled>
   );
 };
 
-const ProductCardStyled = styled.div`
-  border: 1px solid #8d8c8cff;
-
+const ProductCardStyled = styled.div<{ isHighlighted?: boolean }>`
+  border: 1px solid ${(props) => (props.isHighlighted ? "#3b82f6" : "#8d8c8c")};
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
+  position: relative;
+  background: ${(props) => (props.isHighlighted ? "#f0f9ff" : "white")};
+
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
@@ -56,6 +109,19 @@ const ProductCardStyled = styled.div`
   //   @media (max-width: 768px) {
   //    max-width: 370px;
   // }
+`;
+
+const SearchMatchIndicator = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #3b82f6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  z-index: 2;
 `;
 
 const ProductImage = styled.div`
@@ -78,7 +144,7 @@ const StockBadge = styled.span<{ inStock: boolean }>`
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
-  background: ${({ inStock }) => (inStock ? '#4CAF50' : '#f44336')};
+  background: ${({ inStock }) => (inStock ? "#4CAF50" : "#f44336")};
   color: white;
 `;
 
@@ -89,6 +155,14 @@ const ProductInfo = styled.div`
 const ProductTitle = styled.h3`
   margin: 0 0 5px;
   font-size: 16px;
+  color: #333;
+`;
+
+const ProductDescription = styled.p`
+  color: #666;
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.4;
 `;
 
 const ProductCode = styled.p`
@@ -115,7 +189,7 @@ const VatPrice = styled.span`
 `;
 
 const OriginalPrice = styled.span`
-  color: #4CAF50;
+  color: #4caf50;
   font-size: 14px;
   font-weight: bold;
 `;
@@ -129,6 +203,20 @@ const ProductSpecs = styled.ul`
 
 const ProductSpec = styled.li`
   margin-bottom: 5px;
+  color: #555;
+`;
+
+const SearchMatchInfo = styled.div`
+  margin-top: 8px;
+  padding: 4px 8px;
+  background: #e0f2fe;
+  border-radius: 4px;
+  border-left: 3px solid #3b82f6;
+
+  small {
+    color: #1e40af;
+    font-size: 12px;
+  }
 `;
 
 // const AddToCartButton = styled.button`

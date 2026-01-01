@@ -48,11 +48,16 @@ export interface FilterGroup {
   type: "checkbox" | "radio";
 }
 
+type ProductImage = {
+  url: string;
+  description: string;
+};
+
 export interface FeaturedProduct {
   id: number;
   name: string;
   image: string;
-  images?: string[];
+  images?: ProductImage[];
   price: number;
   originalPrice: number;
   stock: number;

@@ -11,17 +11,23 @@ import {
   faPlay,
   faPause,
   faScrewdriverWrench,
+  faContactCard,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { getClientConfig } from "../lib/getClientConfig";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 
 const client = getClientConfig();
 
+type ProductMedia = {
+  url: string;
+  description: string;
+};
 function FeaturedProducts() {
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState<{ [key: number]: boolean }>({});
@@ -126,13 +132,9 @@ function FeaturedProducts() {
   };
 
   // Check if media is a video
-  const isVideo = (mediaUrl: string) => {
-    return (
-      mediaUrl.toLowerCase().endsWith(".mp4") ||
-      mediaUrl.toLowerCase().endsWith(".webm") ||
-      mediaUrl.toLowerCase().endsWith(".ogg") ||
-      mediaUrl.includes("video")
-    );
+  const isVideo = (media: ProductMedia) => {
+    const url = media.url.toLowerCase();
+    return url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg") || url.includes("video");
   };
 
   // Handle video play/pause
@@ -165,6 +167,10 @@ function FeaturedProducts() {
   // Set up video ref
   const setVideoRef = (index: number, element: HTMLVideoElement | null) => {
     videoRefs.current[index] = element;
+  };
+
+  const handleContactUs = () => {
+    navigate("/contact");
   };
 
   return (
@@ -223,7 +229,7 @@ function FeaturedProducts() {
                   ({product.rating.toFixed(1)})
                 </Rating>
 
-                <PriceContainer>
+                <PriceContainer style={{ display: "none" }}>
                   <CurrentPrice>
                     {client.currencySymbol}
                     {product.price.toFixed(2)}
@@ -272,10 +278,11 @@ function FeaturedProducts() {
             <ModalHeader>
               <ProductInfo>
                 <ModalProductName>{selectedProduct.name}</ModalProductName>
-                <ModalPrice>
+                <ModalPrice style={{ display: "none" }}>
                   {client.currencySymbol}
                   {selectedProduct.price.toFixed(2)}
                 </ModalPrice>
+                <ModalDescription>{selectedProduct.images?.[currentImageIndex]?.description ?? "No description available."}</ModalDescription>
               </ProductInfo>
               <CloseButton onClick={() => setSelectedProduct(null)}>
                 <FontAwesomeIcon icon={faXmark} />
@@ -287,7 +294,7 @@ function FeaturedProducts() {
                 <VideoContainer>
                   <ModalVideo
                     ref={(el) => setVideoRef(currentImageIndex, el)}
-                    src={selectedProduct.images[currentImageIndex]}
+                    src={selectedProduct.images[currentImageIndex].url}
                     loop
                     muted
                     autoPlay
@@ -308,7 +315,7 @@ function FeaturedProducts() {
                   </VideoPlayOverlay>
                 </VideoContainer>
               ) : (
-                <ModalImage src={selectedProduct.images[currentImageIndex]} alt={selectedProduct.name} />
+                <ModalImage src={selectedProduct.images[currentImageIndex].url} alt={selectedProduct.name} />
               )}
 
               {/* Navigation Arrows */}
@@ -339,7 +346,7 @@ function FeaturedProducts() {
 
             {/* Image Indicators */}
             <ImageIndicators>
-              {selectedProduct.images.map((media: string, i: number) => (
+              {selectedProduct.images.map((media: ProductMedia, i: number) => (
                 <IndicatorDot
                   key={i}
                   $active={i === currentImageIndex}
@@ -352,10 +359,10 @@ function FeaturedProducts() {
 
             {/* Thumbnail Strip */}
             <ThumbnailStrip>
-              {selectedProduct.images.map((media: string, i: number) => (
+              {selectedProduct.images.map((media: ProductMedia, i: number) => (
                 <Thumbnail
                   key={i}
-                  $src={isVideo(media) ? getVideoThumbnail(media) : media}
+                  $src={isVideo(media) ? getVideoThumbnail(media.url) : media.url}
                   $active={i === currentImageIndex}
                   $type={isVideo(media) ? "video" : "image"}
                   onClick={() => setCurrentImageIndex(i)}>
@@ -369,9 +376,12 @@ function FeaturedProducts() {
             </ThumbnailStrip>
 
             <ModalActions>
-              <ModalAddToCartButton disabled={selectedProduct.stock === 0}>
+              <ModalAddToCartButton disabled={selectedProduct.stock === 0} style={{ display: "none" }}>
                 <FontAwesomeIcon icon={faShoppingCart} /> Add to Cart - {client.currencySymbol}
                 {selectedProduct.price.toFixed(2)}
+              </ModalAddToCartButton>
+              <ModalAddToCartButton onClick={handleContactUs}>
+                <FontAwesomeIcon icon={faContactCard} /> Contact us
               </ModalAddToCartButton>
             </ModalActions>
           </ModalContent>
@@ -472,6 +482,13 @@ const ProductImage = styled.div<{ $imageUrl: string }>`
     transform: scale(1.05);
   }
 `;
+
+const ModalDescription = styled.p`
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #555;
+`; 
+
 
 const ImageOverlay = styled.div<{ $visible: boolean }>`
   position: absolute;

@@ -120,68 +120,34 @@ function ContactPage() {
             <Card>
               <Title>Location</Title>
               <MapWrapper>
-                <iframe
-                  src={client.location}
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <iframe src={client.location} referrerPolicy="no-referrer-when-downgrade" />
               </MapWrapper>
             </Card>
           </div>
 
-          <Card>
+          <Card style={{ display: "none" }}>
             <Title>Send Us a Message</Title>
-            <Form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSubmit}
-            >
+            <Form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
               <input type="hidden" name="form-name" value="contact" />
 
               <div>
                 <LabelInput htmlFor="name">Full Name</LabelInput>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
+                <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
               </div>
 
               <div>
                 <LabelInput htmlFor="email">Email Address</LabelInput>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required />
               </div>
 
               <div>
                 <LabelInput htmlFor="phone">Phone Number</LabelInput>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+                <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} />
               </div>
 
               <div>
                 <LabelInput htmlFor="message">Message</LabelInput>
-                <TextArea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  required
-                />
+                <TextArea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} required />
               </div>
 
               <Button type="submit" disabled={isSubmitting}>
@@ -189,17 +155,8 @@ function ContactPage() {
                 <FontAwesomeIcon icon={faPaperPlane} />
               </Button>
 
-              {submitStatus === "success" && (
-                <Alert type="success">
-                  Thank you for your message! We'll get back to you soon.
-                </Alert>
-              )}
-              {submitStatus === "error" && (
-                <Alert type="error">
-                  Sorry, there was an error sending your message. Please try
-                  again later.
-                </Alert>
-              )}
+              {submitStatus === "success" && <Alert type="success">Thank you for your message! We'll get back to you soon.</Alert>}
+              {submitStatus === "error" && <Alert type="error">Sorry, there was an error sending your message. Please try again later.</Alert>}
             </Form>
           </Card>
         </Grid>

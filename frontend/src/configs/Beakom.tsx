@@ -142,14 +142,31 @@ const clientBeakomConfig: ClientConfig = {
     products: [
       {
         id: 1,
-        name: "Hex Bolt 16mm (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822057/HDG_oqczgd.webp",
+        name: "Hex Bolts",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217401/160c1913-d826-4d41-98f8-78b7dfdf7002.png",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217401/160c1913-d826-4d41-98f8-78b7dfdf7002.png",
+            description: "High-quality hex bolts, with materials like mild, stainless, and brass steel available.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217442/4db37a20-9968-4cf9-abde-896d20362725.png",
+            description: "Durable hex bolts suitable for various applications, including construction and machinery.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217476/05924028-4d07-4bc6-bbe5-9b85f8881d04.png",
+            description: "Precision-engineered hex bolts ensuring a secure fit for your projects.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217531/c1da3da5-7019-4cd3-bfe5-9f05d7658b26.png",
+            description: "Corrosion-resistant hex bolts designed for longevity in outdoor and industrial settings.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217563/1575d1c8-035e-44c7-b13b-99dd5da170ef.png",
+            description: "Versatile hex bolts available in multiple sizes to meet your specific needs.",
+          },
         ],
+
         price: 129.99,
         originalPrice: 179.99,
         stock: 42,
@@ -161,14 +178,27 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 2,
-        name: "Toggle Wing (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822055/toggle_wing_galvanized_nyysj7.webp",
+        name: "Socket Screws",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219198/df80f3b6-50b9-478d-b4ca-6d43571e74e1.png",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219198/df80f3b6-50b9-478d-b4ca-6d43571e74e1.png",
+            description: "Durable socket screws available in various materials including stainless steel and brass.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219254/3e8ece2c-f89b-41ab-8022-4126262fe076.png",
+            description: "Precision socket screws designed for secure fastening in mechanical applications.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219321/a6727000-9f35-4b2c-9b6a-291f64b7d09c.png",
+            description: "Corrosion-resistant socket screws ideal for outdoor and industrial use.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219058/8233e1cb-c71c-4b20-8bab-2e8f4f6c3edd.png",
+            description: "Versatile socket screws available in multiple sizes to suit your project needs.",
+          },
         ],
+
         price: 89.5,
         originalPrice: 119.99,
         stock: 15,
@@ -180,14 +210,27 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 3,
-        name: "Machine Screw (142pc)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822062/galvanized_o2mjeo.webp",
+        name: "Anchors & Expansion Fixings",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219920/87883783-f08b-4e41-aa42-2e5ef2d3bdf7.png",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219920/87883783-f08b-4e41-aa42-2e5ef2d3bdf7.png",
+            description: "High-strength anchors and expansion fixings for secure installations.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219895/95eac3d2-3cbd-4b13-bccf-f80d643c5757.png",
+            description: "Durable anchors and expansion fixings suitable for various materials including concrete and masonry.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219868/d70d803a-0091-4978-8777-301d0c5b94f1.png",
+            description: "Precision-engineered anchors and expansion fixings ensuring reliable performance.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219780/f13ae203-199e-4aeb-a061-5eb97f92fb46.png",
+            description: "Versatile anchors and expansion fixings available in multiple sizes to meet your project requirements.",
+          },
         ],
+
         price: 249.99,
         originalPrice: 349.99,
         stock: 8,
@@ -199,17 +242,30 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 4,
-        name: "Lock Nut (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754822065/lock_nut_rx4ge0.webp",
+        name: "General Screws",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220800/59b79f86-1439-4450-8b76-97cf498adcb3.png",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220800/59b79f86-1439-4450-8b76-97cf498adcb3.png",
+            description: "Versatile general screws suitable for a wide range of applications.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220196/5db3273c-76ee-40ee-99b4-79a5455ae063.png",
+            description: "Durable general screws available in various materials including mild steel and stainless steel.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220078/a0290730-d32e-4e7a-a327-80e592f63bce.png",
+            description: "Precision-engineered general screws ensuring a secure fit for your projects.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220040/4eaca3ae-f84f-45d3-bb90-d6faed3bbf9b.png",
+            description: "Corrosion-resistant general screws designed for longevity in outdoor and industrial settings.",
+          },
         ],
+
         price: 24.99,
         originalPrice: 34.99,
-        stock: 0, // Out of stock
+        stock: 12, // Out of stock
         priceRange: {
           min: 19.99,
           max: 49.99,
@@ -218,14 +274,27 @@ const clientBeakomConfig: ClientConfig = {
       },
       {
         id: 5,
-        name: "Tabular Rivet (Galvanized)",
-        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754829177/tubular_rivet_ocfo2s.webp",
+        name: "Nuts",
+        image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767221089/74fbaffa-bddb-45e7-bfdd-13e50d50e88b.png",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767221089/74fbaffa-bddb-45e7-bfdd-13e50d50e88b.png",
+            description: "High-quality nuts available in various materials including stainless steel and brass.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220976/85caa1ea-84f8-4e14-bc84-dead2c341fd2.png",
+            description: "Durable nuts designed for secure fastening in mechanical applications.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767221984/cecb46df-1a8a-43d8-b34f-2813cd15e3f8.png",
+            description: "Corrosion-resistant nuts ideal for outdoor and industrial use.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767222226/0751ec7b-f17f-4b10-91e3-7fc7b0d70a28.png",
+            description: "Versatile nuts available in multiple sizes to suit your project needs.",
+          },
         ],
+
         price: 59.99,
         originalPrice: 79.99,
         stock: 23,

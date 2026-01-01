@@ -5,62 +5,63 @@ import { getClientConfig } from "../lib/getClientConfig";
 const client = getClientConfig();
 
 export const ProductCard = ({ product }: { product: Product }) => {
-    return (
-      <ProductCardStyled>
-        <ProductImage>
-          <ProductImageImg src={product.images[0]} alt={product.name} />
-          {product.stock > 0 ? (
-            <StockBadge inStock={true}>
-              {product.stock > 10 ? 'In Stock' : `Low Stock (${product.stock})`}
-            </StockBadge>
-          ) : (
-            <StockBadge inStock={false}>Out of Stock</StockBadge>
-          )}
-        </ProductImage>
-        <ProductInfo>
-          <ProductTitle>{product.name}</ProductTitle>
-          <ProductCode>Product Code: {product.code}</ProductCode>
-          <ProductPricing>
-            <Price>{client.currencySymbol}{product.price.toFixed(2)} ex VAT</Price>
-            <VatPrice>{client.currencySymbol}{product.vatPrice.toFixed(2)} inc VAT</VatPrice>
-            {product.originalPrice && (
-              <OriginalPrice>
-                Save {Math.round((1 - product.price / product.originalPrice) * 100)}%
-              </OriginalPrice>
-            )}
-          </ProductPricing>
-          <ProductSpecs>
-            {product.specifications.slice(0, 3).map((spec) => (
-              <ProductSpec key={spec.key}>
-                <strong>{spec.key}:</strong> {spec.value}
-              </ProductSpec>
-            ))}
-          </ProductSpecs>
-          {/* <AddToCartButton>Add to Cart</AddToCartButton> */}
-        </ProductInfo>
-      </ProductCardStyled>
-    );
-  };
+  return (
+    <ProductCardStyled>
+      <ProductImage>
+        <ProductImageImg src={product.images[0]} alt={product.name} />
+        {product.stock > 0 ? (
+          <StockBadge inStock={true}>{product.stock > 10 ? "In Stock" : `Low Stock (${product.stock})`}</StockBadge>
+        ) : (
+          <StockBadge inStock={false}>Out of Stock</StockBadge>
+        )}
+      </ProductImage>
+      <ProductInfo>
+        <ProductTitle>{product.name}</ProductTitle>
+        <ProductCode style={{ display: "none" }}>Product Code: {product.code}</ProductCode>
+        <ProductPricing style={{ display: "none" }}>
+          <Price>
+            {client.currencySymbol}
+            {product.price.toFixed(2)} ex VAT
+          </Price>
+          <VatPrice>
+            {client.currencySymbol}
+            {product.vatPrice.toFixed(2)} inc VAT
+          </VatPrice>
+          {product.originalPrice && <OriginalPrice>Save {Math.round((1 - product.price / product.originalPrice) * 100)}%</OriginalPrice>}
+        </ProductPricing>
+        <ProductSpecs>
+          {product.specifications.slice(0, 2).map((spec) => (
+            <ProductSpec key={spec.key}>
+              <strong>{spec.key}:</strong> {spec.value}
+            </ProductSpec>
+          ))}
+        </ProductSpecs>
+        {/* <AddToCartButton>Add to Cart</AddToCartButton> */}
+      </ProductInfo>
+    </ProductCardStyled>
+  );
+};
 
-  const ProductCardStyled = styled.div`
-  border: 1px solid #eee;
+const ProductCardStyled = styled.div`
+  border: 1px solid #8d8c8cff;
+
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
-  transition: box-shadow 0.3s;
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
   }
 
-//   @media (max-width: 768px) {
-//    max-width: 370px;
-// }
+  //   @media (max-width: 768px) {
+  //    max-width: 370px;
+  // }
 `;
 
 const ProductImage = styled.div`
   position: relative;
-  height: 200px;
-  background: #f5f5f5;
+  height: 300px;
+  background: #ffffffff;
 `;
 
 const ProductImageImg = styled.img`

@@ -629,10 +629,16 @@ const ModalContent = styled.div`
   position: relative;
   background: #fff;
   border-radius: 12px;
-  width: 100vw;
-  max-height: 95vh;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: 768px) {
+    width: 80vw;
+    max-height: 90vh;
+  }
 `;
 
 const ModalHeader = styled.div`

@@ -147,10 +147,26 @@ const clientPrintifyConfig: ClientConfig = {
         name: "Designer Pattern Case",
         image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_normal_xnayhj.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761396305/leoppard_case_lnxhwv.webp",
-          "https://res.cloudinary.com/dxwqt6yrg/video/upload/v1761396448/rotating_case_pyra6u.mp4",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217401/160c1913-d826-4d41-98f8-78b7dfdf7002.png",
+            description: "High-quality hex bolts, with materials like mild, stainless, and brass steel available.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217442/4db37a20-9968-4cf9-abde-896d20362725.png",
+            description: "Durable hex bolts suitable for various applications, including construction and machinery.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217476/05924028-4d07-4bc6-bbe5-9b85f8881d04.png",
+            description: "Precision-engineered hex bolts ensuring a secure fit for your projects.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217531/c1da3da5-7019-4cd3-bfe5-9f05d7658b26.png",
+            description: "Corrosion-resistant hex bolts designed for longevity in outdoor and industrial settings.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217563/1575d1c8-035e-44c7-b13b-99dd5da170ef.png",
+            description: "Versatile hex bolts available in multiple sizes to meet your specific needs.",
+          },
         ],
         price: 49.99,
         originalPrice: 64.99,
@@ -205,10 +221,26 @@ const clientPrintifyConfig: ClientConfig = {
         name: "Glossy Premium Case",
         image: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/green_cover_fusk8g.jpg",
         images: [
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/green_cover_fusk8g.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249192/pink_cover_hbwrn4.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761249121/black_cover_ciduok.jpg",
-          "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1761248947/zebra_close_up_wep3fe.jpg",
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217401/160c1913-d826-4d41-98f8-78b7dfdf7002.png",
+            description: "High-quality hex bolts, with materials like mild, stainless, and brass steel available.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217442/4db37a20-9968-4cf9-abde-896d20362725.png",
+            description: "Durable hex bolts suitable for various applications, including construction and machinery.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217476/05924028-4d07-4bc6-bbe5-9b85f8881d04.png",
+            description: "Precision-engineered hex bolts ensuring a secure fit for your projects.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217531/c1da3da5-7019-4cd3-bfe5-9f05d7658b26.png",
+            description: "Corrosion-resistant hex bolts designed for longevity in outdoor and industrial settings.",
+          },
+          {
+            url: "https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217563/1575d1c8-035e-44c7-b13b-99dd5da170ef.png",
+            description: "Versatile hex bolts available in multiple sizes to meet your specific needs.",
+          },
         ],
         price: 45.99,
         originalPrice: 59.99,

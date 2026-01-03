@@ -109,18 +109,20 @@ const clientBeakomConfig: ClientConfig = {
     // Founder section fields
     founderImage: "Beakom/beakom-founder.jpeg", // or your founder image path
     founderTitle: "Meet The Founder",
-    founderName: "Mrs Jasmine",
+    founderName: "Nana Fosu Hemaa Animah II",
     founderRole: "Founder & CEO",
     founderBio1:
-      "With over 15 years of experience in the construction industry, Mrs Jasmine has established herself as a visionary leader providing innovative solutions.",
+      "With over 30 years of experience in the construction industry, Nana Fosu Hemaa Animah II has established herself as a visionary leader providing innovative solutions.",
     founderBio2:
-      "In 2016, driven by her passion for excellence, Mrs Jasmine founded Beakom. Under her leadership, the company has grown from handling small residential projects to managing complex commercial developments.",
-    founderBio3: "Mrs Jasmine's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
-    // Optional SEO fields
-    // seoTitle: "About Beakom - Expert Construction Company",
-    // seoDescription: "Learn about Beakom, a trusted construction company with 9+ years experience in house extensions, renovations & new builds.",
-    // seoKeywords: "about Beakom, construction company, experienced builders, construction history",
-    // seoUrl: "https://yourdomain.com/about"
+      "Driven by her passion for excellence, Nana Fosu Hemaa Animah II founded Beakom. Under her leadership, the company has grown from handling small residential projects to managing complex commercial developments.",
+    founderBio3:
+      "Nana Fosu Hemaa Animah II's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
+    // Optional SEO fields,
+    seoTitle: "About Beakom - Expert Construction Company",
+    seoDescription: "Learn about Beakom, a trusted construction company with 30+ years experience in house extensions, renovations & new builds.",
+    seoKeywords:
+      "Beakom, construction company, experienced builders, construction history, steel, nuts, bolts,fasteners, hardware supplier, building materials, washers, screws, anchor plugs, retaining rings, keys, expansion fixings",
+    seoUrl: "https://yourdomain.com/about",
   },
   phoneOffice: "053 135 6424",
   phoneMobile: "(+233) 53 135 6424",

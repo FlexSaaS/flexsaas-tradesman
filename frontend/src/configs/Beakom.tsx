@@ -77,7 +77,8 @@ const clientBeakomConfig: ClientConfig = {
     mainImage: "Beakom/beakom-logo.png", // or your story image path
     mainImageAlt: "Beakom Team",
     storyTitle: "Our Story",
-    story1: "Founded in 2016 by Mrs Jasmine, Beakom has become a leader in the hardware fastener industry in Ghana.",
+    story1:
+      "Founded by Nana Fosu Hemaa Animah II with over 30 years experience, Beakom has become a leader in the hardware fastener industry in Ghana.",
     story2: "With a focus on quality and customer satisfaction, we have built a strong reputation for delivering reliable products and services.",
     story3: "Our mission is to provide the best hardware solutions to our clients and to be a trusted partner in their success.",
 
@@ -106,7 +107,7 @@ const clientBeakomConfig: ClientConfig = {
     ],
 
     // Founder section fields
-    founderImage: "/images/founder.jpg", // or your founder image path
+    founderImage: "Beakom/beakom-founder.jpeg", // or your founder image path
     founderTitle: "Meet The Founder",
     founderName: "Mrs Jasmine",
     founderRole: "Founder & CEO",
@@ -356,6 +357,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Fibre Bolt" },
         { key: "Material", value: "Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "16mm" },
         { key: "Length", value: "100mm" },
       ],
@@ -376,6 +378,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Hanger Bolt" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "12mm" },
         { key: "Length", value: "50mm" },
       ],
@@ -396,6 +399,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Bolts" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "8mm" },
         { key: "Length", value: "80mm" },
       ],
@@ -416,6 +420,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Carriage Bolt" },
         { key: "Material", value: "Zinc" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Size", value: "10mm" },
         { key: "Thread", value: "Standard" },
       ],
@@ -436,6 +441,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Eye Bolt" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Inner Diameter", value: "16mm" },
         { key: "Outer Diameter", value: "30mm" },
       ],
@@ -456,6 +462,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "J Bolt" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "10mm" },
         { key: "Length", value: "100mm" },
       ],
@@ -476,6 +483,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "U Bolt" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "12mm" },
         { key: "Length", value: "1m" },
       ],
@@ -496,6 +504,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Stud Bolt" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "8mm" },
         { key: "Length", value: "50mm" },
       ],
@@ -516,6 +525,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Stud Bolt" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "8mm" },
         { key: "Length", value: "50mm" },
       ],
@@ -536,6 +546,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Stud Bolt" },
         { key: "Material", value: "Zinc Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "8mm" },
         { key: "Length", value: "50mm" },
       ],
@@ -556,6 +567,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Hex Bolt" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "10mm" },
         { key: "Embedment Depth", value: "40mm" },
       ],
@@ -576,6 +588,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Hex Bolt" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "10mm" },
         { key: "Embedment Depth", value: "40mm" },
       ],
@@ -596,6 +609,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Hex Flange Bolt" },
         { key: "Material", value: "Zinc" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "20mm" },
         { key: "Embedment Depth", value: "80mm" },
       ],
@@ -616,6 +630,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Hex Flange Bolt" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "20mm" },
         { key: "Embedment Depth", value: "80mm" },
       ],
@@ -623,19 +638,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "15",
       code: "DIA20",
-      name: "hex Flange Bolt (HDG)",
-      type: "Bolts",
+      name: "Hex bolt, nut, flat washer and spring washer (Mild Steel)",
+      type: "Bolts, Nuts, Washers",
       price: 1.0,
       vatPrice: 1.2,
       stock: 150,
-      description: "HDG hex flange bolt for heavy-duty applications",
-      material: "HDGl",
+      description: "Mild steel hex bolt, nut, flat washer and spring washer set for heavy-duty applications",
+      material: "Mild Steel",
       finish: "HDG",
       size: "20mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217531/c1da3da5-7019-4cd3-bfe5-9f05d7658b26.png"],
       specifications: [
-        { key: "Type", value: "Hex Flange Bolt" },
-        { key: "Material", value: "HDG" },
+        { key: "Type", value: "Hex bolt, nut, flat washer and spring washer" },
+        { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "20mm" },
         { key: "Embedment Depth", value: "80mm" },
       ],
@@ -643,19 +659,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "16",
       code: "DIA20",
-      name: "hex Flange Bolt (Zinc)",
+      name: "hex Bolt and Nut (Zinc)",
       type: "Bolts",
       price: 1.0,
       vatPrice: 1.2,
       stock: 150,
-      description: "Zinc hex flange bolt for heavy-duty applications",
+      description: "Zinc hex bolt and nut for heavy-duty applications",
       material: "Zinc",
       finish: "Zinc",
       size: "20mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217442/4db37a20-9968-4cf9-abde-896d20362725.png"],
       specifications: [
-        { key: "Type", value: "Hex Flange Bolt" },
+        { key: "Type", value: "Hex Bolt and Nut" },
         { key: "Material", value: "Zinc" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "20mm" },
         { key: "Embedment Depth", value: "80mm" },
       ],
@@ -663,19 +680,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "15",
       code: "DIA20",
-      name: "hex Flange Bolt (Brass)",
+      name: "hex Bolt and Nut (Brass)",
       type: "Bolts",
       price: 1.0,
       vatPrice: 1.2,
       stock: 150,
-      description: "Brass hex flange bolt for heavy-duty applications",
+      description: "Brass hex bolt and nut for heavy-duty applications",
       material: "Brass",
       finish: "Brass",
       size: "20mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767217401/160c1913-d826-4d41-98f8-78b7dfdf7002.png"],
       specifications: [
-        { key: "Type", value: "Hex Flange Bolt" },
+        { key: "Type", value: "Hex Bolt and Nut" },
         { key: "Material", value: "Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "20mm" },
         { key: "Embedment Depth", value: "80mm" },
       ],
@@ -684,7 +702,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "16",
       code: "DIA40",
-      name: "Expansion Bolt (Brass)",
+      name: "Expansion Bolt (Coated Brass)",
       type: "Anchors & Expansion Fixings",
       price: 2.0,
       vatPrice: 2.4,
@@ -696,7 +714,8 @@ const clientBeakomConfig: ClientConfig = {
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767219920/87883783-f08b-4e41-aa42-2e5ef2d3bdf7.png"],
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
-        { key: "Material", value: "Brass" },
+        { key: "Material", value: "Coated Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "40mm" },
         { key: "Embedment Depth", value: "140mm" },
       ],
@@ -717,6 +736,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -737,6 +757,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -757,6 +778,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -777,6 +799,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -797,6 +820,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Anchors & Expansion Fixings" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -818,6 +842,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -838,6 +863,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -845,19 +871,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "22",
       code: "DIA50",
-      name: "Thumb Screw (Stainless Steel)",
+      name: "Thumb Screw (Stainless Steel and Galvanized Steel)",
       type: "General Screws",
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
       description: "Stainless steel thumb screw",
-      material: "Stainless Steel",
+      material: "Stainless Steel and Galvanized Steel",
       finish: "Galvanized",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220722/c8f7d90a-021d-4406-b49f-263a1bfc31ce.png"],
       specifications: [
         { key: "Type", value: "General Screws" },
-        { key: "Material", value: "Stainless Steel" },
+        { key: "Material", value: "Stainless Steel and Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -865,19 +892,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "23",
       code: "DIA50",
-      name: "Tapping Screw (Stainless Steel)",
+      name: "Tapping Screw (Stainless Steel and Galvanized Steel)",
       type: "General Screws",
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
-      description: "Brass screw for wood and metal",
-      material: "Stainless Steel",
+      description: "Stainless steel screw for wood and metal",
+      material: "Stainless Steel and Galvanized Steel",
       finish: "Stainless Steel",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220694/119ee988-5564-4fb3-b3bb-974269a9c7c8.png"],
       specifications: [
         { key: "Type", value: "General Screws" },
-        { key: "Material", value: "Stainless Steel" },
+        { key: "Material", value: "Stainless Steel and Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -898,6 +926,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -910,7 +939,7 @@ const clientBeakomConfig: ClientConfig = {
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
-      description: "Coach screw for wood and metal",
+      description: "Coach screw for concrete",
       material: "Galvanized Steel",
       finish: "Galvanized Steel",
       size: "50mm",
@@ -918,6 +947,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -938,6 +968,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -950,7 +981,7 @@ const clientBeakomConfig: ClientConfig = {
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
-      description: "Mild screw for wood and metal",
+      description: "Mild screw for wood",
       material: "Mild Steel",
       finish: "Mild Steel",
       size: "50mm",
@@ -965,19 +996,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "26",
       code: "DIA50",
-      name: "Roofing Screw (Stainless Steel)",
+      name: "Roofing Screw (Stainless Steel and Galvanized Steel)",
       type: "General Screws",
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
-      description: "Stainless screw for wood and metal",
-      material: "Stainless Steel",
-      finish: "Stainless Steel",
+      description: "Stainless screw for roofing",
+      material: "Stainless Steel and Galvanized Steel",
+      finish: "Stainless Steel and Galvanized Steel",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220457/5a056c80-ef26-44da-bddd-b02158204ca5.png"],
       specifications: [
         { key: "Type", value: "General Screws" },
-        { key: "Material", value: "Stainless Steel" },
+        { key: "Material", value: "Stainless Steel and Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -985,19 +1017,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "27",
       code: "DIA50",
-      name: "Self Drilling Screw (Stainless Steel)",
+      name: "Self Drilling Screw (Stainless Steel and Galvanized Steel)",
       type: "General Screws",
       price: 2.5,
       vatPrice: 3.0,
       stock: 70,
       description: "Self Drilling Screw",
-      material: "Stainless Steel",
-      finish: "Stainless Steel",
+      material: "Stainless Steel and Galvanized Steel",
+      finish: "Stainless Steel and Galvanized Steel",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220372/9f12c0f9-363b-4e3a-86f6-2b8f0f5c006f.png"],
       specifications: [
         { key: "Type", value: "General Screws" },
-        { key: "Material", value: "Stainless Steel" },
+        { key: "Material", value: "Stainless Steel and Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1018,6 +1051,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1038,6 +1072,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Copper" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1058,6 +1093,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Wood Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1078,6 +1114,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Thread cutting Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1098,6 +1135,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Mating Screws" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1118,6 +1156,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Machine Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1138,6 +1177,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Machine Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1159,6 +1199,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Rubber" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1179,6 +1220,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1199,6 +1241,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1220,6 +1263,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1240,6 +1284,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1260,6 +1305,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1280,6 +1326,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1300,6 +1347,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1320,6 +1368,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1340,6 +1389,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Brass" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1360,6 +1410,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1380,6 +1431,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1400,6 +1452,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1420,6 +1473,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1440,6 +1494,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1460,6 +1515,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1480,6 +1536,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1500,6 +1557,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1520,6 +1578,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Nuts" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1541,6 +1600,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1561,6 +1621,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1581,6 +1642,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1601,6 +1663,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1621,6 +1684,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1641,6 +1705,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Pins & Rivets" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1662,6 +1727,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1682,6 +1748,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1702,6 +1769,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1722,6 +1790,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1742,6 +1811,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1762,6 +1832,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1782,6 +1853,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1802,6 +1874,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1822,6 +1895,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Retaining Rings & Keys" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1843,6 +1917,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1863,6 +1938,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1883,6 +1959,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1903,6 +1980,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1923,6 +2001,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Zinc" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1943,6 +2022,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1963,6 +2043,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -1983,6 +2064,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -2003,6 +2085,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -2023,6 +2106,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -2043,6 +2127,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -2063,6 +2148,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Socket Screws" },
         { key: "Material", value: "Mild Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
         { key: "Embedment Depth", value: "160mm" },
       ],
@@ -2071,19 +2157,20 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "59",
       code: "WASHER50",
-      name: "External Tooth Lock Washer (Stainless Steel)",
+      name: "External Tooth Lock Washer (Stainless/Galvanized Steel)",
       type: "Washers",
       price: 0.1,
       vatPrice: 0.12,
       stock: 100,
       description: "External tooth lock washers ",
-      material: "Stainless Steel",
-      finish: "Stainless Steel",
+      material: "Stainless Steel/Galvanized Steel",
+      finish: "Stainless Steel/Galvanized Steel",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767223259/e9bf38e1-c441-44cb-a6af-237cd5fde379.png"],
       specifications: [
         { key: "Type", value: "Washers" },
-        { key: "Material", value: "Stainless Steel" },
+        { key: "Material", value: "Stainless Steel/Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2099,10 +2186,11 @@ const clientBeakomConfig: ClientConfig = {
       material: "Stainless Steel",
       finish: "stainless steel",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1754825748/spring_washer_xjxeru.jpg"],
+      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767222975/d2cccf21-99db-4a6d-8096-975ddb69b792.png"],
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2122,6 +2210,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2141,6 +2230,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Rubber/Nylon" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2160,6 +2250,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2179,6 +2270,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2198,6 +2290,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
@@ -2217,13 +2310,14 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Galvanized Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },
     {
       id: "652",
       code: "WASHER50",
-      name: "Spring Washer (Stainless Steel)",
+      name: "Flat Washer (Stainless Steel)",
       type: "Washers",
       price: 0.15,
       vatPrice: 0.18,
@@ -2236,6 +2330,7 @@ const clientBeakomConfig: ClientConfig = {
       specifications: [
         { key: "Type", value: "Washers" },
         { key: "Material", value: "Stainless Steel" },
+        { key: "Size", value: "Available in various sizes" },
         { key: "Diameter", value: "50mm" },
       ],
     },

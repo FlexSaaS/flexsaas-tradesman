@@ -75,7 +75,7 @@ export const ProductCard = ({ product, highlightText = "" }: ProductCardProps) =
         </ProductPricing>
         {product.description && <ProductDescription>{highlightField(product.description)}</ProductDescription>}
         <ProductSpecs>
-          {product.specifications?.slice(0, 2).map((spec) => (
+          {product.specifications?.slice(0, 3).map((spec) => (
             <ProductSpec key={spec.key}>
               <strong>{highlightField(spec.key)}:</strong> {highlightField(spec.value)}
             </ProductSpec>

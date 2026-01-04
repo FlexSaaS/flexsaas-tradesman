@@ -54,7 +54,7 @@ export const ProductCard = ({ product, highlightText = "" }: ProductCardProps) =
       <ProductImage>
         <ProductImageImg src={product.images[0]} alt={product.name} />
         {product.stock > 0 ? (
-          <StockBadge inStock={true}>{product.stock > 10 ? "In Stock" : `Low Stock (${product.stock})`}</StockBadge>
+          <StockBadge inStock={true}>{product.stock >= 1 ? "In Stock" : `Low Stock (${product.stock})`}</StockBadge>
         ) : (
           <StockBadge inStock={false}>Out of Stock</StockBadge>
         )}

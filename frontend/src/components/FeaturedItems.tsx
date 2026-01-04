@@ -204,7 +204,7 @@ function FeaturedProducts() {
                     <FontAwesomeIcon icon={faFire} /> Best seller
                   </Badge>
                   <StockIndicator stock={product.stock}>
-                    {product.stock > 10 ? "In Stock" : product.stock > 0 ? `Low Stock (${product.stock})` : "Out of Stock"}
+                    {product.stock >= 1 ? "In Stock" : product.stock > 0 ? `Low Stock (${product.stock})` : "Out of Stock"}
                   </StockIndicator>
 
                   {/* Hover Overlay */}
@@ -487,8 +487,7 @@ const ModalDescription = styled.p`
   margin-top: 0.5rem;
   font-size: 1.1rem;
   color: #555;
-`; 
-
+`;
 
 const ImageOverlay = styled.div<{ $visible: boolean }>`
   position: absolute;
@@ -532,7 +531,7 @@ const StockIndicator = styled.div<{ stock: number }>`
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background-color: ${(props) => (props.stock > 10 ? "#4CAF50" : props.stock > 0 ? "#9e7703ff" : "#F44336")};
+  background-color: ${(props) => (props.stock >= 1 ? "#4CAF50" : props.stock > 0 ? "#9e7703ff" : "#F44336")};
   color: white;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;

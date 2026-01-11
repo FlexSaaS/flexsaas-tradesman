@@ -321,7 +321,7 @@ const clientBeakomConfig: ClientConfig = {
         { name: "Washers", count: 873, selected: false },
         { name: "Retaining Rings & Keys", count: 417, selected: false },
         { name: "Anchor Plugs", count: 130, selected: false },
-        { name: "Other Materials", count: 430, selected: false },
+        { name: "Sealants & Adhesives", count: 430, selected: false },
       ],
       type: "checkbox",
     },

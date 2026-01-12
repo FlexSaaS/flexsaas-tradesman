@@ -621,14 +621,14 @@ const ImageModal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 2000;
-  padding: 2rem;
+  // padding: 2rem;
 `;
 
 const ModalContent = styled.div`
   position: relative;
   background: #fff;
   border-radius: 12px;
-  width: 90%;
+  width: 98%;
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;

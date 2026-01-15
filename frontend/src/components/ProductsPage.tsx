@@ -14,10 +14,15 @@ const ProductsPage = () => {
   const [allProducts] = useState<Product[]>(client.products || []);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(client.products || []);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage, setItemsPerPage] = useState(12);
   const [sortBy, setSortBy] = useState("price-asc");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Function to refresh the entire page
+  const handleRefresh = () => {
+    window.location.reload();
+  };
 
   // Function to search products by keywords
   const searchProducts = (products: Product[], query: string) => {
@@ -190,6 +195,12 @@ const ProductsPage = () => {
             <ApplyFiltersButton onClick={applyFilters}>Apply Filters</ApplyFiltersButton>
             <ClearFiltersButton onClick={clearFilters}>Clear Filters</ClearFiltersButton>
             {hasSearchQuery && <ClearSearchButtonFullWidth onClick={clearSearch}>Clear Search</ClearSearchButtonFullWidth>}
+
+            {/* Refresh Button in Filters Sidebar */}
+            <RefreshButton onClick={handleRefresh}>
+              <FontAwesomeIcon icon={faSync} size="sm" />
+              <span style={{ marginLeft: "8px" }}>Refresh Page</span>
+            </RefreshButton>
           </FiltersSidebar>
           <ProductsListing>
             {/* Search Bar in Main Content Area */}
@@ -252,6 +263,11 @@ const ProductsPage = () => {
                     <option value="name-asc">Name: A-Z</option>
                   </SortSelect>
                 </SortOptions>
+
+                {/* Refresh Button in Header */}
+                <RefreshButtonSmall onClick={handleRefresh} title="Refresh page">
+                  <FontAwesomeIcon icon={faSync} />
+                </RefreshButtonSmall>
               </ListingControls>
             </ListingHeader>
             {hasActiveFilters && filteredProducts.length === 0 ? (
@@ -265,6 +281,12 @@ const ProductsPage = () => {
                     Clear Search
                   </ClearSearchButton>
                 )}
+
+                {/* Refresh Button in No Products Found state */}
+                <RefreshButton onClick={handleRefresh} style={{ marginTop: "12px" }}>
+                  <FontAwesomeIcon icon={faSync} size="sm" />
+                  <span style={{ marginLeft: "8px" }}>Refresh Page</span>
+                </RefreshButton>
               </NoProductsFound>
             ) : (
               <>
@@ -307,6 +329,61 @@ const SearchInputWrapper = styled.div`
   svg {
     color: #6b7280;
     margin-right: 8px;
+  }
+`;
+
+// Add this import at the top with other FontAwesome imports
+import { faSync } from "@fortawesome/free-solid-svg-icons";
+
+// Add these styled components (place them with your other styled components)
+
+const RefreshButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 12px;
+
+  &:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+`;
+
+const RefreshButtonSmall = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+
+  &:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 `;
 

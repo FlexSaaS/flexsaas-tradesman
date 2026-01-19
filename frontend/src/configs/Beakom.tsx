@@ -813,7 +813,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "19",
+      id: "1i9",
       code: "DIA50",
       name: "Sleeve anchor (Galvanized)",
       type: "Anchors & Expansion Fixings",
@@ -834,7 +834,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "19",
+      id: "1r9",
       code: "DIA50",
       name: "Drop-in anchor (Galvanized)",
       type: "Anchors & Expansion Fixings",
@@ -1023,7 +1023,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "26",
+      id: "2u6",
       code: "DIA50",
       name: "Roofing Screw (Stainless Steel and Galvanized Steel)",
       type: "General Screws",
@@ -1149,7 +1149,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "29",
+      id: "2m9",
       code: "DIA50",
       name: "Wood Screws (All Materials)",
       type: "General Screws",
@@ -1677,7 +1677,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "471",
+      id: "471a",
       code: "DIA50",
       name: "Split Pin (Galvanized Steel)",
       type: "Pins & Rivets",
@@ -1740,7 +1740,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "41",
+      id: "41b",
       code: "DIA50",
       name: "Tubular Rivet (Stainless Steel)",
       type: "Pins & Rivets",
@@ -1867,7 +1867,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "49",
+      id: "49a",
       code: "DIA50",
       name: "Shaft pin(Stainless Steel)",
       type: "Retaining Rings & Keys",
@@ -1972,7 +1972,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "5112",
+      id: "5112a",
       code: "DIA50",
       name: "E-Clips Rings (Mild Steel)",
       type: "Retaining Rings & Keys",
@@ -2014,7 +2014,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "5112",
+      id: "5112c",
       code: "DIA50",
       name: "Tapered Rings (Stainless Steel or Mild Steel)",
       type: "Retaining Rings & Keys",
@@ -2225,7 +2225,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "581",
+      id: "581a",
       code: "DIA50",
       name: "Hex Socket Countersunk Screw (Mild Steel)",
       type: "Socket Screws",
@@ -2246,7 +2246,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "581",
+      id: "581v",
       code: "DIA50",
       name: "Socket Button Flange Screw (Galvanized Steel)",
       type: "Socket Screws",
@@ -2267,7 +2267,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "581",
+      id: "581c",
       code: "DIA50",
       name: "Socket Button head Allen bolt (Mild Steel)",
       type: "Socket Screws",
@@ -2469,7 +2469,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "625",
+      id: "625b",
       code: "WASHER50",
       name: "heavy duty clamp (Stainless Steel or Coated Brass)",
       type: "Other Hardware Materials",
@@ -2489,7 +2489,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "625",
+      id: "625a",
       code: "WASHER50",
       name: "Cable Tie",
       type: "Other Hardware Materials",
@@ -2509,7 +2509,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "625",
+      id: "625c",
       code: "WASHER50",
       name: "Fibre Tape",
       type: "Other Hardware Materials",
@@ -2529,7 +2529,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "625",
+      id: "62e5",
       code: "WASHER50",
       name: "Flexible PVC Transparent Hose",
       type: "Other Items",
@@ -2549,7 +2549,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "655",
+      id: "655d",
       code: "WASHER50",
       name: "Castor Wheels",
       type: "Other Items",
@@ -2569,7 +2569,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "655",
+      id: "655e",
       code: "WASHER50",
       name: "Castor Wheels",
       type: "Other Items",
@@ -2589,7 +2589,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "655",
+      id: "655d",
       code: "WASHER50",
       name: "Castor Wheels",
       type: "Other Items",
@@ -2609,7 +2609,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "655",
+      id: "655j",
       code: "WASHER50",
       name: "Castor Wheels",
       type: "Other Items",
@@ -2629,7 +2629,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "655",
+      id: "655l",
       code: "WASHER50",
       name: "Flat Washer (Galvanized Steel)",
       type: "Washers",
@@ -2671,7 +2671,7 @@ const clientBeakomConfig: ClientConfig = {
     },
     // CUTTING & DRILLING ACCESSORIES
     {
-      id: "652",
+      id: "652s",
       code: "WASHER50",
       name: "concrete drill bit (Stainless Steel)",
       type: "Cutting & Drilling Accessories",
@@ -2691,7 +2691,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "j52",
       code: "WASHER50",
       name: "Metal Drill Bit (Stainless Steel)",
       type: "Cutting & Drilling Accessories",
@@ -2711,7 +2711,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65f2",
       code: "WASHER50",
       name: "Diamond Cutting Disc (Concrete)",
       type: "Cutting & Drilling Accessories",
@@ -2731,7 +2731,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6sf52",
       code: "WASHER50",
       name: "Wood Cutting Disc",
       type: "Cutting & Drilling Accessories",
@@ -2751,7 +2751,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65sd2",
       code: "WASHER50",
       name: "Metal Cutting Disc",
       type: "Cutting & Drilling Accessories",
@@ -2771,7 +2771,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65dss2",
       code: "WASHER50",
       name: "Stone Cutting Disc",
       type: "Cutting & Drilling Accessories",
@@ -2791,7 +2791,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65grhj",
       code: "WASHER50",
       name: "Hacksaw Blade",
       type: "Cutting & Drilling Accessories",
@@ -2812,7 +2812,7 @@ const clientBeakomConfig: ClientConfig = {
     },
     // LUBRICANTS & CHEMICALS
     {
-      id: "652",
+      id: "65dfdd2",
       code: "WASHER50",
       name: "Grease",
       type: "Lubricants & Chemicals",
@@ -2832,7 +2832,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6df2dd",
       code: "WASHER50",
       name: "WD-40",
       type: "Lubricants & Chemicals",
@@ -2852,7 +2852,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "652llur",
       code: "WASHER50",
       name: "WD-40 Industrial",
       type: "Lubricants & Chemicals",
@@ -2872,7 +2872,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "df5df2g",
       code: "WASHER50",
       name: "Zinc-Galvanized spray",
       type: "Lubricants & Chemicals",
@@ -2893,7 +2893,7 @@ const clientBeakomConfig: ClientConfig = {
     },
     // Hand tools
     {
-      id: "652",
+      id: "6df52sfjjurr",
       code: "WASHER50",
       name: "Allen Key Set",
       type: "Hand tools",
@@ -2913,7 +2913,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65dgshlied2",
       code: "WASHER50",
       name: "screw Driver Set",
       type: "Hand tools",
@@ -2933,7 +2933,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65dfgsebjz2",
       code: "WASHER50",
       name: "Drill Machine",
       type: "Hand tools",
@@ -2953,7 +2953,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6ewfhja5sfa2",
       code: "WASHER50",
       name: "Spanner Set",
       type: "Hand tools",
@@ -2974,7 +2974,7 @@ const clientBeakomConfig: ClientConfig = {
     },
     // SEALANTS & ADHESIVES
     {
-      id: "652",
+      id: "6sdfa5sdfax2",
       code: "WASHER50",
       name: "TCP Silicone Sealant",
       type: "Sealants & Adhesives",
@@ -2994,7 +2994,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6sdfa2asda",
       code: "WASHER50",
       name: " SikaSeal ",
       type: "Sealants & Adhesives",
@@ -3014,7 +3014,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6fdszshasc52",
       code: "WASHER50",
       name: "Akfix Silicone Sealant",
       type: "Sealants & Adhesives",
@@ -3034,7 +3034,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65setweyeaw2",
       code: "WASHER50",
       name: "Soudal Silicone Spray",
       type: "Sealants & Adhesives",
@@ -3054,7 +3054,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "6ertwq2",
       code: "WASHER50",
       name: "99 glue",
       type: "Sealants & Adhesives",
@@ -3074,7 +3074,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "652",
+      id: "65sgabyo742",
       code: "WASHER50",
       name: "Loctite adhesive",
       type: "Sealants & Adhesives",
@@ -3257,7 +3257,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "623sdfa93",
       code: "WASHER50",
       name: "V belt",
       type: "Fasteners",
@@ -3298,7 +3298,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62fas393dfa",
       code: "WASHER50",
       name: "SS Expansion bolt (Sleeve Anchor)",
       type: "Fasteners",
@@ -3318,7 +3318,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "6239sfa3",
       code: "WASHER50",
       name: "SS Anchor bolt",
       type: "Fasteners",
@@ -3338,7 +3338,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62sgar4yt393",
       code: "WASHER50",
       name: "Hook screw(Hook Bolt/Screw Hook)",
       type: "Fasteners",
@@ -3358,7 +3358,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "6etw2yuwe393",
       code: "WASHER50",
       name: "Saddle clips(Wire Rope Clips)",
       type: "Fasteners",
@@ -3378,7 +3378,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "agy54393",
       code: "WASHER50",
       name: "Padlock",
       type: "Other Hardware Materials",
@@ -3398,7 +3398,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62393783wdd",
       code: "WASHER50",
       name: "Gate hinges",
       type: "Other Hardware Materials",
@@ -3438,7 +3438,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62ertw334593",
       code: "WASHER50",
       name: "Screw protection covers",
       type: "Other Hardware Materials",
@@ -3459,7 +3459,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "634623956453",
       code: "WASHER50",
       name: "Screw covers",
       type: "Other Hardware Materials",
@@ -3480,7 +3480,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "623wetrsdfg93",
       code: "WASHER50",
       name: "Steel pipe",
       type: "Other Hardware Materials",
@@ -3500,7 +3500,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "623uefdser4593",
       code: "WASHER50",
       name: "Galvanized pipe",
       type: "Other Hardware Materials",
@@ -3521,7 +3521,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "623hre743493",
       code: "WASHER50",
       name: "Steel chain",
       type: "Other Hardware Materials",
@@ -3541,7 +3541,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "34565rffd2393",
       code: "WASHER50",
       name: "Stainless steel wire rope clamp",
       type: "Other Hardware Materials",
@@ -3561,7 +3561,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "623erw4tgew93",
       code: "WASHER50",
       name: "Galvanized saddle clips",
       type: "Other Hardware Materials",
@@ -3581,7 +3581,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "erwt9ttw3",
       code: "WASHER50",
       name: "Electronic contact cleaner",
       type: "Cleaning and Maintenance",
@@ -3602,7 +3602,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62wetw43gd393",
       code: "WASHER50",
       name: "Brake fluid",
       type: "Cleaning and Maintenance",
@@ -3622,7 +3622,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "wrtwetdd",
       code: "WASHER50",
       name: "Ekobit",
       type: "Cleaning and Maintenance",
@@ -3643,7 +3643,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62391",
       code: "WASHER50",
       name: "Flexible ducting",
       type: "Cleaning and Maintenance",
@@ -3664,7 +3664,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62wtetd393",
       code: "WASHER50",
       name: "Air hose",
       type: "Air and Ducting",
@@ -3684,7 +3684,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "62393",
+      id: "62wet393",
       code: "WASHER50",
       name: "Pipe flange",
       type: "Pipe Fittings",

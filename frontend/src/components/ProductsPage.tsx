@@ -76,14 +76,7 @@ const ProductsPage = () => {
       const filtered = searchedProducts.filter(
         (product) =>
           selectedFilters.includes(product.material!) ||
-          selectedFilters.includes(product.type!) ||
-          selectedFilters.includes(product.finish!) ||
-          selectedFilters.some(
-            (filter) =>
-              product.name.toLowerCase().includes(filter.toLowerCase()) ||
-              product.description.toLowerCase().includes(filter.toLowerCase()) ||
-              product.type?.toLowerCase().includes(filter.toLowerCase())
-          )
+          selectedFilters.includes(product.type!)
       );
       setFilteredProducts(filtered);
     }

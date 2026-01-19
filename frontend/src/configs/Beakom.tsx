@@ -2449,7 +2449,7 @@ const clientBeakomConfig: ClientConfig = {
       ],
     },
     {
-      id: "615",
+      id: "sdfawee43",
       code: "WASHER50",
       name: "Hose Clamp (All types)",
       type: "Other Hardware Materials",

@@ -1890,7 +1890,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "50",
       code: "DIA50",
-      name: "O-ring (Plastic))",
+      name: "O-ring (Plastic)",
       type: "Retaining Rings & Keys",
       price: 2.5,
       vatPrice: 3.0,
@@ -2819,7 +2819,7 @@ const clientBeakomConfig: ClientConfig = {
       price: 0.15,
       vatPrice: 0.18,
       stock: 100,
-      description: "Used for cutting metal or plastic",
+      description: "Used for cutting metal, wood or plastic",
       material: "All types",
       finish: "All types",
       size: "50mm",

@@ -867,7 +867,7 @@ const clientBeakomConfig: ClientConfig = {
       material: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber",
       finish: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber",
       size: "50mm",
-      images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1767220849/ecc502a4-e939-4e80-9162-51e42918755e.png"],
+      images: ["/Beakom/general_screws.png"],
       specifications: [
         { key: "Type", value: "General Screws" },
         { key: "Material", value: "Galvanized Steel, Stainless Steel, Mild Steel, Brass, Copper, HDG, Zinc, Nylon, Rubber" },

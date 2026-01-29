@@ -415,7 +415,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "4",
       code: "HN10",
-      name: "Carriage Bolt (Zinc Plated/Galvanized)",
+      name: "Carriage Bolt/Body bolt (Zinc Plated/Galvanized)",
       type: "Bolts",
       price: 0.25,
       vatPrice: 0.3,
@@ -731,7 +731,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "116",
       code: "DIA40",
-      name: "Expansion Drywall anchor (Plastic)",
+      name: "Expansion drywall/ Hollow wall plug/ Butterfly plug (Plastic)",
       type: "Anchors & Expansion Fixings",
       price: 2.0,
       vatPrice: 2.4,
@@ -752,7 +752,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "17",
       code: "DIA50",
-      name: "Toggle Wing (Galvanized Steel)",
+      name: "Screw with toggle wing nut(Galvanized Steel)",
       type: "Anchors & Expansion Fixings",
       price: 2.5,
       vatPrice: 3.0,
@@ -794,7 +794,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "19",
       code: "DIA50",
-      name: "Wedge anchor (Galvanized)",
+      name: "Wedge anchor/Anchor bolt (Galvanized)",
       type: "Anchors & Expansion Fixings",
       price: 2.5,
       vatPrice: 3.0,
@@ -1384,7 +1384,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "34",
       code: "DIA50",
-      name: "Cross Barrel Nut (Brass)",
+      name: "Cross Barrel Nut (Coated Brass)",
       type: "Nuts",
       price: 2.5,
       vatPrice: 3.0,
@@ -1426,7 +1426,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "36",
       code: "DIA50",
-      name: "Wood Nut (Brass)",
+      name: "Wood Nut (Coated Brass)",
       type: "Nuts",
       price: 2.5,
       vatPrice: 3.0,
@@ -1447,7 +1447,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "37",
       code: "DIA50",
-      name: "Tee Nut (Brass)",
+      name: "Tee Nut (Coated Brass)",
       type: "Nuts",
       price: 2.5,
       vatPrice: 3.0,
@@ -3632,7 +3632,7 @@ const clientBeakomConfig: ClientConfig = {
       price: 0.15,
       vatPrice: 0.18,
       stock: 100,
-      description: "Used to hold metal tools, screws, or workpieces in place for easy access or hands-free work",
+      description: "Used for driving lag bolts or lag screws with an impact driver.",
       material: "All types",
       finish: "All types",
       size: "50mm",

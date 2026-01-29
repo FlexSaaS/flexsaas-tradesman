@@ -23,7 +23,7 @@ const EtherealVistaConfig: ClientConfig = {
   primaryColorLight: "#F5F5DC", // Beige
   secondaryColor: "#F5F5DC", // Beige
   tagline: "Elevating Beauty with Elegance and Precision",
-  fontFamily: "Playfair Display, Georgia, serif",
+  fontFamily: "Roboto, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
   currencySymbol: "£",
   isBooking: true,
 

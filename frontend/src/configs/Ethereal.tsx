@@ -6,39 +6,38 @@ import {
   faAward,
   faStar,
   faClock,
-  faBath,
-  faBaby,
-  faCut,
-  faEarListen,
-  faPaw,
-  faShower,
-  faTooth,
+  faSpa,
+  faScissors,
+  faHandSparkles,
+  faPalette,
+  faUserTie,
+  faBrush,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import type { ClientConfig } from "../types/Config";
 
 const EtherealVistaConfig: ClientConfig = {
   name: "Ethereal Vista",
-  logo: "Lecien/lechien-logo.png",
-  primaryColor: "black",
-  primaryColorLight: "white",
-  secondaryColor: "white",
-  tagline: "Award Winning Styling By Cheryl Howard",
-  fontFamily: "Roboto, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+  logo: "EtherealVista/ethereal-vista-logo.png",
+  primaryColor: "#800000", // Maroon
+  primaryColorLight: "#F5F5DC", // Beige
+  secondaryColor: "#F5F5DC", // Beige
+  tagline: "Elevating Beauty with Elegance and Precision",
+  fontFamily: "Playfair Display, Georgia, serif",
   currencySymbol: "£",
   isBooking: true,
 
   // Header
   header: {
-    title: "Our Projects",
-    subtitle: "Award Winning Styling By Cheryl Howard",
+    title: "Our Service Gallery",
+    subtitle: "Experience Luxury Beauty Treatments",
   },
 
   // Call to action
   cta: {
-    title: "Need a grooming appointment for your furry friend?",
-    subtitle: "We’d love to pamper your pet. Book a session with our expert groomers today.",
-    buttonText: "Book Now",
+    title: "Ready for a transformative beauty experience?",
+    subtitle: "Book your appointment today and discover the Ethereal Vista difference.",
+    buttonText: "Book Appointment",
     link: "/contact",
   },
 
@@ -46,187 +45,209 @@ const EtherealVistaConfig: ClientConfig = {
   features: [
     {
       icon: faShieldAlt,
-      title: "Gentle Care Guaranteed",
-      description: "Safe, hygienic, and stress-free grooming for your pet.",
+      title: "Sanitized & Safe Environment",
+      description: "Impeccable hygiene standards ensuring your health and safety.",
     },
     {
       icon: faCrown,
-      title: "Luxury Pampering",
-      description: "Treat your furry friend to a premium grooming experience.",
+      title: "Luxury Experience",
+      description: "Premium treatments in an elegant, relaxing atmosphere.",
     },
     {
       icon: faStopwatch,
-      title: "On-Time Appointments",
-      description: "Punctual service so your pet is groomed without delays.",
+      title: "Punctual Service",
+      description: "Respect for your time with timely appointments.",
     },
     {
       icon: faHandshake,
-      title: "Trusted Care",
-      description: "A friendly and dependable team your pet can trust.",
+      title: "Trusted Professionals",
+      description: "Expert stylists with years of experience and training.",
     },
     {
       icon: faAward,
-      title: "Professional Standards",
-      description: "Expert groomers delivering consistent, quality results.",
+      title: "Award-Winning Techniques",
+      description: "Latest trends and proven methods for stunning results.",
     },
     {
       icon: faStar,
-      title: "Happy Pets, Happy Owners",
-      description: "Your pet’s happiness and your satisfaction come first.",
+      title: "Client Satisfaction",
+      description: "Your happiness and confidence are our ultimate rewards.",
     },
   ],
 
   // About section
   about: {
-    title: "About Us",
-    subtitle: "Who we are and what we do.",
+    title: "About Ethereal Vista",
+    subtitle: "Where beauty meets tranquility",
     description:
-      "Welcome to Le Chien, We are a Multi Award Winning Dog Grooming Salon with over 23 years experience of caring for your beloved pampered dogs",
-    image: "/images/about-team.jpg",
+      "Welcome to Ethereal Vista, where we transform beauty routines into luxurious experiences. Our salon combines expert craftsmanship with serene ambiance to elevate your self-care journey.",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
 
     // Story section
-    mainImage: "Lecien/lechien-logo.png",
-    mainImageAlt: "Le Chien Team",
-    storyTitle: "Our Story",
+    mainImage: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
+    mainImageAlt: "Ethereal Vista Beauty Salon Interior",
+    storyTitle: "Our Vision",
     story1:
-      "Cheryl Howard Opened Le Chien in 2005 and has been grooming dogs to a High standard since 1997 when she started her dog grooming career.",
-    story2:
-      "Cheryl and her Team Regularly Competes in dog grooming competitions across the UK and Europe winning at some of the most prestigious events.",
+      "Founded on the principle that everyone deserves to feel beautiful, Ethereal Vista was created as a sanctuary for self-care and transformation.",
+    story2: "We believe in the power of personalized beauty treatments to boost confidence and enhance natural elegance.",
     story3:
-      "In 2018 Cheryl was selected to join Groom Team England representing the United Kingdom at the Bi-annual International World Grooming tournament. She was Later Selected again in 2020 making it her 2nd term on the Team.",
+      "Our team continuously trains in the latest techniques and trends, ensuring we offer cutting-edge services while maintaining classic sophistication.",
     story4:
-      "Our Team of highly experienced stylists will ensure your Dogs visit is a happy and enjoyable experience. We offer bespoke styling to cater for all Breeds in a style that best suits you and your dogs lifestyle",
-    story5:
-      "At Le Chien we have a great range of high end quality Products to suit every dogs coat and skin type and only use the best natural and Holistic products on the market to ensure we get the best results whilst caring for your dog.",
-    story6: "We Welcome all prospected Custom to Visit the salon for a free Consultation to discuss your grooming needs.",
+      "We've curated a selection of premium, cruelty-free products that nourish and enhance your natural beauty, suitable for all skin and hair types.",
+    story5: "Our bespoke approach means every service is tailored to your individual style, preferences, and lifestyle needs.",
+    story6: "We invite you to visit for a complimentary consultation to discuss your beauty aspirations.",
 
     // Values
     values: [
       {
-        icon: faPaw,
-        title: "Gentle Care",
-        description: "We treat every dog with kindness, patience, and respect to make grooming a positive experience.",
+        icon: faSpa,
+        title: "Relaxing Atmosphere",
+        description: "A serene environment designed to help you unwind and rejuvenate during your visit.",
       },
       {
-        icon: faBath,
-        title: "Professional Grooming",
-        description: "From baths to haircuts, our grooming services keep your dog looking and feeling their best.",
+        icon: faScissors,
+        title: "Precision Styling",
+        description: "Meticulous attention to detail in every haircut, style, and beauty treatment.",
       },
       {
         icon: faClock,
-        title: "On-Time Appointments",
-        description: "We value your time and stick to our schedules so you and your pet are never left waiting.",
+        title: "Timely Appointments",
+        description: "Efficient service that respects your schedule without compromising quality.",
       },
       {
         icon: faHeart,
-        title: "Happy, Healthy Pets",
-        description: "Our ultimate goal is a wagging tail — ensuring your furry friend leaves looking fresh and feeling loved.",
+        title: "Client-Centered Care",
+        description: "Your comfort, satisfaction, and beauty goals are our highest priority.",
       },
     ],
 
     // Founder section
-    founderImage: "Lecien/leChien.jpg",
-    founderTitle: "Meet The Founder",
-    founderName: "Cheryl Howard",
-    founderRole: "Founder & CEO",
-    founderBio1:
-      "Cheryl Howard has been a professional dog groomer since 1997, bringing over 23 years of expertise to Le Chien, which she founded in 2005.",
+    founderImage: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1669&auto=format&fit=crop",
+    founderTitle: "Our Lead Stylist",
+    founderName: "Ariana Sterling",
+    founderRole: "Creative Director & Master Stylist",
+    founderBio1: "With over 15 years in the beauty industry, Ariana brings a wealth of expertise and passion to Ethereal Vista.",
     founderBio2:
-      "Cheryl and her team regularly compete and win at prestigious UK and European grooming competitions, showcasing their exceptional skills.",
-    founderBio3:
-      "Selected twice for Groom Team England, Cheryl leads with passion and dedication, ensuring every dog receives personalized, high-quality care.",
+      "Her work has been featured in several beauty publications, and she regularly attends international beauty expos to stay ahead of trends.",
+    founderBio3: "Ariana leads our team with a commitment to excellence and personalized care, ensuring every client leaves feeling extraordinary.",
   },
 
   // Contact Info
-  phoneOffice: "07352467408",
-  phoneMobile: "(+44) 7352467408",
-  email: "lechienlondon@gmail.com",
-  address: "362 Grand Dr, London SW20 9NQ",
-  openHours1: "Monday - Friday: 8:00 AM - 4:30 PM",
-  openHours2: "Saturday: Closed",
-  openHours3: "Sunday: Closed",
+  phoneOffice: "020 8123 4567",
+  phoneMobile: "07890 123456",
+  email: "info@etherealvista.com",
+  address: "123 Luxury Lane, Mayfair, London W1K 4AB",
+  openHours1: "Tuesday - Friday: 9:00 AM - 7:00 PM",
+  openHours2: "Saturday: 10:00 AM - 6:00 PM",
+  openHours3: "Sunday & Monday: Closed",
   location:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.4687243926096!2d-0.22528528765834063!3d51.39186031901957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487608f9d6d3ef3f%3A0x6509f53f5714f6fa!2sLe%20Chien%20London!5e1!3m2!1sen!2suk!4v1759092551184!5m2!1sen!2suk",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.674675487647!2d-0.1560005236843851!3d51.50732227181092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760533287e9d6f%3A0x9b4e82b42e2e0b7a!2sMayfair%2C%20London!5e0!3m2!1sen!2suk!4v1749422216188!5m2!1sen!2suk",
 
   // Hero
   hero: {
-    title: "Le Chien London",
-    subtitle: "Award Winning Styling By Cheryl Howard",
-    backgroundImage: "Lecien/leChien.jpg",
+    title: "Ethereal Vista Beauty Salon",
+    subtitle: "Elevating Beauty with Elegance and Precision",
+    backgroundImage: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
   },
 
   // Services
-  serviceDescription:
-    "We provide a full range of professional dog grooming services, ensuring your furry friend looks, feels, and smells their best.",
-  serviceCTATitle: "Ready to Pamper Your Pup?",
-  serviceCTADescription:
-    "Book a grooming session today and give your furry friend the care they deserve. From baths to stylish trims, we’ll have them looking and feeling their best.",
+  serviceDescription: "We offer a comprehensive range of beauty services designed to enhance your natural elegance and boost your confidence.",
+  serviceCTATitle: "Ready to Experience Premium Beauty Care?",
+  serviceCTADescription: "Book your appointment today and let our expert stylists help you achieve the look you've always desired.",
   services: [
     {
-      title: "Full Grooming",
-      icon: faCut,
-      description: "A complete grooming package including bath, haircut, brushing, and styling to keep your dog looking fresh and clean.",
+      title: "Hair Styling & Grooming",
+      icon: faScissors,
+      description: "Expert haircuts, styling, and treatments tailored to enhance your features and suit your lifestyle.",
     },
     {
-      title: "Bath & Blow Dry",
-      icon: faShower,
-      description: "Gentle shampoo and conditioning followed by a blow dry, leaving your dog’s coat soft, shiny, and smelling great.",
+      title: "Manicure Services",
+      icon: faHandSparkles,
+      description: "Luxurious nail care including shaping, polishing, and nail art with premium products.",
     },
     {
-      title: "Nail Trimming",
-      icon: faPaw,
-      description: "Safe and precise nail trimming to ensure your dog’s comfort and prevent overgrowth or splitting.",
+      title: "Pedicure Services",
+      icon: faSpa,
+      description: "Revitalizing foot care and treatments that leave your feet feeling refreshed and beautifully groomed.",
     },
     {
-      title: "Ear Cleaning",
-      icon: faEarListen,
-      description: "Careful ear cleaning to remove wax and dirt, helping to prevent infections and discomfort.",
+      title: "Hair Coloring",
+      icon: faPalette,
+      description: "Custom color formulations and professional application for vibrant, healthy-looking hair.",
     },
     {
-      title: "Teeth Cleaning",
-      icon: faTooth,
-      description: "Gentle brushing and tartar removal to promote healthy teeth and fresh breath.",
+      title: "Professional Styling",
+      icon: faUserTie,
+      description: "Special occasion styling and grooming services for events and important moments.",
     },
     {
-      title: "Puppy Introduction Groom",
-      icon: faBaby,
-      description: "A short, gentle grooming session to introduce puppies to the grooming process in a calm and friendly way.",
+      title: "Beauty Treatments",
+      icon: faBrush,
+      description: "Additional beauty services including waxing, facial treatments, and professional makeup.",
     },
   ],
 
-  // Projects
+  // Projects (Portfolio)
   projects: [
     {
       id: 1,
-      title: "Luxury Dog Spa Day",
-      description: "A full pampering session with gentle wash, blow-dry, and coat conditioning for a silky shine.",
-      category: "Grooming",
-      image: "Lecien/dog1.png",
-      gallery: ["Lecien/dog2.png", "Lecien/dog3.png", "Lecien/dog4.png"],
+      title: "Elegant Evening Makeover",
+      description: "Complete hair styling and manicure for a sophisticated evening look.",
+      category: "Special Occasion",
+      image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1740&auto=format&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1740&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
+      ],
     },
     {
       id: 2,
-      title: "Puppy’s First Groom",
-      description: "A stress-free introduction to grooming with a warm bath, soft brushing, and nail trim for young pups.",
-      category: "Puppy Care",
-      image: "Lecien/dog2.png",
-      gallery: ["Lecien/dog1.png", "Lecien/dog3.png", "Lecien/dog4.png"],
+      title: "Classic French Manicure",
+      description: "Timeless nail art with modern precision and premium polish.",
+      category: "Nail Art",
+      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1740&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
+      ],
     },
     {
       id: 3,
-      title: "Breed-Specific Styling",
-      description: "Expert coat trimming and styling tailored to your dog’s breed for a show-quality finish.",
-      category: "Styling",
-      image: "Lecien/dog4.png",
-      gallery: ["Lecien/dog3.png", "Lecien/dog1.png", "Lecien/dog4.png"],
+      title: "Professional Haircut & Style",
+      description: "Precision haircut and blow-dry for everyday elegance and manageability.",
+      category: "Hair Styling",
+      image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1669&auto=format&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1740&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
+      ],
+    },
+    {
+      id: 4,
+      title: "Premium Beauty Products",
+      description: "Our curated collection of luxury skincare and haircare products.",
+      category: "Products",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1770&auto=format&fit=crop",
+      gallery: [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1740&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1669&auto=format&fit=crop",
+      ],
     },
   ],
 
-  featuredTitle: "Why choose Le Chien for your pet’s grooming?",
-  featuredSubTitle: "Your pet’s comfort and style are our top priority, with gentle care and professional grooming every time.",
+  featuredTitle: "Why choose Ethereal Vista for your beauty needs?",
+  featuredSubTitle: "Expert craftsmanship meets luxurious care in our serene salon environment.",
 
-  favicon: "Lecien/lechien-logo.png",
-  companyNo: "5234798",
+  favicon: "EtherealVista/ethereal-vista-logo.png",
+  companyNo: "98765432",
 };
 
 export default EtherealVistaConfig;

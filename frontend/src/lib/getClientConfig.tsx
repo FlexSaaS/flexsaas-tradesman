@@ -4,6 +4,7 @@ import clientBConfig from "../configs/clientB";
 import clientBeakomConfig from "../configs/Beakom";
 import clientPrintifyConfig from "../configs/Printify";
 import LecienConfig from "../configs/Lecien";
+import EtherealVistaConfig from "../configs/Ethereal";
 // import other configs...
 
 const configMap: Record<string, ClientConfig> = {
@@ -11,7 +12,8 @@ const configMap: Record<string, ClientConfig> = {
   B: clientBConfig,
   Beakom: clientBeakomConfig,
   Printify: clientPrintifyConfig,
-  Lecien: LecienConfig
+  Lecien: LecienConfig,
+  Ethereal: EtherealVistaConfig,
   // ...
 };
 

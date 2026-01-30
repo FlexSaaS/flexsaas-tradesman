@@ -81,10 +81,19 @@ function HomePage() {
         <SectionContainer>
           <InnerContainer>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <SectionHeader>
-                <SectionTitle>Recent Projects</SectionTitle>
-                <SectionSubtitle>Take a look at our latest work</SectionSubtitle>
-              </SectionHeader>
+              {!isEthereral && (
+                <SectionHeader>
+                  <SectionTitle>Recent Projects</SectionTitle>
+                  <SectionSubtitle>Take a look at our latest work</SectionSubtitle>
+                </SectionHeader>
+              )}
+
+              {isEthereral && (
+                <SectionHeader>
+                  <SectionTitle>Our Recent Styles</SectionTitle>
+                  <SectionSubtitle>Fresh looks from our happy clients</SectionSubtitle>
+                </SectionHeader>
+              )}
             </motion.div>
 
             <ProjectsGrid>

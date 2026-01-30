@@ -40,12 +40,13 @@ function HomePage() {
   };
 
   const isBeakom = client.name === "Beakom Enterprise";
+  const isEthereral = client.name === "Ethereal Vista";
 
   return (
     <div>
       <HeroSection>
-        <HeroContent style={{ justifyContent: isBeakom ? "center" : "flex-start" }}>
-          <HeroInner style={{ textAlign: isBeakom ? "center" : "left" }}>
+        <HeroContent style={{ justifyContent: isBeakom || isEthereral  ? "center" : "flex-start" }}>
+          <HeroInner style={{ textAlign: isBeakom || isEthereral ? "center" : "left" }}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <HeroTitle>{client.hero.title}</HeroTitle>
             </motion.div>
@@ -53,7 +54,7 @@ function HomePage() {
               <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-              <ButtonGroup style={{ justifyContent: isBeakom ? "center" : "flex-start" }}>
+              <ButtonGroup style={{ justifyContent: isBeakom || isEthereral  ? "center" : "flex-start" }}>
                 {/* either you offer booking or not */}
                 {client.isBooking ? (
                   <PrimaryButton to="/contact">
@@ -193,8 +194,8 @@ const HeroSection = styled.div`
   height: 90vh;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0.71),
+      rgba(0, 0, 0, 0.55)
     ),
     url(${() => client.hero.backgroundImage});
   background-size: cover;

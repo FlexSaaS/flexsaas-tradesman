@@ -25,7 +25,7 @@ function Header() {
               <NavLink to="/services">SERVICES</NavLink>
             )}
             {client.projects && client.projects.length > 0 && (
-              <NavLink to="/projects">GROOMING</NavLink>
+              <NavLink to="/projects">GALLERY</NavLink>
             )}
             {client.products && client.products.length > 0 && (
               <NavLink to="/products">PRODUCTS</NavLink>
@@ -63,7 +63,7 @@ function Header() {
                 to="/projects"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Projects
+                Gallery
               </MobileNavLink>
             )}
 

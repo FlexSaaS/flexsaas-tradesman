@@ -124,12 +124,12 @@ const EtherealVistaConfig: ClientConfig = {
     // Founder section
     founderImage: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1669&auto=format&fit=crop",
     founderTitle: "Our Lead Stylist",
-    founderName: "Ariana Sterling",
+    founderName: "Louis's Babe",
     founderRole: "Creative Director & Master Stylist",
-    founderBio1: "With over 15 years in the beauty industry, Ariana brings a wealth of expertise and passion to Ethereal Vista.",
+    founderBio1: "With over 15 years in the beauty industry, Louis's Babe brings a wealth of expertise and passion to Ethereal Vista.",
     founderBio2:
       "Her work has been featured in several beauty publications, and she regularly attends international beauty expos to stay ahead of trends.",
-    founderBio3: "Ariana leads our team with a commitment to excellence and personalized care, ensuring every client leaves feeling extraordinary.",
+    founderBio3: "Louis's Babe leads our team with a commitment to excellence and personalized care, ensuring every client leaves feeling extraordinary.",
   },
 
   // Contact Info

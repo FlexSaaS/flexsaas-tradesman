@@ -18,7 +18,7 @@ import type { ClientConfig } from "../types/Config";
 
 const EtherealVistaConfig: ClientConfig = {
   name: "Ethereal Vista",
-  logo: "EtherealVista/ethereal-vista-logo.png",
+  logo: "Ethereal/ethereal-logo.jpeg",
   primaryColor: "#800000", // Maroon
   primaryColorLight: "#F5F5DC", // Beige
   secondaryColor: "#F5F5DC", // Beige
@@ -129,7 +129,8 @@ const EtherealVistaConfig: ClientConfig = {
     founderBio1: "With over 15 years in the beauty industry, Louis's Babe brings a wealth of expertise and passion to Ethereal Vista.",
     founderBio2:
       "Her work has been featured in several beauty publications, and she regularly attends international beauty expos to stay ahead of trends.",
-    founderBio3: "Louis's Babe leads our team with a commitment to excellence and personalized care, ensuring every client leaves feeling extraordinary.",
+    founderBio3:
+      "Louis's Babe leads our team with a commitment to excellence and personalized care, ensuring every client leaves feeling extraordinary.",
   },
 
   // Contact Info

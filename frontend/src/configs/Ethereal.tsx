@@ -247,7 +247,7 @@ const EtherealVistaConfig: ClientConfig = {
   featuredTitle: "Why choose Ethereal Vista for your beauty needs?",
   featuredSubTitle: "Expert craftsmanship meets luxurious care in our serene salon environment.",
 
-  favicon: "EtherealVista/ethereal-vista-logo.png",
+  favicon: "Ethereal/ethereal-favicon.jpeg",
   companyNo: "98765432",
 };
 

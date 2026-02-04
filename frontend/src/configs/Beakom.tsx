@@ -132,7 +132,7 @@ const clientBeakomConfig: ClientConfig = {
   openHours2: "Saturday: Closed",
   openHours3: "Sunday: Closed",
   location:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.326517978818!2d-0.17532868573276844!3d5.677338595839495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d67ae832e11%3A0xf8a52cc4866b9ca5!2sArena%20Station%2C%20Hanson%20Lane%2C%20Accra!5e0!3m2!1sen!2suk!4v1747849113481!5m2!1sen!2suk",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.147180723223!2d-0.2163984!3d5.5451844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9121dad349f7%3A0x7270ccf2ce43916c!2sBeakom%20Enterprise!5e0!3m2!1sen!2suk!4v1770242338113!5m2!1sen!2suk",
   hero: {
     title: "Building Your Vision with Precision",
     subtitle: "Supplying you with all the hardware fasteners you need for your projects.",

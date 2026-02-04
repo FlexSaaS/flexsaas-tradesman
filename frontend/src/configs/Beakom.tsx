@@ -3755,7 +3755,7 @@ const clientBeakomConfig: ClientConfig = {
       stock: 100,
       description:
         "Used to transmit rotational power between pulleys through friction, using tension to enable smooth rotary motion in systems like industrial machines and conveyors",
-      material: "Rubber ",
+      material: "Fibre",
       finish: "Rubber ",
       size: "50mm",
       images: ["https://res.cloudinary.com/dxwqt6yrg/image/upload/v1770149700/81d896c3-9aa2-4dc2-8869-10885362bd2a.png"],

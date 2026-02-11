@@ -119,7 +119,7 @@ const clientBeakomConfig: ClientConfig = {
       "Nana Fosu Hemaa Animah II's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
     // Optional SEO fields,
     seoTitle: "About Beakom - Expert Hardware Supply Company",
-    seoDescription: "Learn about Beakom, a trusted hardware supply company with 30+ years experience in house extensions, renovations & new builds.",
+    seoDescription: "Discover Beakom — a trusted hardware supplier with over 40 years of excellence in providing high-quality fasteners, fittings, and industrial components for construction, engineering, machinery, DIY projects, and more.",
     seoKeywords:
       "Beakom, hardware supply company, experienced builders, hardware supply history, steel, nuts, bolts,fasteners, hardware supplier, building materials, washers, screws, anchor plugs, retaining rings, keys, expansion fixings",
     seoUrl: "https://beakomenterprise.com/products",

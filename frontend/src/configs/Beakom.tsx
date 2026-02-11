@@ -1573,7 +1573,7 @@ const clientBeakomConfig: ClientConfig = {
     {
       id: "403",
       code: "DIA50",
-      name: "Long Nut (Galvanized Steel)",
+      name: "Long Nut/Rod coupling (Galvanized Steel)",
       type: "Nuts",
       price: 2.5,
       vatPrice: 3.0,

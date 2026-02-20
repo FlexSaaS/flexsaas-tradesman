@@ -119,13 +119,14 @@ const clientBeakomConfig: ClientConfig = {
       "Nana Fosu Hemaa Animah II's hands-on approach and dedication to client satisfaction have been instrumental in building Beakom's reputation.",
     // Optional SEO fields,
     seoTitle: "About Beakom - Expert Hardware Supply Company",
-    seoDescription: "Discover Beakom — a trusted hardware supplier with over 40 years of excellence in providing high-quality fasteners, fittings, and industrial components for construction, engineering, machinery, DIY projects, and more.",
+    seoDescription:
+      "Discover Beakom — a trusted hardware supplier with over 40 years of excellence in providing high-quality fasteners, fittings, and industrial components for construction, engineering, machinery, DIY projects, and more.",
     seoKeywords:
       "Beakom, hardware supply company, experienced builders, hardware supply history, steel, nuts, bolts,fasteners, hardware supplier, building materials, washers, screws, anchor plugs, retaining rings, keys, expansion fixings",
     seoUrl: "https://beakomenterprise.com/products",
   },
   phoneOffice: "053 135 6424",
-  phoneMobile: "024 461 5161",
+  phoneMobile: "053 135 6424",
   email: "beakomenterprisegh@gmail.com",
   address: "Hanson lane, Arena station, Accra",
   openHours1: "Monday - Friday: 8:00 AM - 4:30 PM",

@@ -127,6 +127,7 @@ const clientBeakomConfig: ClientConfig = {
   },
   phoneOffice: "053 135 6424",
   phoneMobile: "053 135 6424",
+  countryCode: "233",
   email: "beakomenterprisegh@gmail.com",
   address: "Hanson lane, Arena station, Accra",
   openHours1: "Monday - Friday: 8:00 AM - 4:30 PM",

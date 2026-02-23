@@ -8,7 +8,10 @@ const client = getClientConfig();
 
 function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = client.phoneMobile.replace(/\D/g, ""); // Remove non-numeric characters
+
+  const WHATSAPP_COUNTRY_CODE = client.countryCode || "44";
+
+  const phoneNumber = client.phoneMobile.replace(/\D/g, "").replace(/^0/, WHATSAPP_COUNTRY_CODE); 
   const message = "Hi! I saw your website and would like to make some enquiries";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

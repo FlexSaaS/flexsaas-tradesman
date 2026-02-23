@@ -86,6 +86,7 @@ export interface ClientConfig {
   favicon: string;
   phoneOffice: string;
   phoneMobile: string;
+  countryCode?: string;
   email: string;
   address: string;
   openHours1: string;

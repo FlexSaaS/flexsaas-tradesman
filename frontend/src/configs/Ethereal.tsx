@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import type { ClientConfig } from "../types/Config";
 
+
 const EtherealVistaConfig: ClientConfig = {
   name: "Ethereal Vista",
   logo: "Ethereal/ethereal-logo.jpeg",
@@ -23,7 +24,7 @@ const EtherealVistaConfig: ClientConfig = {
   primaryColorLight: "#F5F5DC", // Beige
   secondaryColor: "#F5F5DC", // Beige
   tagline: "Elevating Beauty with Elegance and Precision",
-  fontFamily: "Roboto, Gill Sans MT, Calibri, Trebuchet MS, sans-serif",
+  fontFamily: "Jost",
   currencySymbol: "£",
   isBooking: true,
 
@@ -77,8 +78,13 @@ const EtherealVistaConfig: ClientConfig = {
 
   // About section
   about: {
-    title: "About Ethereal Vista",
-    subtitle: "Where beauty meets tranquility",
+    title: "Our Mission",
+    subtitle: `ETHEREAL VISTA is more than a salon — it is an experience, a ritual, and a lifestyle. 
+We are a refined sanctuary designed for women who value luxury, self-care, and conscious living.
+Our salon blends premium treatments with carefully selected cruelty-free and organic products, ensuring that every service nurtures both your radiance and well-being.
+Ethereal Vista represents the modern woman — graceful yet powerful, conscious yet indulgent. 
+She understands that beauty is not vanity; it is self-expression, confidence, and lifestyle.`,
+
     description:
       "Welcome to Ethereal Vista, where we transform beauty routines into luxurious experiences. Our salon combines expert craftsmanship with serene ambiance to elevate your self-care journey.",
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop",
@@ -88,14 +94,14 @@ const EtherealVistaConfig: ClientConfig = {
     mainImageAlt: "Ethereal Vista Beauty Salon Interior",
     storyTitle: "Our Vision",
     story1:
-      "Founded on the principle that everyone deserves to feel beautiful, Ethereal Vista was created as a sanctuary for self-care and transformation.",
-    story2: "We believe in the power of personalized beauty treatments to boost confidence and enhance natural elegance.",
-    story3:
-      "Our team continuously trains in the latest techniques and trends, ensuring we offer cutting-edge services while maintaining classic sophistication.",
-    story4:
-      "We've curated a selection of premium, cruelty-free products that nourish and enhance your natural beauty, suitable for all skin and hair types.",
-    story5: "Our bespoke approach means every service is tailored to your individual style, preferences, and lifestyle needs.",
-    story6: "We invite you to visit for a complimentary consultation to discuss your beauty aspirations.",
+      "Through expert care, premium products, and serene surroundings, we aim to make every visit a rejuvenating escape, leaving our clients glowing, confident, and inspired.",
+    story2: "We believe beauty should feel indulgent yet intentional — a ritual that restores not only your glow, but your confidence.",
+    story3: "With intentionality in every detail , our services are a moment of luxury, and every client feels empowered, pampered, and celebrated.",
+    story4: "Redefining modern beauty by offering premium, cruelty-free, and organic treatments that nurture confidence, elegance, and wellness.",
+    story5:
+      "Ethereal Vista was born from a desire to create more than just a salon — but a sanctuary. A space where women could pause, breathe, and indulge in refined self-care without compromising their values.",
+    story6:
+      "A haven where every appointment feels like an escape into softness, elegance, and empowerment ⁃	Our aim as a business is to provide intentional, personalized beauty experiences that elevate not just appearance but the entire sense of self.",
 
     // Values
     values: [

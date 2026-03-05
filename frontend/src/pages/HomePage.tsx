@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
@@ -13,6 +13,16 @@ const client = getClientConfig();
 function HomePage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video plays on load for Ethereal Vista
+    if (client.name === "Ethereal Vista" && videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
 
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
@@ -40,55 +50,63 @@ function HomePage() {
   };
 
   const isBeakom = client.name === "Beakom Enterprise";
-  const isEthereral = client.name === "Ethereal Vista";
+  const isEthereal = client.name === "Ethereal Vista";
 
   return (
     <div>
       <HeroSection>
-        <HeroContent style={{ justifyContent: isBeakom || isEthereral  ? "center" : "flex-start" }}>
-          <HeroInner style={{ textAlign: isBeakom || isEthereral ? "center" : "left" }}>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <HeroTitle>{client.hero.title}</HeroTitle>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-              <ButtonGroup style={{ justifyContent: isBeakom || isEthereral  ? "center" : "flex-start" }}>
-                {/* either you offer booking or not */}
-                {client.isBooking ? (
-                  <PrimaryButton to="/contact">
-                    BOOK <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
-                  </PrimaryButton>
-                ) : (
-                  <PrimaryButton to="/contact">
-                    CONTACT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
-                  </PrimaryButton>
-                )}
-                {/* either you offer services or sell products */}
-                {client.services && client.services.length > 0 ? (
-                  <SecondaryButton to="/services">SERVICES</SecondaryButton>
-                ) : (
-                  <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
-                )}
-              </ButtonGroup>
-            </motion.div>
-          </HeroInner>
-        </HeroContent>
+        {isEthereal && (
+          <VideoBackground autoPlay muted loop playsInline ref={videoRef}>
+            <source src="/Ethereal/ethereal-beauty.mp4" type="video/mp4" />
+            {/* Fallback image if video doesn't load - using same gradient overlay approach */}
+          </VideoBackground>
+        )}
+        <HeroSectionInner isEthereal={isEthereal}>
+          <HeroContent style={{ justifyContent: isBeakom || isEthereal ? "center" : "flex-start" }}>
+            <HeroInner style={{ textAlign: isBeakom || isEthereal ? "center" : "left" }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <HeroTitle>{client.hero.title}</HeroTitle>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <HeroSubtitle>{client.hero.subtitle}</HeroSubtitle>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
+                <ButtonGroup style={{ justifyContent: isBeakom || isEthereal ? "center" : "flex-start" }}>
+                  {/* either you offer booking or not */}
+                  {client.isBooking ? (
+                    <PrimaryButton to="/contact">
+                      BOOK <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                    </PrimaryButton>
+                  ) : (
+                    <PrimaryButton to="/contact">
+                      CONTACT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                    </PrimaryButton>
+                  )}
+                  {/* either you offer services or sell products */}
+                  {client.services && client.services.length > 0 ? (
+                    <SecondaryButton to="/services">SERVICES</SecondaryButton>
+                  ) : (
+                    <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
+                  )}
+                </ButtonGroup>
+              </motion.div>
+            </HeroInner>
+          </HeroContent>
+        </HeroSectionInner>
       </HeroSection>
 
       {Array.isArray(client.projects) && client.projects.length > 0 && (
         <SectionContainer>
           <InnerContainer>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              {!isEthereral && (
+              {!isEthereal && (
                 <SectionHeader>
                   <SectionTitle>Recent Projects</SectionTitle>
                   <SectionSubtitle>Take a look at our latest work</SectionSubtitle>
                 </SectionHeader>
               )}
 
-              {isEthereral && (
+              {isEthereal && (
                 <SectionHeader>
                   <SectionTitle>Our Recent Styles</SectionTitle>
                   <SectionSubtitle>Fresh looks from our happy clients</SectionSubtitle>
@@ -198,20 +216,47 @@ function HomePage() {
 
 export default HomePage;
 
+// New styled component for video background
+const VideoBackground = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+`;
+
+// Modified HeroSection to handle video background
 const HeroSection = styled.div`
   position: relative;
   height: 90vh;
-  background-image: linear-gradient(
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+`;
+
+// Inner component to handle the background image for non-video clients
+const HeroSectionInner = styled.div<{ isEthereal?: boolean }>`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${({ isEthereal }) =>
+    !isEthereal &&
+    `
+    background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.71),
       rgba(0, 0, 0, 0.55)
     ),
-    url(${() => client.hero.backgroundImage});
-  background-size: cover;
-  background-position: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+    url(${client.hero.backgroundImage});
+    background-size: cover;
+    background-position: center;
+  `}
 `;
 
 const HeroContent = styled.div`
@@ -220,6 +265,8 @@ const HeroContent = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -230,6 +277,10 @@ const HeroInner = styled.div`
   width: 40%;
   text-align: left;
   margin: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -307,7 +358,8 @@ const ViewAllLink = styled(Link)`
 const FeatureCard = styled.div`
   background-color: white;
   padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;
 `;
@@ -408,7 +460,8 @@ const ProjectsGrid = styled.div`
 const ProjectCard = styled.div`
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   background-color: white;
@@ -480,7 +533,8 @@ const CarouselItem = styled.div`
   flex: 0 0 20rem;
   background-color: white;
   padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   text-align: center;
   transition: all 0.3s;

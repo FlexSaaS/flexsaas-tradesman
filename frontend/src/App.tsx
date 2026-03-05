@@ -16,6 +16,32 @@ import { useEffect } from "react";
 function App() {
   const client = getClientConfig();
 
+useEffect(() => {
+  // Check if font is from Google and load it via @import in a style tag
+  if (client.name === "Ethereal Vista" && client.fontFamily === "Jost") {
+    const style = document.createElement("style");
+    style.id = "ethereal-fonts";
+    style.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap');
+      
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{font-family:'Jost',sans-serif;}
+      ::-webkit-scrollbar{width:6px}
+      ::-webkit-scrollbar-track{background:#1a1c22}
+      ::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px}
+      @keyframes gentlePulse{0%,100%{opacity:.3}50%{opacity:.6}}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+      @keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+      @keyframes overlayIn{from{opacity:0}to{opacity:1}}
+      .fade-section{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.22,1,.36,1)}
+      .fade-section.visible{opacity:1;transform:translateY(0)}
+      body.modal-open{overflow:hidden}
+    `;
+    document.head.appendChild(style);
+  }
+}, [client.name, client.fontFamily]);
+  
   // Set favicon
   useEffect(() => {
     if (!client.favicon) return;

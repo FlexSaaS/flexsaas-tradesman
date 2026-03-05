@@ -15,19 +15,13 @@ function AboutPageTemp() {
         {/* Header Section */}
         <Header>
           <Title>{about?.title}</Title>
-          <Subtitle>{about?.subtitle}</Subtitle>
+          <Subtitle style={{ textAlign: "left" }}>{about?.subtitle}</Subtitle>
         </Header>
 
         {/* Story Section */}
         <StoryGrid>
           <div>
-            <StoryImage
-              src={about?.mainImage}
-              alt={about?.mainImageAlt}
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <StoryImage src={about?.mainImage} alt={about?.mainImageAlt} loading="lazy" width="600" height="400" />
           </div>
           <StoryText>
             <h2>{about?.storyTitle}</h2>
@@ -47,10 +41,7 @@ function AboutPageTemp() {
             {about?.values?.map((value, idx) => (
               <ValueCard key={idx}>
                 <ValueIcon>
-                  <FontAwesomeIcon
-                    icon={value.icon as IconDefinition}
-                    size="3x"
-                  />
+                  <FontAwesomeIcon icon={value.icon as IconDefinition} size="3x" />
                 </ValueIcon>
                 <ValueTitle>{value.title}</ValueTitle>
                 <ValueDesc>{value.description}</ValueDesc>
@@ -63,13 +54,7 @@ function AboutPageTemp() {
         <TeamSection>
           <TeamTitle>{about?.founderTitle}</TeamTitle>
           <div className="flex flex-col items-center">
-            <FounderImage
-              src={about?.founderImage}
-              alt={about?.founderName}
-              loading="lazy"
-              width="192"
-              height="192"
-            />
+            <FounderImage src={about?.founderImage} alt={about?.founderName} loading="lazy" width="192" height="192" />
             <FounderName>{about?.founderName}</FounderName>
             <FounderRole>{about?.founderRole}</FounderRole>
             <FounderBio>
@@ -117,7 +102,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #4b5563;
   max-width: 48rem;
   margin: 0 auto;

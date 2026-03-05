@@ -150,7 +150,7 @@ const FooterLogo = styled.img`
 
 const Description = styled.p`
   margin-top: 1rem;
-  color: ${client.primaryColor};
+  color: black;
 `;
 
 const SocialLinks = styled.div`
@@ -192,7 +192,7 @@ const ContactItem = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: ${client.primaryColor};
+  color: black;
 `;
 
 const IconWrapper = styled.div`
@@ -209,7 +209,7 @@ const QuickLinks = styled.div`
 `;
 
 const QuickLink = styled(Link)`
-  color: ${client.primaryColor};
+  color: black;
   transition: color 0.3s ease;
   text-decoration: none;
 

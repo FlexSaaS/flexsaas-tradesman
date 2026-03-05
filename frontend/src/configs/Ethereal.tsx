@@ -253,7 +253,7 @@ She understands that beauty is not vanity; it is self-expression, confidence, an
   featuredTitle: "Why choose Ethereal Vista for your beauty needs?",
   featuredSubTitle: "Expert craftsmanship meets luxurious care in our serene salon environment.",
 
-  favicon: "Ethereal/ethereal-favicon.jpeg",
+  favicon: "Ethereal/ethereal-logo.jpeg",
   companyNo: "98765432",
 };
 

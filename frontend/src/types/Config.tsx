@@ -13,6 +13,23 @@ export interface Service {
   description: string;
 }
 
+export interface ServiceAddon {
+  name: string;
+  duration?: string;
+  description: string;
+  price: number;
+}
+
+export interface DetailedService {
+  title: string;
+  icon: IconDefinition;
+  description: string;
+  basePrice?: number;
+  duration?: string;
+  isFree?: boolean;
+  addons?: ServiceAddon[];
+}
+
 export interface FeatureIconConfig {
   icon: IconDefinition;
   title: string;
@@ -101,6 +118,7 @@ export interface ClientConfig {
   linkedIn?: string;
 
   services?: Service[];
+  detailedServices?: DetailedService[];
   serviceDescription?: string;
   serviceCTATitle?: string;
   serviceCTADescription?: string;

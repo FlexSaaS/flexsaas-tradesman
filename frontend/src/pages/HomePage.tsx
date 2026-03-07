@@ -52,6 +52,9 @@ function HomePage() {
   const isBeakom = client.name === "Beakom Enterprise";
   const isEthereal = client.name === "Ethereal Vista";
 
+  const bookingHref =
+    "https://www.fresha.com/a/beauty-technicians-accra-102-nii-nortei-nyanchi-street-d0g71ydr/booking?cartId=056ccff0-bcd1-4141-bdb2-a2c8d6b50a1a";
+
   return (
     <div>
       <HeroSection>
@@ -74,16 +77,25 @@ function HomePage() {
                 <ButtonGroup style={{ justifyContent: isBeakom || isEthereal ? "center" : "flex-start" }}>
                   {/* either you offer booking or not */}
                   {client.isBooking ? (
-                    <PrimaryButton to="/contact">
-                      BOOK <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
-                    </PrimaryButton>
+                    isEthereal ? (
+                      <PrimaryButtonExternal href={bookingHref} target="_blank" rel="noopener noreferrer">
+                        BOOK
+                        <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                      </PrimaryButtonExternal>
+                    ) : (
+                      <PrimaryButton to="/contact">
+                        BOOK
+                        <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                      </PrimaryButton>
+                    )
                   ) : (
                     <PrimaryButton to="/contact">
-                      CONTACT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                      CONTACT
+                      <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
                     </PrimaryButton>
                   )}
                   {/* either you offer services or sell products */}
-                  {client.services && client.services.length > 0 ? (
+                  {(client?.services?.length ?? 0) > 0 || (client?.detailedServices?.length ?? 0) > 0 ? (
                     <SecondaryButton to="/services">SERVICES</SecondaryButton>
                   ) : (
                     <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
@@ -317,6 +329,30 @@ const ButtonGroup = styled.div`
 `;
 
 const PrimaryButton = styled(Link)`
+  background-color: ${client.primaryColor};
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 450;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+
+  &:hover {
+    background-color: ${client.primaryColorLight};
+    transform: scale(1.05);
+    color: black;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+`;
+
+const PrimaryButtonExternal = styled.a`
   background-color: ${client.primaryColor};
   color: #ffffff;
   padding: 0.5rem 1rem;

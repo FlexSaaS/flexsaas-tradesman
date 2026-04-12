@@ -107,7 +107,7 @@ export interface ClientConfig {
   email: string;
   address: string;
   openHours1: string;
-  openHours2: string;
+  openHours2?: string;
   openHours3: string;
   location: string;
   currencySymbol?: string;

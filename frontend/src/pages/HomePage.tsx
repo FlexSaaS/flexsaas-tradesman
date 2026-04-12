@@ -60,7 +60,7 @@ function HomePage() {
       <HeroSection>
         {isEthereal && (
           <VideoBackground autoPlay muted loop playsInline ref={videoRef}>
-            <source src="/Ethereal/ethereal-beauty.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dxwqt6yrg/video/upload/v1775996261/Lounge_1_pdlepc.mp4" type="video/mp4" />
             {/* Fallback image if video doesn't load - using same gradient overlay approach */}
           </VideoBackground>
         )}
@@ -163,7 +163,7 @@ function HomePage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               style={{ textAlign: "center" }}>
               <ViewAllLink to="/projects">
-                View All Projects <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
+                {isEthereal ? "View All Gallery" : "View All Projects"} <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "0.5rem" }} />
               </ViewAllLink>
             </motion.div>
           </InnerContainer>
@@ -237,6 +237,7 @@ const VideoBackground = styled.video`
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  filter: brightness(0.7) contrast(1);
 `;
 
 // Modified HeroSection to handle video background

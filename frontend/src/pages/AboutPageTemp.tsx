@@ -8,7 +8,8 @@ const client = getClientConfig();
 
 function AboutPageTemp() {
   const { about } = client;
-
+  
+  const isEtherealVista = client.name === "Ethereal Vista";
   return (
     <PageWrapper>
       <Container>
@@ -51,7 +52,7 @@ function AboutPageTemp() {
         </ValuesSection>
 
         {/* Team Section */}
-        <TeamSection>
+        <TeamSection style={{ display: isEtherealVista ? "none" : "block" }}>
           <TeamTitle>{about?.founderTitle}</TeamTitle>
           <div className="flex flex-col items-center">
             <FounderImage src={about?.founderImage} alt={about?.founderName} loading="lazy" width="192" height="192" />

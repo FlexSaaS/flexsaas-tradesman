@@ -10,9 +10,14 @@ function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   const WHATSAPP_COUNTRY_CODE = client.countryCode || "44";
+  const isEthereal = client.name === "Ethereal Vista";
 
-  const phoneNumber = client.phoneMobile.replace(/\D/g, "").replace(/^0/, WHATSAPP_COUNTRY_CODE); 
-  const message = "Hi! I saw your website and would like to make some enquiries";
+  const phoneNumber = client.phoneMobile.replace(/\D/g, "").replace(/^0/, WHATSAPP_COUNTRY_CODE);
+  let message = "Hi! I saw your website and would like to make some enquiries";
+  if (isEthereal) {
+    message = "Hi! I found your salon online and love what you do. I would like to make some enquiries";
+  }
+
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

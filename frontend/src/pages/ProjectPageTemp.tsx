@@ -21,7 +21,7 @@ function ProjectsPage() {
   const location = useLocation();
 
   const projects = useMemo<Project[]>(() => client.projects || [], []);
-
+  const isEthereal = client.name === "Ethereal Vista";
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalImageLoaded, setModalImageLoaded] = useState(false);
@@ -234,7 +234,12 @@ function ProjectsPage() {
         <CTASection>
           <CTATitle>{client.cta.title}</CTATitle>
           <CTASubtitle>{client.cta.subtitle}</CTASubtitle>
-          <CTAButton to={client.cta.link}>{client.cta.buttonText}</CTAButton>
+          {isEthereal && (
+            <CTALink href={client.cta.link} target="_blank" rel="noopener noreferrer">
+              {client.cta.buttonText}
+            </CTALink>
+          )}
+          {!isEthereal && <CTAButton to={client.cta.link}>{client.cta.buttonText}</CTAButton>}
         </CTASection>
       </Container>
     </PageWrapper>
@@ -634,6 +639,37 @@ const CTASubtitle = styled.p`
   @media (min-width: 640px) {
     margin-bottom: 2rem;
     font-size: 1rem;
+  }
+`;
+
+const CTALink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: ${client.secondaryColor};
+  color: #111827;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    background: ${client.primaryColor};
+    color: ${client.secondaryColor};
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.14);
+  }
+
+  @media (min-width: 640px) {
+    padding: 0.95rem 1.9rem;
+    font-size: 1.05rem;
   }
 `;
 

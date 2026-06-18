@@ -39,7 +39,7 @@ const EtherealVistaConfig: ClientConfig = {
     title: "Ready for a transformative beauty experience?",
     subtitle: "Book your appointment today and discover the Ethereal Vista difference.",
     buttonText: "Book Appointment",
-    link: "/contact",
+    link: "https://www.fresha.com/book-now/ethereal-vista-hutpcg8b/services?lid=2909125&eid=5141119&share=true&pId=2812645",
   },
 
   // Features

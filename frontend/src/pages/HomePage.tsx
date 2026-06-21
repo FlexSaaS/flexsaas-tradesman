@@ -95,11 +95,12 @@ function HomePage() {
                     </PrimaryButton>
                   )}
                   {/* either you offer services or sell products */}
-                  {(client?.services?.length ?? 0) > 0 || (client?.detailedServices?.length ?? 0) > 0 ? (
-                    <SecondaryButton to="/services">SERVICES</SecondaryButton>
-                  ) : (
-                    <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
-                  )}
+                  {!isEthereal &&
+                    ((client?.services?.length ?? 0) > 0 || (client?.detailedServices?.length ?? 0) > 0 ? (
+                      <SecondaryButton to="/services">SERVICES</SecondaryButton>
+                    ) : (
+                      <SecondaryButton to="/products">OUR PRODUCTS</SecondaryButton>
+                    ))}
                 </ButtonGroup>
               </motion.div>
             </HeroInner>
